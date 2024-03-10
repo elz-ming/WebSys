@@ -23,14 +23,16 @@
         /* Center the background image */
         position: relative;
         display: flex;
-        width: 100%;
-        max-width: 1920px;
+        /* width: 100%; */
+        /* max-width: 1920px; */
         /* Set maximum width */
         flex-direction: column;
         align-items: center;
         padding: 25px 60px 80px;
         overflow: hidden;
         /* Prevent scrolling of the main content */
+        margin-left: auto; /* Center horizontally */
+        margin-right: auto; /* Center horizontally */
       }
 
       @media (max-width: 1459px) {
