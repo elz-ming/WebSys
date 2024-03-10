@@ -419,11 +419,6 @@
       </div>
 
       <div class="div-category">Choose a category</div>
-      <?php
-        echo("<h3>Content inside PHP code...</h3>");
-        echo("<hr />");
-        phpinfo();
-      ?>
     </main>
   </body>
 </html>
