@@ -150,7 +150,7 @@ body{
 }
 
 .toggle{
-    background-image: url('/src/image/LoginJapan.jpg');
+    background-image: url("../image/LoginJapan.jpg");
     background-size: cover; /* Ensure the background covers the entire container */
     background-position: center; /* Center the background image */
     color: #070707;
@@ -163,7 +163,7 @@ body{
 }
 
 .container.active .toggle{
-    background-image: url('/src/image/LoginSpain.jpg');
+    background-image: url("../image/LoginSpain.jpg");
     background-size: cover; /* Ensure the background covers the entire container */
     background-position: center; /* Center the background image */
     transform: translateX(50%);
