@@ -10,21 +10,31 @@
     html {
       height: 100%;
       margin: 0;
+      overflow-x: hidden;
+      /* Prevent horizontal scrolling */
     }
 
     .div {
-      background-color: rgba(0, 0, 0, 0.7);
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/15/Travel_%288274728646%29.jpg');
+      /* Replace 'path/to/your/image.jpg' with the path to your background image */
+      background-size: cover;
+      /* Ensure the background image covers the entire element */
+      background-position: center;
+      /* Center the background image */
       position: relative;
       display: flex;
       width: 100%;
+      max-width: 1920px;
+      /* Set maximum width */
       flex-direction: column;
       align-items: center;
       padding: 25px 60px 80px;
+      overflow: hidden;
+      /* Prevent scrolling of the main content */
     }
 
-    @media (max-width: 991px) {
+    @media (max-width: 1459px) {
       .div {
-        max-width: 100%;
         padding: 0 20px;
       }
     }
@@ -85,7 +95,12 @@
       color: #868383;
       font-weight: 300;
       padding: 15px 24px;
+      margin-left: 123px;
+      /* Adjust margin to position it 123px away from the logo */
+      width: 554px;
+      /* Set width to 554px */
     }
+
 
     @media (max-width: 991px) {
       .div-6 {
@@ -304,10 +319,34 @@
       white-space: nowrap;
       font: 600 36px Poppins, sans-serif;
       text-align: center;
-      margin: 0 auto;
-      /* Updated margin to center horizontally */
+      position: absolute;
+      top: 1050px;
+      /* Position 1050px from the top */
+      bottom: 5504px;
+      /* Position 5504px from the bottom */
+      left: 264px;
+      /* Position 264px from the left */
+      right: 264px;
+      /* Position 264px from the right */
+      margin: auto;
+      /* Center horizontally */
     }
 
+    .div-category-container {
+      width: 1390px;
+      height: 393px;
+      position: absolute;
+      top: 1104px;
+      /* Adjust top position based on the space between "choose a category" and the block */
+      bottom: 5070px;
+      /* Adjust bottom position based on the space between the block and the bottom of the webpage */
+      left: 264px;
+      /* Position 264px from the left */
+      right: 264px;
+      /* Position 264px from the right */
+      margin: auto;
+      /* Center horizontally */
+    }
 
     @media (max-width: 991px) {
       .div-category {
