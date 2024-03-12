@@ -4,6 +4,14 @@ body {
     line-height: normal;
 }
 
+@media (max-width: 601px) {
+    body {
+        max-width: 100%;
+        height: auto;
+        padding: 0 20px;
+    }
+}
+
 :root {
     /* fonts */
     --font-poppins: Poppins;
@@ -81,7 +89,7 @@ body {
     position: relative;
     object-fit: cover;
     display: none;
-    max-width: 100%;
+    /* max-width: 100%; */
     z-index: 0;
 }
 
