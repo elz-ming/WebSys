@@ -5,7 +5,7 @@
     </head>
     <body>
         <header>
-            <h1>This the HOMEPAGE</h1>
+            <h1>This the HOMEPAGE really?</h1>
         </header>
         <main>
             <h2>This the main</h2>
@@ -17,6 +17,7 @@
                 <li>Link to logout page: <a href="logout.html">Logout page</a></li>
                 <li>Link to about page: <a href="about.html">About page</a></li>
                 <li>Link to blog page: <a href="blog.html">Blog page</a></li>
+                <li>Link to blog page:</li>
             </ul>
         </main>
         <footer>
