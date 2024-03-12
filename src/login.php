@@ -35,19 +35,13 @@
                 </div>
                 <div class="mb-3">
                     <label for="pwd" class="form-label"></label>
-                    <input required maxlength="30" type="password" id="pwd" name="pwd" class="form-control"
+                    <input required maxlength="30" minlength="8" type="password" id="pwd" name="pwd" class="form-control"
                         placeholder="Enter password">
                 </div>
                 <div class="mb-3">
                     <label for="pwd_confirm" class="form-label"></label>
-                    <input required maxlength="30" type="password" id="pwd_confirm" name="pwd_confirm"
+                    <input required maxlength="30" minlength="8" type="password" id="pwd_confirm" name="pwd_confirm"
                         class="form-control" placeholder="Confirm password">
-                </div>
-                <div class="mb-3 form-check">
-                    <input required type="checkbox" name="agree" id="agree" class="form-check-input">
-                    <label class="form-check-label" for="agree">
-                        Agree to terms and conditions.
-                    </label>
                 </div>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-primary">Submit</button>
@@ -67,7 +61,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="pwd" class="form-label"></label>
-                    <input required maxlength="30" type="password" id="pwd" name="pwd" class="form-control"
+                    <input required maxlength="30" minlength="8" type="password" id="pwd" name="pwd" class="form-control"
                         placeholder="Password">
                 </div>
                 <div class="mb-3">
