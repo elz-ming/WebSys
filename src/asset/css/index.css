@@ -1,15 +1,7 @@
 body {
-    zoom: 75%;
+    /* zoom: 75%; */
     margin: 0;
     line-height: normal;
-}
-
-@media (max-width: 601px) {
-    body {
-        max-width: 100%;
-        height: auto;
-        padding: 0 20px;
-    }
 }
 
 :root {
@@ -89,7 +81,7 @@ body {
     position: relative;
     object-fit: cover;
     display: none;
-    /* max-width: 100%; */
+    max-width: 100%;
     z-index: 0;
 }
 
@@ -5095,7 +5087,7 @@ body {
     bottom: 0;
     left: 0;
     background-color: var(--color-white);
-    overflow: hidden;
+    /* overflow: hidden; */
     flex-direction: column;
     align-items: flex-end;
     max-width: 100%;
