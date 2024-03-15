@@ -1,0 +1,16 @@
+    /* </-tommy css codes here> */
+    .main-cover {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 200vh;
+        min-height: 100vh;
+        width: 100%;
+        background-color: #f9f9f9;
+      }
+      
+      .country-cover {
+        max-width: 100%;
+        height: auto;
+        margin: 0;
+      }

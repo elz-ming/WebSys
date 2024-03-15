@@ -10,6 +10,10 @@
   <link rel="stylesheet" href="/asset/css/index.css" />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.css"> 
 </head>
 
 <body>
@@ -49,17 +53,13 @@
             </div>
           </div>
         </div>
+
         <div class="error-node">
           <div class="variable-node">
-            <h1 class="where-will-you">Where will you go next?</h1>
+            <h1 class="where-will-you">Travel Blogs</h1>
             <div class="group-node">
               <div class="lorem-ipsum-dolor">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                sed et donec purus viverra. Sit justo velit, eu sed
-                sollicitudin tempus, risus. Sed sit elit mauris adipiscing.
-                Lobortis pellentesque nulla accumsan id urna, ullamcorper
-                gravida varius. Massa mauris, cursus orci magna non enim fames
-                et sed.
+                This is the main page for travel blogs
               </div>
             </div>
             <div class="call-node">
@@ -84,69 +84,112 @@
           <img class="array-node-icon4" alt="" src="/asset/image/index/frame-1@2x.png" />
         </div>
       </section>
-      <section class="boolean-node">
-        <div class="vector-node">
-          <div class="matrix-node">
-            <h1 class="choose-a-category">Choose a category</h1>
+      <section class="filter table">
+        <div class="table-desktop-filter">
+          <div class="row mt-3">
+              <div class="col-12 col-sm-6 label-top">
+                  <!-- rubah class -->
+
+                  <form action="/store-directory" method="get">
+                      <div class=" form-group form-inline f-mobile-block mb-3 mb-3">
+                          <!-- rubah class -->
+                          <!-- <label class="mr-3"> -->
+                          <span style="color:#acacac !important;">
+                              <i class="fa fa-search" aria-hidden="true"> </i> &nbsp;&nbsp;<strong>SEARCH DIRECTORY</strong>&nbsp;&nbsp;&nbsp;
+                              <!-- </label> -->
+
+                              <input type="text" class="form-control" placeholder="Enter Store Name" aria-label="Enter Store Name" aria-describedby="basic-addon2" name="name">
+                          </span>
+                          <div class="input-group-append">
+                              &nbsp;&nbsp;
+                              <button class="btn btn-dark" type="submit"><i class="fa fa-chevron-right" aria-hidden="true"> </i></button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+              <div class="col-12 col-sm-6 label-top">
+                  <!-- rubah class -->
+                  <form action="/store-directory" method="get">
+                      <div class="row">
+                          <div class="col">
+                              <div class="form-inline f-mobile-block mb-3">
+                                  <!-- rubah class -->
+                                  <!-- <label class="mr-3"> -->
+                                  <span style="color:#acacac !important;">  <strong style="">FILTER BY</strong>&nbsp;&nbsp;&nbsp;</span>
+                                  <!-- </label> -->
+                                  <select class="form-control" id="level" name="level"><option value="">-- All Levels --</option>
+                                    <option selected="selected">Basement 1</option>
+                                    <option>Basement 1A</option>
+                                    <option>Basement 2</option>
+                                    <option>Level 1</option>
+                                    <option>Level 2</option>
+                                    <option>Level 3</option>
+                                    <option>Level 4</option>
+                                    <option>Level 5</option>
+                                    <option>Level 6</option>
+                                    <option>Level b1</option>
+                                    <option>Level JP101</option>
+                                    <option>Level JP102</option>
+                                    <option>Level JP103</option>
+                                    <option>Level JP104</option>
+                                    <option>Level JP105</option>
+                                    <option>Level JP106</option>
+                                    <option>Level JP1B1</option>
+                                    <option>Level JP1B1A</option>
+                                    <option>Level JP201</option>
+                                    <option>Level JP203</option>
+                                    <option>Level JP2B1</option>
+                                    <option>Level JP2B2</option>
+                                    </select>
+
+                              </div>
+
+                          </div>
+                          <div class="col">
+                              <div class="input-group form-group form-inline f-mobile-block mb-3">
+                                  <!-- rubah class -->
+                                  <!-- tambahan label -->
+                                  <!-- end label -->
+                                  <select class="form-control" id="cate" name="cate"><option value="">— All Categories —</option>
+                                    <option>Beauty &amp; Wellness</option>
+                                    <option>Books &amp; Stationery</option>
+                                    <option>Books, Gifts &amp; Hobbies</option>
+                                    <option>CSFS</option>
+                                    <option>Department Store</option>
+                                    <option>Education</option>
+                                    <option>Electronics &amp; Technology</option>
+                                    <option>Fashion &amp; Accessories</option>
+                                    <option selected="selected">Food &amp; Beverage</option>
+                                    <option>Gifts &amp; Souvenirs</option>
+                                    <option>Home &amp; Furnishings</option>
+                                    <option>Hypermarket, Supermarket &amp; Specialty Mart</option>
+                                    <option>Information Technology</option>
+                                    <option>Jewellery, Watches &amp; Optical</option>
+                                    <option>Jewellery/Watches/Pen</option>
+                                    <option>Kids</option>
+                                    <option>Leisure &amp; Entertainment</option>
+                                    <option>Lifestyle</option>
+                                    <option>Music &amp; Video</option>
+                                    <option>Services</option>
+                                    <option>Shoes &amp; Bags</option>
+                                    <option>Sporting Goods &amp; Apparel</option>
+                                    <option>Sundry &amp; Services</option>
+                                    <option>Telecommunication</option>
+                                    <option>Telecommunications / Mobile Accessories/Services Centres</option>
+                                    <option>Toys &amp; Hobbies</option>
+                                    <option>Value Store</option>
+                                    </select>
+                                  &nbsp;&nbsp;
+                                  <button class="btn btn-dark" type="submit"><i class="fa fa-chevron-right" aria-hidden="true"> </i></button>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+              </div>
           </div>
-          <div class="stack-node">
-            <div class="circular-queue-node">
-              <img class="left-icon" loading="lazy" alt="" src="/asset/image/index/left.svg" />
-            </div>
-            <div class="map-node">
-              <div class="solo-travel">
-                <div class="hash-table-node-parent">
-                  <img class="hash-table-node" loading="lazy" alt="" src="/asset/image/index/rectangle-6@2x.png" />
+      </div>
+</section>
 
-                  <div class="database-node"></div>
-                </div>
-                <div class="solo-travel1">Solo Travel</div>
-              </div>
-              <div class="mount-travel">
-                <div class="rectangle-parent">
-                  <img class="frame-child" loading="lazy" alt="" src="/asset/image/index/rectangle-4@2x.png" />
-
-                  <div class="frame-item"></div>
-                </div>
-                <div class="mount-travel1">Mount Travel</div>
-              </div>
-              <div class="jungal-travel">
-                <div class="rectangle-group">
-                  <img class="frame-inner" loading="lazy" alt="" src="/asset/image/index/rectangle-5@2x.png" />
-
-                  <div class="rectangle-div"></div>
-                </div>
-                <div class="jungal-travel1">Jungal Travel</div>
-              </div>
-              <div class="road-travel">
-                <div class="rectangle-container">
-                  <img class="rectangle-icon" loading="lazy" alt="" src="/asset/image/index/rectangle-3@2x.png" />
-
-                  <div class="frame-child1"></div>
-                </div>
-                <div class="road-travel1">Road Travel</div>
-              </div>
-              <div class="osean-travel">
-                <div class="frame-div">
-                  <img class="frame-child2" loading="lazy" alt="" src="/asset/image/index/rectangle-7@2x.png" />
-
-                  <div class="frame-child3"></div>
-                </div>
-                <div class="osean-travel1">Osean Travel</div>
-              </div>
-              <div class="old-city-travel">
-                <img class="old-city-travel-child" loading="lazy" alt="" src="/asset/image/index/rectangle-8@2x.png" />
-
-                <div class="old-city-travel1">Old City Travel</div>
-              </div>
-              <img class="right-icon" loading="lazy" alt="" src="/asset/image/index/right@2x.png" />
-            </div>
-          </div>
-          <div class="network-node">
-            <img class="network-node-child" loading="lazy" alt="" src="/asset/image/index/group-109.svg" />
-          </div>
-        </div>
-      </section>
       <section class="client-node">
         <div class="router-node">
           <div class="hub-node">
@@ -185,6 +228,11 @@
                       </div>
                       <div class="by">By</div>
                       <div class="edmund-lin">Edmund Lin</div>
+                      <div class="button-container">
+                        <a href="https://www.youtube.com">
+                          <button class="youtube-button">Visit us on YouTube</button>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -370,7 +418,9 @@
           </div>
           <div class="raster-image">
             <div class="layer-loom">
+            <a href="post.php" class="block-link">
               <div class="text-block">1</div>
+            </a>
               <div class="text-block1">2</div>
               <div class="text-block2">3</div>
               <div class="proximity-prober">
@@ -380,7 +430,95 @@
           </div>
         </div>
       </section>
-      <section class="row-manager">
+      <div class="listings wpbdp-listings-list list">
+
+        <div class="wpbdp-pagination pr-3">
+
+            <span class="prev"></span>
+
+            <span class="next">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <span>Page  </span>
+                        </div>
+                        <div class="col-xs-8">
+                            <div class="pagination-container"><ul class="pagination"><li class="active"><a>1</a></li>
+                            <li><a href="http://www.jurongpoint.com.sg/store-directory/?level=&amp;cate=Food+%26+Beverage&amp;page=2">2</a></li>
+                            <li><a href="http://www.jurongpoint.com.sg/store-directory/?level=&amp;cate=Food+%26+Beverage&amp;page=3">3</a></li>
+                            <li><a href="http://www.jurongpoint.com.sg/store-directory/?level=&amp;cate=Food+%26+Beverage&amp;page=4">4</a></li>
+                            <li><a href="http://www.jurongpoint.com.sg/store-directory/?level=&amp;cate=Food+%26+Beverage&amp;page=5">5</a></li>
+                            <li class="disabled PagedList-ellipses"><a></a></li>
+                            <li class="PagedList-skipToNext"><a href="http://www.jurongpoint.com.sg/store-directory/?level=&amp;cate=Food+%26+Beverage&amp;page=2" rel="next">&gt;&gt;</a></li>
+                            <li class="PagedList-skipToLast"><a href="http://www.jurongpoint.com.sg/store-directory/?level=&amp;cate=Food+%26+Beverage&amp;page=13">Last</a></li>
+                          </ul>
+                        </div>
+                        </div>
+                    </div>
+            </span>
+        </div>
+
+    </div>
+
+    <div class="products">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="product-item">
+              <a href="package-details.html"><img src="assets/images/product-1-370x270.jpg" alt=""></a>
+              <div class="down-content">
+                <a href="package-details.html"><h4>Limelight Lodge</h4></a>
+
+                <h6>$300 - $400</h6>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum incidunt, aperiam nostrum et. Voluptas vel labore numqua.</p>
+
+                <small>
+                     <strong title="Available"><i class="fa fa-calendar"></i> Spring</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                     <strong title="Nights"><i class="fa fa-cube"></i> 20 nights</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                     <strong title="Flight included"><i class="fa fa-plane"></i> Flight included</strong>
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="product-item">
+              <a href="package-details.html"><img src="assets/images/product-2-370x270.jpg" alt=""></a>
+              <div class="down-content">
+                <a href="package-details.html"><h4>Limelight Lodge</h4></a>
+
+                <h6>$300 - $400</h6>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum incidunt, aperiam nostrum et. Voluptas vel labore numqua.</p>
+
+                <small>
+                     <strong title="Available"><i class="fa fa-calendar"></i> Spring</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                     <strong title="Nights"><i class="fa fa-cube"></i> 20 nights</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                     <strong title="Flight included"><i class="fa fa-plane"></i> Flight included</strong>
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="product-item">
+              <a href="package-details.html"><img src="assets/images/product-3-370x270.jpg" alt=""></a>
+              <div class="down-content">
+                <a href="package-details.html"><h4>Limelight Lodge</h4></a>
+
+                <h6>$300 - $400</h6>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum incidunt, aperiam nostrum et. Voluptas vel labore numqua.</p>
+
+                <small>
+                     <strong title="Available"><i class="fa fa-calendar"></i> Spring</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                     <strong title="Nights"><i class="fa fa-cube"></i> 20 nights</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                     <strong title="Flight included"><i class="fa fa-plane"></i> Flight included</strong>
+                </small>
+              </div>
+            </div>
+          </div>
+      <!-- <section class="row-manager">
         <div class="shape-combiner">
           <div class="shape-spliter">
             <h1 class="best-hikes">Best Hikes</h1>
@@ -968,7 +1106,7 @@
             <img class="youtube-icon1" alt="" src="/asset/image/index/youtube-1.svg" />
           </div>
         </div>
-      </section>
+      </section> -->
     </main>
   </div>
 </body>
