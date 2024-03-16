@@ -10,7 +10,7 @@
     padding: 0;
     color: white;
     position: relative;
-    background-image: url(./public/womantravelerwithbackpackwalkingyasakapagodasannenzakastreetkyotojapan.png);
+    background-image: url(/asset/image/index/womantravelerwithbackpackwalkingyasakapagodasannenzakastreetkyotojapan.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -74,7 +74,7 @@ div.header-container {
 }
 
 .header-nav ul li:after {
-    content: url(./public/frame-1@2x.png);
+    content: url(/asset/image/index/frame-1@2x.png);
     padding-top: 10px;
     text-decoration: none;
 }
@@ -197,23 +197,23 @@ h2 {
 }
 
 .img-1 {
-    background-image: url(./public/rectangle-6@2x.png);
+    background-image: url(/asset/image/index/rectangle-6@2x.png);
 }
 
 .img-2 {
-    background-image: url(./public/rectangle-4@2x.png);
+    background-image: url(/asset/image/index/rectangle-4@2x.png);
 }
 
 .img-3 {
-    background-image: url(./public/rectangle-5@2x.png);
+    background-image: url(/asset/image/index/rectangle-5@2x.png);
 }
 
 .img-4 {
-    background-image: url(./public/rectangle-3@2x.png);
+    background-image: url(/asset/image/index/rectangle-3@2x.png);
 }
 
 .img-5 {
-    background-image: url(./public/rectangle-7@2x.png);
+    background-image: url(/asset/image/index/rectangle-7@2x.png);
 }
 
 @media(max-width:1600px) {
