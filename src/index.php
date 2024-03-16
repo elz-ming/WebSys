@@ -1,974 +1,464 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
   <link rel="stylesheet" href="/asset/css/index.css" />
+  <!--Bootstrap JS-->
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    </script>
+  <!-- Custom JS -->
+  <script defer src="/main.js"></script>
+  <!-- Tinyslider JS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
+  <!--Font Awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
 </head>
 
 <body>
-  <div class="data-hub">
-    <main class="home-page">
-      <section class="hero-seation">
-        <img class="woman-traveler-with-backpack-w-icon" alt=""
-          src="/asset/image/index/womantravelerwithbackpackwalkingyasakapagodasannenzakastreetkyotojapan.png" />
-
-        <div class="merge-node">
-          <div class="condition-node">
-            <div class="input-node">
-              <h1 class="company">Company</h1>
-              <div class="search-bar">
-                <div class="search-bar-child"></div>
-                <div class="sequence-node">
-                  <img class="decision-node-icon" alt="" src="/asset/image/index/decision-node.svg" />
-                </div>
-                <input class="search-your-option" placeholder="Search your option" type="text" />
-              </div>
-            </div>
-          </div>
-          <div class="container-node"></div>
-          <div class="iterative-node">
-            <div class="function-node">
-              <div class="home">Home</div>
-              <div class="event-node">
-                <div class="destinations">Destinations</div>
-              </div>
-              <div class="event-node1">
-                <div class="about-us">About Us</div>
-              </div>
-              <div class="event-node2">
-                <div class="blog">Blog</div>
-              </div>
-              <div class="contact-us">Contact Us</div>
-            </div>
-          </div>
+  <section class="header-container">
+    <div class="header">
+      <div class="header-bar row">
+        <h1 class="col-3 company">TravelTalk</h1>
+        <div class="col-6 search-bar">
+          <img class="decision-node-icon" alt="" src="/asset/image/index/decision-node.svg" />
+          <input placeholder="search" type="text" />
         </div>
-        <div class="error-node">
-          <div class="variable-node">
-            <h1 class="where-will-you">Where will you go next?</h1>
-            <div class="group-node">
-              <div class="lorem-ipsum-dolor">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                sed et donec purus viverra. Sit justo velit, eu sed
-                sollicitudin tempus, risus. Sed sit elit mauris adipiscing.
-                Lobortis pellentesque nulla accumsan id urna, ullamcorper
-                gravida varius. Massa mauris, cursus orci magna non enim fames
-                et sed.
-              </div>
-            </div>
-            <div class="call-node">
-              <h1 class="lets-go">Let’s Go.....</h1>
-            </div>
+        <div class="col-3 profile"><img class="decision-node-icon" alt="" src="/asset/image/index/social-media.svg" /></div>
+      </div>
+      <div class="header-nav mt-3">
+        <nav>
+          <ul>
+            <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.php">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="overlay-bg"><img src="/asset/image/index/rectangle-1.svg" /></div>
+    <div class="row intro-container">
+      <h1 class="col-12 intro-text">Where will you go next?</h1>
+      <div class="intro-content">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+        sed et donec purus viverra. Sit justo velit, eu sed
+        sollicitudin tempus, risus. Sed sit elit mauris adipiscing.
+        Lobortis pellentesque nulla accumsan id urna, ullamcorper
+        gravida varius. Massa mauris, cursus orci magna non enim fames
+        et sed."
+      </div>
+      <div class="lets-go">Let's Go...</div>
+    </div>
+  </section>
+  <section id="slider">
+    <div class="carousel">
+      <div class="subcarousel">
+        <div class="slider-wrapper">
+          <div>
+            <h2>Choose a Category</h2>
           </div>
-        </div>
-        <div class="index-node">
-          <img class="index-node-child" alt="" src="/asset/image/index/rectangle-1.svg" />
-
-          <div class="wrapper-social-media">
-            <img class="social-media-icon" loading="lazy" alt="" src="/asset/image/index/social-media.svg" />
-          </div>
-          <img class="array-node-icon" alt="" src="/asset/image/index/frame-1@2x.png" />
-
-          <img class="array-node-icon1" alt="" src="/asset/image/index/frame-1@2x.png" />
-
-          <img class="array-node-icon2" alt="" src="/asset/image/index/frame-1@2x.png" />
-
-          <img class="array-node-icon3" alt="" src="/asset/image/index/frame-1@2x.png" />
-
-          <img class="array-node-icon4" alt="" src="/asset/image/index/frame-1@2x.png" />
-        </div>
-      </section>
-      <section class="boolean-node">
-        <div class="vector-node">
-          <div class="matrix-node">
-            <h1 class="choose-a-category">Choose a category</h1>
-          </div>
-          <div class="stack-node">
-            <div class="circular-queue-node">
-              <img class="left-icon" loading="lazy" alt="" src="/asset/image/index/left.svg" />
-            </div>
-            <div class="map-node">
-              <div class="solo-travel">
-                <div class="hash-table-node-parent">
-                  <img class="hash-table-node" loading="lazy" alt="" src="/asset/image/index/rectangle-6@2x.png" />
-
-                  <div class="database-node"></div>
-                </div>
-                <div class="solo-travel1">Solo Travel</div>
-              </div>
-              <div class="mount-travel">
-                <div class="rectangle-parent">
-                  <img class="frame-child" loading="lazy" alt="" src="/asset/image/index/rectangle-4@2x.png" />
-
-                  <div class="frame-item"></div>
-                </div>
-                <div class="mount-travel1">Mount Travel</div>
-              </div>
-              <div class="jungal-travel">
-                <div class="rectangle-group">
-                  <img class="frame-inner" loading="lazy" alt="" src="/asset/image/index/rectangle-5@2x.png" />
-
-                  <div class="rectangle-div"></div>
-                </div>
-                <div class="jungal-travel1">Jungal Travel</div>
-              </div>
-              <div class="road-travel">
-                <div class="rectangle-container">
-                  <img class="rectangle-icon" loading="lazy" alt="" src="/asset/image/index/rectangle-3@2x.png" />
-
-                  <div class="frame-child1"></div>
-                </div>
-                <div class="road-travel1">Road Travel</div>
-              </div>
-              <div class="osean-travel">
-                <div class="frame-div">
-                  <img class="frame-child2" loading="lazy" alt="" src="/asset/image/index/rectangle-7@2x.png" />
-
-                  <div class="frame-child3"></div>
-                </div>
-                <div class="osean-travel1">Osean Travel</div>
-              </div>
-              <div class="old-city-travel">
-                <img class="old-city-travel-child" loading="lazy" alt="" src="/asset/image/index/rectangle-8@2x.png" />
-
-                <div class="old-city-travel1">Old City Travel</div>
-              </div>
-              <img class="right-icon" loading="lazy" alt="" src="/asset/image/index/right@2x.png" />
-            </div>
-          </div>
-          <div class="network-node">
-            <img class="network-node-child" loading="lazy" alt="" src="/asset/image/index/group-109.svg" />
-          </div>
-        </div>
-      </section>
-      <section class="client-node">
-        <div class="router-node">
-          <div class="hub-node">
-            <h1 class="travel-guides">Travel Guides</h1>
-          </div>
-          <div class="gateway-node">
-            <div class="firewall-node">
-              <div class="post-1">
-                <div class="post-1-child"></div>
-                <img class="post-1-item" loading="lazy" alt="" src="/asset/image/index/rectangle-17@2x.png" />
-
-                <div class="post-1-inner">
-                  <div class="frame-parent">
-                    <div class="best-10-things-to-do-in-egypt-parent">
-                      <div class="best-10-things">
-                        Best 10 things to do in Egypt
-                      </div>
-                      <div class="lorem-ipsum-dolor-sit-amet-co-wrapper">
-                        <div class="lorem-ipsum-dolor-container">
-                          <p class="lorem-ipsum-dolor1">
-                            Lorem ipsum dolor sit amet, con turadip
-                          </p>
-                          <p class="iscingelit-in-sed">
-                            iscingelit. In sed et donec purus viverra. Sit
-                          </p>
-                          <p class="justo-velit-eu">justo velit, eu sed</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="frame-group">
-                      <div class="solo-travel-parent">
-                        <div class="solo-travel2">Solo Travel</div>
-                        <div class="constant-node-wrapper">
-                          <div class="constant-node"></div>
-                        </div>
-                      </div>
-                      <div class="by">By</div>
-                      <div class="edmund-lin">Edmund Lin</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="post-11">
-                <div class="post-1-child1"></div>
-                <img class="queue-structure-icon" alt="" src="/asset/image/index/rectangle-17@2x.png" />
-
-                <div class="post-1-inner1">
-                  <div class="frame-container">
-                    <div class="best-10-things-to-do-in-egypt-group">
-                      <div class="best-10-things1">
-                        Best 10 things to do in Egypt
-                      </div>
-                      <div class="lorem-ipsum-dolor-sit-amet-co-container">
-                        <div class="lorem-ipsum-dolor-container1">
-                          <p class="lorem-ipsum-dolor2">
-                            Lorem ipsum dolor sit amet, con turadip
-                          </p>
-                          <p class="iscingelit-in-sed1">
-                            iscingelit. In sed et donec purus viverra. Sit
-                          </p>
-                          <p class="justo-velit-eu1">justo velit, eu sed</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="frame-parent1">
-                      <div class="solo-travel-group">
-                        <div class="solo-travel3">Solo Travel</div>
-                        <div class="network-client-wrapper">
-                          <div class="network-client"></div>
-                        </div>
-                      </div>
-                      <div class="by1">By</div>
-                      <div class="edmund-lin1">Edmund Lin</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="post-12">
-                <div class="post-1-child2"></div>
-                <img class="formatting-node-icon" alt="" src="/asset/image/index/rectangle-17@2x.png" />
-
-                <div class="post-1-inner2">
-                  <div class="frame-parent2">
-                    <div class="best-10-things-to-do-in-egypt-container">
-                      <div class="best-10-things2">
-                        Best 10 things to do in Egypt
-                      </div>
-                      <div class="lorem-ipsum-dolor-sit-amet-co-frame">
-                        <div class="lorem-ipsum-dolor-container2">
-                          <p class="lorem-ipsum-dolor3">
-                            Lorem ipsum dolor sit amet, con turadip
-                          </p>
-                          <p class="iscingelit-in-sed2">
-                            iscingelit. In sed et donec purus viverra. Sit
-                          </p>
-                          <p class="justo-velit-eu2">justo velit, eu sed</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="frame-parent3">
-                      <div class="solo-travel-container">
-                        <div class="solo-travel4">Solo Travel</div>
-                        <div class="layout-component-wrapper">
-                          <div class="layout-component"></div>
-                        </div>
-                      </div>
-                      <div class="by2">By</div>
-                      <div class="edmund-lin2">Edmund Lin</div>
-                    </div>
-                  </div>
+          <br>
+          <div class="my-slider">
+            <div>
+              <div class="slide">
+                <div class="slide-img img-1">
+                  <a href="#">Solo Travel</a>
                 </div>
               </div>
             </div>
-            <div class="firewall-node1">
-              <div class="post-13">
-                <div class="post-1-child3"></div>
-                <img class="post-1-child4" alt="" src="/asset/image/index/rectangle-17@2x.png" />
-
-                <div class="post-1-inner3">
-                  <div class="frame-parent4">
-                    <div class="best-10-things-to-do-in-egypt-parent1">
-                      <div class="best-10-things3">
-                        Best 10 things to do in Egypt
-                      </div>
-                      <div class="lorem-ipsum-dolor-sit-amet-co-wrapper1">
-                        <div class="lorem-ipsum-dolor-container3">
-                          <p class="lorem-ipsum-dolor4">
-                            Lorem ipsum dolor sit amet, con turadip
-                          </p>
-                          <p class="iscingelit-in-sed3">
-                            iscingelit. In sed et donec purus viverra. Sit
-                          </p>
-                          <p class="justo-velit-eu3">justo velit, eu sed</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="frame-parent5">
-                      <div class="solo-travel-parent1">
-                        <div class="solo-travel5">Solo Travel</div>
-                        <div class="line-wrapper">
-                          <div class="line-div"></div>
-                        </div>
-                      </div>
-                      <div class="by3">By</div>
-                      <div class="edmund-lin3">Edmund Lin</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="post-14">
-                <div class="post-1-child5"></div>
-                <img class="post-1-child6" alt="" src="/asset/image/index/rectangle-17@2x.png" />
-
-                <div class="post-1-inner4">
-                  <div class="frame-parent6">
-                    <div class="best-10-things-to-do-in-egypt-parent2">
-                      <div class="best-10-things4">
-                        Best 10 things to do in Egypt
-                      </div>
-                      <div class="lorem-ipsum-dolor-sit-amet-co-wrapper2">
-                        <div class="lorem-ipsum-dolor-container4">
-                          <p class="lorem-ipsum-dolor5">
-                            Lorem ipsum dolor sit amet, con turadip
-                          </p>
-                          <p class="iscingelit-in-sed4">
-                            iscingelit. In sed et donec purus viverra. Sit
-                          </p>
-                          <p class="justo-velit-eu4">justo velit, eu sed</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="frame-parent7">
-                      <div class="solo-travel-parent2">
-                        <div class="solo-travel6">Solo Travel</div>
-                        <div class="line-container">
-                          <div class="frame-child4"></div>
-                        </div>
-                      </div>
-                      <div class="by4">By</div>
-                      <div class="edmund-lin4">Edmund Lin</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="post-15">
-                <div class="post-1-child7"></div>
-                <img class="post-1-child8" alt="" src="/asset/image/index/rectangle-17@2x.png" />
-
-                <div class="post-1-inner5">
-                  <div class="frame-parent8">
-                    <div class="best-10-things-to-do-in-egypt-parent3">
-                      <div class="best-10-things5">
-                        Best 10 things to do in Egypt
-                      </div>
-                      <div class="lorem-ipsum-dolor-sit-amet-co-wrapper3">
-                        <div class="lorem-ipsum-dolor-container5">
-                          <p class="lorem-ipsum-dolor6">
-                            Lorem ipsum dolor sit amet, con turadip
-                          </p>
-                          <p class="iscingelit-in-sed5">
-                            iscingelit. In sed et donec purus viverra. Sit
-                          </p>
-                          <p class="justo-velit-eu5">justo velit, eu sed</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="frame-parent9">
-                      <div class="solo-travel-parent3">
-                        <div class="solo-travel7">Solo Travel</div>
-                        <div class="line-frame">
-                          <div class="frame-child5"></div>
-                        </div>
-                      </div>
-                      <div class="by5">By</div>
-                      <div class="edmund-lin5">Edmund Lin</div>
-                    </div>
-                  </div>
+            <div>
+              <div class="slide">
+                <div class="slide-img img-2">
+                  <a href="#">Mount Travel</a>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="raster-image">
-            <div class="layer-loom">
-              <div class="text-block">1</div>
-              <div class="text-block1">2</div>
-              <div class="text-block2">3</div>
-              <div class="proximity-prober">
-                <img class="column-manager-icon" alt="" src="/asset/image/index/frame-6@2x.png" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="row-manager">
-        <div class="shape-combiner">
-          <div class="shape-spliter">
-            <h1 class="best-hikes">Best Hikes</h1>
-          </div>
-          <div class="text-node-group">
-            <div class="input-filter">
-              <div class="result-set">
-                <div class="wrapper-feature-extractor">
-                  <img class="feature-extractor-icon" loading="lazy" alt="" src="/asset/image/index/rectangle-27@2x.png" />
-                </div>
-                <div class="result-set-inner">
-                  <div class="everest-base-camp-nepal-parent">
-                    <div class="everest-base-camp">
-                      Everest Base Camp Nepal
-                    </div>
-                    <div class="lorem-ipsum-dolor-container6">
-                      <p class="lorem-ipsum-dolor7">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </p>
-                      <p class="elit-in-sed">
-                        elit. In sed et donec purus viverra. Sit justo velit,
-                        eu sed sollicitudin tempus,
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="result-set1">
-                <div class="wrapper-rectangle-27">
-                  <img class="wrapper-rectangle-27-child" alt="" src="/asset/image/index/rectangle-27@2x.png" />
-                </div>
-                <div class="result-set-child">
-                  <div class="everest-base-camp-nepal-group">
-                    <div class="everest-base-camp1">
-                      Everest Base Camp Nepal
-                    </div>
-                    <div class="lorem-ipsum-dolor-container7">
-                      <p class="lorem-ipsum-dolor8">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </p>
-                      <p class="elit-in-sed1">
-                        elit. In sed et donec purus viverra. Sit justo velit,
-                        eu sed sollicitudin tempus,
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="result-set2">
-                <div class="wrapper-rectangle-271">
-                  <img class="wrapper-rectangle-27-item" alt="" src="/asset/image/index/rectangle-27@2x.png" />
-                </div>
-                <div class="result-set-inner1">
-                  <div class="everest-base-camp-nepal-container">
-                    <div class="everest-base-camp2">
-                      Everest Base Camp Nepal
-                    </div>
-                    <div class="lorem-ipsum-dolor-container8">
-                      <p class="lorem-ipsum-dolor9">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </p>
-                      <p class="elit-in-sed2">
-                        elit. In sed et donec purus viverra. Sit justo velit,
-                        eu sed sollicitudin tempus,
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="result-set3">
-                <div class="wrapper-rectangle-272">
-                  <img class="wrapper-rectangle-27-inner" alt="" src="/asset/image/index/rectangle-27@2x.png" />
-                </div>
-                <div class="result-set-inner2">
-                  <div class="everest-base-camp-nepal-parent1">
-                    <div class="everest-base-camp3">
-                      Everest Base Camp Nepal
-                    </div>
-                    <div class="lorem-ipsum-dolor-container9">
-                      <p class="lorem-ipsum-dolor10">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </p>
-                      <p class="elit-in-sed3">
-                        elit. In sed et donec purus viverra. Sit justo velit,
-                        eu sed sollicitudin tempus,
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="result-set4">
-                <div class="wrapper-rectangle-273">
-                  <img class="wrapper-rectangle-27-child1" alt="" src="/asset/image/index/rectangle-27@2x.png" />
-                </div>
-                <div class="result-set-inner3">
-                  <div class="everest-base-camp-nepal-parent2">
-                    <div class="everest-base-camp4">
-                      Everest Base Camp Nepal
-                    </div>
-                    <div class="lorem-ipsum-dolor-container10">
-                      <p class="lorem-ipsum-dolor11">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing
-                      </p>
-                      <p class="elit-in-sed4">
-                        elit. In sed et donec purus viverra. Sit justo velit,
-                        eu sed sollicitudin tempus,
-                      </p>
-                    </div>
-                  </div>
+            <div>
+              <div class="slide">
+                <div class="slide-img img-3">
+                  <a href="#">Jungal Travel</a>
                 </div>
               </div>
             </div>
-            <div class="rule-set">
-              <div class="popular-post">
-                <div class="intagram-1"></div>
-                <b class="popular-post1">popular post</b>
-                <div class="decision-maker">
-                  <div class="data-table">
-                    <div class="wrapper-error-handler">
-                      <img class="error-handler-icon" loading="lazy" alt="" src="/asset/image/index/rectangle-60@2x.png" />
-                    </div>
-                    <div class="things-id-tell-any-new-travle-parent">
-                      <div class="things-id-tell-container">
-                        <p class="things-id-tell">
-                          13 things i’d Tell Any New
-                        </p>
-                        <p class="travler">Travler</p>
-                      </div>
-                      <div class="frame-parent10">
-                        <div class="post-parent">
-                          <div class="post">Post</div>
-                          <div class="text-container"></div>
-                        </div>
-                        <div class="by6">By</div>
-                        <div class="adam-smith">Adam Smith</div>
-                      </div>
-                      <div class="nov-2020-parent">
-                        <div class="nov-2020">10 Nov, 2020</div>
-                        <div class="checkbox-group-wrapper">
-                          <div class="checkbox-group"></div>
-                        </div>
-                        <div class="comment">50 comment</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="data-table1">
-                    <div class="wrapper-rectangle-61">
-                      <img class="wrapper-rectangle-61-child" loading="lazy" alt=""
-                        src="/asset/image/index/rectangle-61@2x.png" />
-                    </div>
-                    <div class="things-id-tell-any-new-travle-group">
-                      <div class="things-id-tell-container1">
-                        <p class="things-id-tell1">
-                          13 things i’d Tell Any New
-                        </p>
-                        <p class="travler1">Travler</p>
-                      </div>
-                      <div class="frame-parent11">
-                        <div class="post-group">
-                          <div class="post1">Post</div>
-                          <div class="frame-child6"></div>
-                        </div>
-                        <div class="by7">By</div>
-                        <div class="adam-smith1">Adam Smith</div>
-                      </div>
-                      <div class="nov-2020-group">
-                        <div class="nov-20201">10 Nov, 2020</div>
-                        <div class="line-wrapper1">
-                          <div class="frame-child7"></div>
-                        </div>
-                        <div class="comment1">50 comment</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="data-table2">
-                    <div class="wrapper-rectangle-62">
-                      <img class="wrapper-rectangle-62-child" loading="lazy" alt=""
-                        src="/asset/image/index/rectangle-62@2x.png" />
-                    </div>
-                    <div class="things-id-tell-any-new-travle-container">
-                      <div class="things-id-tell-container2">
-                        <p class="things-id-tell2">
-                          13 things i’d Tell Any New
-                        </p>
-                        <p class="travler2">Travler</p>
-                      </div>
-                      <div class="frame-parent12">
-                        <div class="post-container">
-                          <div class="post2">Post</div>
-                          <div class="frame-child8"></div>
-                        </div>
-                        <div class="by8">By</div>
-                        <div class="adam-smith2">Adam Smith</div>
-                      </div>
-                      <div class="nov-2020-container">
-                        <div class="nov-20202">10 Nov, 2020</div>
-                        <div class="line-wrapper2">
-                          <div class="frame-child9"></div>
-                        </div>
-                        <div class="comment2">50 comment</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="data-table3">
-                    <div class="wrapper-rectangle-64">
-                      <img class="wrapper-rectangle-64-child" alt="" src="/asset/image/index/rectangle-64@2x.png" />
-                    </div>
-                    <div class="things-id-tell-any-new-travle-parent1">
-                      <div class="things-id-tell-container3">
-                        <p class="things-id-tell3">
-                          13 things i’d Tell Any New
-                        </p>
-                        <p class="travler3">Travler</p>
-                      </div>
-                      <div class="frame-parent13">
-                        <div class="post-parent1">
-                          <div class="post3">Post</div>
-                          <div class="frame-child10"></div>
-                        </div>
-                        <div class="by9">By</div>
-                        <div class="adam-smith3">Adam Smith</div>
-                      </div>
-                      <div class="nov-2020-parent1">
-                        <div class="nov-20203">10 Nov, 2020</div>
-                        <div class="line-wrapper3">
-                          <div class="frame-child11"></div>
-                        </div>
-                        <div class="comment3">50 comment</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="data-table4">
-                    <div class="wrapper-rectangle-63">
-                      <img class="wrapper-rectangle-63-child" alt="" src="/asset/image/index/rectangle-63@2x.png" />
-                    </div>
-                    <div class="things-id-tell-any-new-travle-parent2">
-                      <div class="things-id-tell-container4">
-                        <p class="things-id-tell4">
-                          13 things i’d Tell Any New
-                        </p>
-                        <p class="travler4">Travler</p>
-                      </div>
-                      <div class="frame-parent14">
-                        <div class="post-parent2">
-                          <div class="post4">Post</div>
-                          <div class="frame-child12"></div>
-                        </div>
-                        <div class="by10">By</div>
-                        <div class="adam-smith4">Adam Smith</div>
-                      </div>
-                      <div class="nov-2020-parent2">
-                        <div class="nov-20204">10 Nov, 2020</div>
-                        <div class="line-wrapper4">
-                          <div class="frame-child13"></div>
-                        </div>
-                        <div class="comment4">50 comment</div>
-                      </div>
-                    </div>
-                  </div>
+            <div>
+              <div class="slide">
+                <div class="slide-img img-4">
+                  <a href="#">Road Travel</a>
                 </div>
               </div>
-              <div class="follow-me">
-                <div class="intagram-5"></div>
-                <b class="follow-us">Follow Us</b>
-                <div class="radio-button-group">
-                  <div class="wrapper-facebook">
-                    <img class="facebook-icon" alt="" src="/asset/image/index/facebook.svg" />
-                  </div>
-                  <div class="wrapper-twitter">
-                    <img class="twitter-icon" alt="" src="/asset/image/index/twitter.svg" />
-                  </div>
-                  <div class="wrapper-instagram">
-                    <img class="instagram-icon" alt="" src="/asset/image/index/instagram.svg" />
-                  </div>
-                  <div class="wrapper-youtube">
-                    <img class="youtube-icon" alt="" src="/asset/image/index/youtube.svg" />
-                  </div>
-                </div>
-              </div>
-              <form class="subscribe-today">
-                <div class="intagram-4"></div>
-                <div class="subscribe-today1">Subscribe today</div>
-                <div class="tabs">
-                  <div class="lorem-ipsum-dolor12">
-                    Lorem ipsum dolor sit am consectetur adipisc ing elit. In
-                    sed et donec purus viverra. Sit justo
-                  </div>
-                </div>
-                <div class="modal-window">
-                  <input class="full-name" placeholder="Full Name" type="text" />
-
-                  <input class="your-email" placeholder="your email" type="text" />
-
-                  <div class="grid-container">
-                    <div class="canvas">
-                      <div class="shape-path"></div>
-                    </div>
-                    <div class="you-agree-to">
-                      You agree to our company privacy policy
-                    </div>
-                  </div>
-                </div>
-                <button class="subscribe">
-                  <div class="subscribe-child"></div>
-                  <div class="subscribe1">Subscribe</div>
-                </button>
-              </form>
-              <div class="tags">
-                <div class="tags-child"></div>
-                <div class="tags-item"></div>
-                <div class="intagram-3"></div>
-                <b class="tags1">Tags</b>
-                <div class="row-set">
-                  <div class="image-container">
-                    <div class="frame-parent15">
-                      <div class="travel-website-parent">
-                        <div class="travel-website">Travel website</div>
-                        <div class="text-combiner-wrapper">
-                          <div class="text-combiner"></div>
-                        </div>
-                      </div>
-                      <div class="frame-parent16">
-                        <div class="travel-tips-wrapper">
-                          <div class="travel-tips">Travel tips</div>
-                        </div>
-                        <div class="position-processor"></div>
-                      </div>
-                      <div class="frame-parent17">
-                        <div class="travel-trick-wrapper">
-                          <div class="travel-trick">Travel trick</div>
-                        </div>
-                        <div class="circle-creator"></div>
-                      </div>
-                    </div>
-                    <div class="frame-parent18">
-                      <div class="travel-website-group">
-                        <div class="travel-website1">Travel website</div>
-                        <div class="text-transformer-wrapper">
-                          <div class="text-transformer"></div>
-                        </div>
-                      </div>
-                      <div class="frame-parent19">
-                        <div class="travel-tips-container">
-                          <div class="travel-tips1">Travel tips</div>
-                        </div>
-                        <div class="flip-flopper"></div>
-                      </div>
-                      <div class="frame-parent20">
-                        <div class="travel-trick-container">
-                          <div class="travel-trick1">Travel trick</div>
-                        </div>
-                        <div class="fill-filler"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="image-container1">
-                    <div class="frame-parent21">
-                      <div class="travel-website-container">
-                        <div class="travel-website2">Travel website</div>
-                        <div class="line-wrapper5">
-                          <div class="frame-child14"></div>
-                        </div>
-                      </div>
-                      <div class="frame-parent22">
-                        <div class="travel-tips-frame">
-                          <div class="travel-tips2">Travel tips</div>
-                        </div>
-                        <div class="frame-child15"></div>
-                      </div>
-                      <div class="frame-parent23">
-                        <div class="travel-trick-frame">
-                          <div class="travel-trick2">Travel trick</div>
-                        </div>
-                        <div class="frame-child16"></div>
-                      </div>
-                    </div>
-                    <div class="frame-parent24">
-                      <div class="travel-website-parent1">
-                        <div class="travel-website3">Travel website</div>
-                        <div class="line-wrapper6">
-                          <div class="frame-child17"></div>
-                        </div>
-                      </div>
-                      <div class="frame-parent25">
-                        <div class="travel-tips-wrapper1">
-                          <div class="travel-tips3">Travel tips</div>
-                        </div>
-                        <div class="frame-child18"></div>
-                      </div>
-                      <div class="frame-parent26">
-                        <div class="travel-trick-wrapper1">
-                          <div class="travel-trick3">Travel trick</div>
-                        </div>
-                        <div class="frame-child19"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="image-container2">
-                    <div class="frame-parent27">
-                      <div class="travel-website-parent2">
-                        <div class="travel-website4">Travel website</div>
-                        <div class="line-wrapper7">
-                          <div class="frame-child20"></div>
-                        </div>
-                      </div>
-                      <div class="frame-parent28">
-                        <div class="travel-tips-wrapper2">
-                          <div class="travel-tips4">Travel tips</div>
-                        </div>
-                        <div class="frame-child21"></div>
-                      </div>
-                      <div class="frame-parent29">
-                        <div class="travel-trick-wrapper2">
-                          <div class="travel-trick4">Travel trick</div>
-                        </div>
-                        <div class="frame-child22"></div>
-                      </div>
-                    </div>
-                    <div class="travel-website-parent3">
-                      <div class="travel-website5">Travel website</div>
-                      <div class="travel-tips5">Travel tips</div>
-                      <div class="frame-parent30">
-                        <div class="travel-trick-wrapper3">
-                          <div class="travel-trick5">Travel trick</div>
-                        </div>
-                        <div class="frame-child23"></div>
-                      </div>
-                    </div>
-                  </div>
+            </div>
+            <div>
+              <div class="slide">
+                <div class="slide-img img-5">
+                  <a href="#">Osean Travel</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <section class="stroke-styler">
-        <div class="shadow-shaper">
-          <div class="effects-engine">
-            <div class="layer-loom1">
-              <div class="group-gradient">1</div>
-              <div class="group-gradient1">2</div>
-              <div class="group-gradient2">3</div>
-              <div class="proximity-prober1">
-                <img class="align-alignment-icon" alt="" src="/asset/image/index/frame-6@2x.png" />
+      </div>
+    </div>
+  </section>
+  <div>
+    <h2>Travel Guides</h2>
+  </div>
+  <section class="row card-container">
+    <div class="col-4 card">
+      <img src="/asset/image/index/rectangle-17@2x.png">
+      <div class="card-content">
+        <h3>Best 10 Things To Do in Egypt</h3>
+        <p>Lorem ipsum dolor sit amet, con turadip
+          iscingelit. In sed et donec purus viverra. Sit
+          justo velit, eu sed</p>
+        <a href="#">Solo Travel</a>
+        <p>By Edmund Lin</p>
+      </div>
+    </div>
+    <div class="col-4 card">
+      <img src="/asset/image/index/rectangle-17@2x.png">
+      <div class="card-content">
+        <h3>Best 10 Things To Do in Egypt</h3>
+        <p>Lorem ipsum dolor sit amet, con turadip
+          iscingelit. In sed et donec purus viverra. Sit
+          justo velit, eu sed</p>
+        <a href="#">Solo Travel</a>
+        <p>By Edmund Lin</p>
+      </div>
+    </div>
+    <div class="col-4 card">
+      <img src="/asset/image/index/rectangle-17@2x.png">
+      <div class="card-content">
+        <h3>Best 10 Things To Do in Egypt</h3>
+        <p>Lorem ipsum dolor sit amet, con turadip
+          iscingelit. In sed et donec purus viverra. Sit
+          justo velit, eu sed</p>
+        <a href="#">Solo Travel</a>
+        <p>By Edmund Lin</p>
+      </div>
+    </div>
+    <div class="col-4 card">
+      <img src="/asset/image/index/rectangle-17@2x.png">
+      <div class="card-content">
+        <h3>Best 10 Things To Do in Egypt</h3>
+        <p>Lorem ipsum dolor sit amet, con turadip
+          iscingelit. In sed et donec purus viverra. Sit
+          justo velit, eu sed</p>
+        <a href="#">Solo Travel</a>
+        <p>By Edmund Lin</p>
+      </div>
+    </div>
+    <div class="col-4 card">
+      <img src="/asset/image/index/rectangle-17@2x.png">
+      <div class="card-content">
+        <h3>Best 10 Things To Do in Egypt</h3>
+        <p>Lorem ipsum dolor sit amet, con turadip
+          iscingelit. In sed et donec purus viverra. Sit
+          justo velit, eu sed</p>
+        <a href="#">Solo Travel</a>
+        <p>By Edmund Lin</p>
+      </div>
+    </div>
+    <div class="col-4 card">
+      <img src="/asset/image/index/rectangle-17@2x.png">
+      <div class="card-content">
+        <h3>Best 10 Things To Do in Egypt</h3>
+        <p>Lorem ipsum dolor sit amet, con turadip
+          iscingelit. In sed et donec purus viverra. Sit
+          justo velit, eu sed</p>
+        <a href="#">Solo Travel</a>
+        <p>By Edmund Lin</p>
+      </div>
+    </div>
+  </section>
+  <section class="num-nav mt-3">
+    <nav>
+      <ul>
+        <span class="arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
+        <li class="nav-item"><a class="nav-link" href="#">1</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">2</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">3</a></li>
+        <i class="fa-solid fa-chevron-right"></i>
+      </ul>
+    </nav>
+  </section>
+  <section class="hikes-container">
+    <div>
+      <h2>Best Hikes</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-xl-8 hikes-post">
+        <div class="hikes-wrapper">
+          <img src="/asset/image/index/rectangle-27@2x.png" width="274" height="245">
+          <div class="hikes-text">
+            <h3>Everest Base Camp Nepal</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. In sed et donec purus viverra. Sit justo velit, eu sed sollicitudin tempus,</p>
+          </div>
+        </div>
+        <div class="hikes-wrapper">
+          <img src="/asset/image/index/rectangle-27@2x.png" width="274" height="245">
+          <div class="hikes-text">
+            <h3>Everest Base Camp Nepal</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. In sed et donec purus viverra. Sit justo velit, eu sed sollicitudin tempus,</p>
+          </div>
+        </div>
+        <div class="hikes-wrapper">
+          <img src="/asset/image/index/rectangle-27@2x.png" width="274" height="245">
+          <div class="hikes-text">
+            <h3>Everest Base Camp Nepal</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. In sed et donec purus viverra. Sit justo velit, eu sed sollicitudin tempus,</p>
+          </div>
+        </div>
+        <div class="hikes-wrapper">
+          <img src="/asset/image/index/rectangle-27@2x.png" width="274" height="245">
+          <div class="hikes-text">
+            <h3>Everest Base Camp Nepal</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. In sed et donec purus viverra. Sit justo velit, eu sed sollicitudin tempus,</p>
+          </div>
+        </div>
+        <div class="hikes-wrapper">
+          <img src="/asset/image/index/rectangle-27@2x.png" width="274" height="245">
+          <div class="hikes-text">
+            <h3>Everest Base Camp Nepal</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. In sed et donec purus viverra. Sit justo velit, eu sed sollicitudin tempus,</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12  col-xl-3">
+        <div class="popular-post">
+          <h4>Popular Post</h4>
+          <div class="pop-wrapper">
+            <img src="/asset/image/index/rectangle-60@2x.png" width="114" height="79">
+            <div class="pop-text">
+              <h3>13 Things I'd Tell Any New Travler</h3>
+              <div class="post-author">
+                <a href="#" class="post-link">Post</a>
+                <span class="author-name">By Adam Smith</span>
+              </div>
+              <div class="post-meta">
+                <span class="post-date">10 Nov, 2020</span>
+                <span class="symbol">&#8212</span>
+                <span class="post-comments">50 comments</span>
               </div>
             </div>
           </div>
-          <div class="contrast-controller">
-            <div class="opacity-optimizer">
-              <h1 class="pick-a-country">Pick a country & start exploring</h1>
-            </div>
-            <div class="text-toolbox">
-              <div class="shape-shaper">
-                <img class="post-1-icon" loading="lazy" alt="" src="/asset/image/index/post1@2x.png" />
-
-                <div class="egpyt-wrapper">
-                  <h1 class="egpyt">Egpyt</h1>
-                </div>
+          <div class="pop-wrapper">
+            <img src="/asset/image/index/rectangle-61@2x.png" width="114" height="79">
+            <div class="pop-text">
+              <h3>13 Things I'd Tell Any New Travler</h3>
+              <div class="post-author">
+                <a href="#" class="post-link">Post</a>
+                <span class="author-name">By Adam Smith</span>
               </div>
-              <div class="shape-shaper1">
-                <img class="post-1-icon1" alt="" src="/asset/image/index/post1@2x.png" />
-
-                <div class="egpyt-container">
-                  <h1 class="egpyt1">Egpyt</h1>
-                </div>
-              </div>
-              <div class="shape-shaper2">
-                <img class="post-1-icon2" alt="" src="/asset/image/index/post1@2x.png" />
-
-                <div class="egpyt-frame">
-                  <h1 class="egpyt2">Egpyt</h1>
-                </div>
+              <div class="post-meta">
+                <span class="post-date">10 Nov, 2020</span>
+                <span class="symbol">&#8212</span>
+                <span class="post-comments">50 comments</span>
               </div>
             </div>
           </div>
-          <div class="node-navigator">
-            <div class="shape-shaper3">
-              <img class="post-1-icon3" alt="" src="/asset/image/index/post1@2x.png" />
-
-              <div class="egpyt-wrapper1">
-                <h1 class="egpyt3">Egpyt</h1>
+          <div class="pop-wrapper">
+            <img src="/asset/image/index/rectangle-62@2x.png" width="114" height="79">
+            <div class="pop-text">
+              <h3>13 Things I'd Tell Any New Travler</h3>
+              <div class="post-author">
+                <a href="#" class="post-link">Post</a>
+                <span class="author-name">By Adam Smith</span>
               </div>
-            </div>
-            <div class="shape-shaper4">
-              <img class="post-1-icon4" alt="" src="/asset/image/index/post1@2x.png" />
-
-              <div class="egpyt-wrapper2">
-                <h1 class="egpyt4">Egpyt</h1>
-              </div>
-            </div>
-            <div class="shape-shaper5">
-              <img class="post-1-icon5" alt="" src="/asset/image/index/post1@2x.png" />
-
-              <div class="egpyt-wrapper3">
-                <h1 class="egpyt5">Egpyt</h1>
+              <div class="post-meta">
+                <span class="post-date">10 Nov, 2020</span>
+                <span class="symbol">&#8212</span>
+                <span class="post-comments">50 comments</span>
               </div>
             </div>
           </div>
-          <div class="icon-inserter">
-            <div class="text-toolbox1">
-              <div class="shape-shaper6">
-                <img class="post-1-icon6" alt="" src="/asset/image/index/post1@2x.png" />
-
-                <div class="egpyt-wrapper4">
-                  <h1 class="egpyt6">Egpyt</h1>
-                </div>
+          <div class="pop-wrapper">
+            <img src="/asset/image/index/rectangle-64@2x.png" width="114" height="79">
+            <div class="pop-text">
+              <h3>13 Things I'd Tell Any New Travler</h3>
+              <div class="post-author">
+                <a href="#" class="post-link">Post</a>
+                <span class="author-name">By Adam Smith</span>
               </div>
-              <div class="shape-shaper7">
-                <img class="post-1-icon7" alt="" src="/asset/image/index/post1@2x.png" />
-
-                <div class="egpyt-wrapper5">
-                  <h1 class="egpyt7">Egpyt</h1>
-                </div>
+              <div class="post-meta">
+                <span class="post-date">10 Nov, 2020</span>
+                <span class="symbol">&#8212</span>
+                <span class="post-comments">50 comments</span>
               </div>
-              <div class="shape-shaper8">
-                <img class="post-1-icon8" alt="" src="/asset/image/index/post1@2x.png" />
-
-                <div class="egpyt-wrapper6">
-                  <h1 class="egpyt8">Egpyt</h1>
-                </div>
+            </div>
+          </div>
+          <div class="pop-wrapper">
+            <img src="/asset/image/index/rectangle-63@2x.png" width="114" height="79">
+            <div class="pop-text">
+              <h3>13 Things I'd Tell Any New Travler</h3>
+              <div class="post-author">
+                <a href="#" class="post-link">Post</a>
+                <span class="author-name">By Adam Smith</span>
+              </div>
+              <div class="post-meta">
+                <span class="post-date">10 Nov, 2020</span>
+                <span class="symbol">&#8212</span>
+                <span class="post-comments">50 comments</span>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <footer class="trips-for-your-first-solo-trav">
-        <img class="data-aggregator-icon" alt="" src="/asset/image/index/data-aggregator@2x.png" />
-
-        <div class="filter-tree">
-          <div class="function-hub">
-            <h1 class="trips-for-your">
-              Trips For your first solo traveling
-            </h1>
-          </div>
-          <div class="lorem-ipsum-dolor-container11">
-            <p class="lorem-ipsum-dolor13">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed
-              et donec purus
-            </p>
-            <p class="viverra-sit-justo">
-              viverra. Sit justo velit, eu sed sollicitudin tempus, risus. Sed
-              sit elit mauris adipiscing. Lobortis pellentesque nulla accumsan
-              id urna, ullamcorper gravida varius.
-            </p>
+        <br>
+        <div class="follow-post">
+          <h4>Follow Us</h4>
+          <div class="follow-icon">
+            <a href="https://www.facebook.com" target="_blank" class="social-icon">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" class="social-icon">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" class="social-icon">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com" target="_blank" class="social-icon">
+              <i class="fa-brands fa-youtube"></i>
           </div>
         </div>
-        <div class="loop-node">
-          <div class="comparison-node">
-            <div class="input-node1">
-              <img class="video-player-icon" loading="lazy" alt="" src="/asset/image/index/video-player.svg" />
+        <br>
+        <div class="subscribe-container">
+          <h4>Subscribe Today</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. In sed et donec purus viverra. Sit justo</p>
+          <form class="subscribe-form">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <div class="checkbox-container">
+              <input type="checkbox" id="privacy-policy" required>
+              <label for="privacy-policy">You Agree To Our Company Privacy Policy</label>
             </div>
-            <h1 class="watch-video">Watch video</h1>
+            <button type="submit" class="subscribe-btn">SUBSCRIBE</button>
+          </form>
+        </div>
+        <br>
+        <div class="tags-container">
+          <h4>Tags</h4>
+          <div class="tags">
+            <span class="tag">Travel Website</span>
+            <span class="tag">Travel Tips</span>
+            <span class="tag">Travel Trick</span>
+            <span class="tag">Travel Website</span>
+            <span class="tag">Travel Tips</span>
+            <span class="tag">Travel Trick</span>
+            <span class="tag">Travel Website</span>
+            <span class="tag">Travel Tips</span>
+            <span class="tag">Travel Trick</span>
+          </div>
+        </div>
+      </div>
+  </section>
+  <section class="num-nav mt-3">
+    <nav>
+      <ul>
+        <span class="arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
+        <li class="nav-item"><a class="nav-link" href="#">1</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">2</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">3</a></li>
+        <i class="fa-solid fa-chevron-right"></i>
+      </ul>
+    </nav>
+  </section>
+  <div>
+    <h2>Pick A Country & Start Exploring</h2>
+  </div>
+  <section class="row card-container">
+    <div class="col-4 card">
+      <img src="/asset/image/index/rectangle-17@2x.png">
+      <div class="card-content">
+        <h5>Egypt</h5>
+      </div>
+    </div>
+    <div class="col-4 card">
+      <img src="/asset/image/index/rectangle-17@2x.png">
+      <div class="card-content">
+        <h5>Egypt</h5>
+      </div>
+    </div>
+    <div class="col-4 card">
+      <img src="/asset/image/index/rectangle-17@2x.png">
+      <div class="card-content">
+        <h5>Egypt</h5>
+      </div>
+    </div>
+    <div class="col-4 card">
+      <img src="/asset/image/index/rectangle-17@2x.png">
+      <div class="card-content">
+        <h5>Egypt</h5>
+      </div>
+    </div>
+    <div class="col-4 card">
+      <img src="/asset/image/index/rectangle-17@2x.png">
+      <div class="card-content">
+        <h5>Egypt</h5>
+      </div>
+    </div>
+    <div class="col-4 card">
+      <img src="/asset/image/index/rectangle-17@2x.png">
+      <div class="card-content">
+        <h5>Egypt</h5>
+      </div>
+    </div>
+  </section>
+  <br>
+  <footer>
+    <section class="video-background">
+      <!-- The video -->
+      <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+        <source src="https://assets.codepen.io/6093409/river.mp4" type="video/mp4">
+      </video>
+      <div class="video-overlay">
+        <h1>Trips For Your First Solo Traveling</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <!-- <a href="#" class="btn btn-primary video-button">Top</a> -->
+      </div>
+      <footer class="footer-container">
+        <div class="row footer-nav mt-3">
+          <div class="col-xs-12 col-md copyright">
+            <p>Copyright &copy; ojjomedia All Right Reserved</p>
+          </div>
+          <div class="col-xs-12 col-md footer-nav-child">
+            <nav>
+              <ul>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Privacy</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Terms</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-xs-12 col-md follow-icon">
+            <a href="https://www.facebook.com" target="_blank" class="social-icon">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" class="social-icon">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" class="social-icon">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com" target="_blank" class="social-icon">
+              <i class="fa-brands fa-youtube"></i>
           </div>
         </div>
       </footer>
-      <section class="fotter">
-        <div class="fotter-child"></div>
-        <div class="connector-node">
-          <div class="constant-node1">
-            <img class="error-handler-icon1" alt="" src="/asset/image/index/frame-8.svg" />
-          </div>
-          <div class="sequence-node1">
-            <h2 class="ojjomedia-all-right">
-              2020 ojjomedia All Right Reserved
-            </h2>
-          </div>
-          <div class="delay-node">
-            <h2 class="contact">Contact</h2>
-            <h2 class="privacy">Privacy</h2>
-            <h2 class="terms">Terms</h2>
-            <h2 class="about">About</h2>
-          </div>
-        </div>
-        <div class="multi-output-node">
-          <div class="wrapper-facebook1">
-            <img class="facebook-icon1" alt="" src="/asset/image/index/facebook-1.svg" />
-          </div>
-          <div class="wrapper-twitter1">
-            <img class="twitter-icon1" alt="" src="/asset/image/index/twitter-1.svg" />
-          </div>
-          <div class="wrapper-instagram1">
-            <img class="instagram-icon1" alt="" src="/asset/image/index/instagram-1.svg" />
-          </div>
-          <div class="wrapper-youtube1">
-            <img class="youtube-icon1" alt="" src="/asset/image/index/youtube-1.svg" />
-          </div>
-        </div>
-      </section>
-    </main>
-  </div>
+      <script src="/main.js"></script>
 </body>
 
 </html>
