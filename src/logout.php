@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="asset/css/logout.css">
     <title>Logout</title>
 </head>
+
 <body>
     <div class="container">
         <div class="content">
             <h1>It's Time to Logout</h1>
             <p>Thanks for visiting! Come back soon.</p>
             <button class="home-button">Return to Homepage</button>
-    </div>
-    <script src="asset/js/LogoutScript.js"></script>
+        </div>
+        <script src="asset/js/LogoutScript.js"></script>
 </body>
+
 </html>

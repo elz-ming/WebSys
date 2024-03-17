@@ -12,7 +12,7 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form action="process_register.php" method="post">
+            <form action="register.process.php" method="post">
                 <h1>
                     <span>C</span><span>r</span><span>e</span><span>a</span><span>t</span><span>e</span>
                     <span> </span>
