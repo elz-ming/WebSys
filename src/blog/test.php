@@ -109,9 +109,7 @@
         </div>
       </div>
     </div> -->
-    <div class="image-contain">
-                <img src="/asset/image/Amsterdam.jpg" alt="Image description">
-            </div>
+    
     <div class="page-heading about-heading header-text" style="background-image: url(/asset/image/.jpg);">
     <div class="container">
         <div class="row">

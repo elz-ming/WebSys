@@ -557,7 +557,14 @@
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left:-15px;
-    align-self: center;
+  }
+  .row1 {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    margin-top: 10px;
   }
   
   .no-gutters {
@@ -1031,9 +1038,9 @@
     }
   
     .col-md-4 {
-        -ms-flex: 0 0 33.333333%;
-        flex: 0 0 33.333333%;
-        max-width:33.333333%
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width:25%;
     }
   
     .col-md-5 {

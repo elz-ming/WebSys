@@ -94,6 +94,10 @@
             </div>
             </div>
         </div>
+        <div class="col-md-12">
+            <div class="section-heading">
+            </div>
+        </div>
       <div class="image-contain">
         <img src="/asset/image/bridge.jpg" alt="Image description">
     </div>
@@ -104,9 +108,7 @@
                     <div>
                 </div>
                     <div class="col-md-8">
-                        <h5>Introduction to Amsterdam</h5>
                         <p>A guided canal cruise is a must-do. As you glide past the gabled houses lining the waterways, imagine life in Amsterdam's Golden Age, a period of immense wealth and artistic flourishing. Don't miss the Anne Frank House, a poignant reminder of World War II and the enduring power of human spirit.<br>
-                        <img class="country-cover" alt="" src="/asset/image/Duck.jpg" />
                         <br>
 
 
@@ -114,45 +116,124 @@
                         Art enthusiasts will rejoice in Amsterdam's treasure trove of museums. Marvel at the masterpieces of Van Gogh and Rembrandt at the Rijksmuseum, or delve into modern and contemporary art at the Stedelijk Museum. For something a little different, explore the quirky exhibits at the House of Bols, a journey through the history of Dutch jenever.</p>
 
                         <br>
-
-                        <h5>Wow amazing content here.</h5>
-                        <br>
-
-                        <img class="landscape-photo" alt="" src="/asset/image/Farm.jpg" />
-
-                        <br>
-
-                        Amazing.Venture beyond the central sights and discover Amsterdam's hidden gems. Explore the Jordaan neighborhood, a maze of charming canals and independent shops. Rent a bike, the quintessential Amsterdam mode of transport, and pedal through the Vondelpark, a sprawling oasis in the heart of the city. Sample the local cuisine at a cozy "brown cafe," savoring bitterballen (deep-fried meat croquettes) and a refreshing glass of Dutch beer.
-
-        A City that Never Sleeps
-
-        As night falls, Amsterdam transforms into a vibrant hub of nightlife. Catch a live performance at a jazz bar, lose yourself in the pulsating energy of a dance club, or simply relax with a drink and people-watch at a lively cafe.
+                        <div class="col-md-12">
+                        <div class="section-heading">
+                            <h2>Nightlife</h2>
+                        </div>
+                        </div>
 
 
                         <br>
 
 
                     </div>
-
-                    <!-- <div class="col-md-4">
-                    <div class="left-content">
-                        <h4>Place to link tickets? So they can just add package with this and DIY later if needed</h4>
-
-                        <br>
-                        
-                        <p>Shop.<br><br>here</p>
-                        
-                        <p>with a add to cart button that add the iternary immedietly</p>
+                    <div class="image-contain">
+                        <img src="/asset/image/Night.jpg" alt="Image description">
                     </div>
+                    <div class="col-md-6">
+                        <p>This May I had to travel to Amsterdam for work for a full week. Having only seen the airport previously, I took the chance to stay over the weekend and spend some time exploring the city. It’s definitely an interesting place with a lot of photo opportunities. I spent 2,5 days exploring the city, largely by foot (I walked almost 70 kilometres). Unfortunately I caught a bad cold early during my stay, so I spent most evenings in bed after work. If I were to compare it to other cities, I’d probably characterise it as a mix between London, Paris and Venezia, although I think it takes more time to truly understand the lifestyle of a place.
+
+Below is a collection of photos from the trip. I’ll point out a few spots that are specifically interesting from a photography perspective, hopefully this may be valuable for others looking for some inspiration before a trip to Amsterdam.</p>
                     </div>
-                </div> -->
+                        <div class="col-md-6">
+                            <img class="vert-small-photo" alt="" src="/asset/image/Farm.jpg" />
+                        </div>
+                        <!-- <div class="row1"> -->
+                        <div class="col-md-4">
+                            <img class="vert-small-photo" alt="" src="/asset/image/Farm.jpg" />
+                        </div>                    <div class="col-md-4">
+                            <img class="vert-small-photo" alt="" src="/asset/image/Farm.jpg" />
+                        </div>
+                        <div class="col-md-4">
+                            <img class="vert-small-photo" alt="" src="/asset/image/Farm.jpg" />
+                        </div>
+                        <div class="col-md-4">
+                            <img class="vert-small-photo" alt="" src="/asset/image/Farm.jpg" />
+                        </div>
+
+                    </div>
+                    <div class = "row">
+                    <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>Nature</h2>
+                    </div>
+</div>
+                    <div class="image-contain">
+                        <img src="/asset/image/tulip.jpg" alt="Image description">
+                    </div>
+                    <br>
+                    <div class="col-md-6">
+                        <p>This May I had to travel to Amsterdam for work for a full week. Having only seen the airport previously, I took the chance to stay over the weekend and spend some time exploring the city. It’s definitely an interesting place with a lot of photo opportunities. I spent 2,5 days exploring the city, largely by foot (I walked almost 70 kilometres). Unfortunately I caught a bad cold early during my stay, so I spent most evenings in bed after work. If I were to compare it to other cities, I’d probably characterise it as a mix between London, Paris and Venezia, although I think it takes more time to truly understand the lifestyle of a place.
+
+                                Below is a collection of photos from the trip. I’ll point out a few spots that are specifically interesting from a photography perspective, hopefully this may be valuable for others looking for some inspiration before a trip to Amsterdam.</p>
+                    </div>
+                        <div class="col-md-6">
+                            <img class="vert-small-photo" alt="" src="/asset/image/Farm.jpg" />
+                        </div>
+                    </div>
+                    
+</div>
 
                 <br>
                 
 
             </div>
+            <div class="send-message">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Leave A Comment</h2>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="contact-form">
+                <form id="contact" action="" method="post">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="col-lg-12">
+                        <fieldset>
+                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
+                        </fieldset>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                        <fieldset>
+                            <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
+                        </fieldset>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                        <fieldset>
+                            <input name="email" type="text" class="form-control" id="email" placeholder="E-Mail Address" required="">
+                        </fieldset>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-lg-12 text-center">
+                    <fieldset>
+                        <button type="submit" id="form-submit" class="filled-button">Submit</button>
+                    </fieldset>
+                    </div>
+                </div>
+                </form>
+            </div>
+            </div>
             </div>
                 </main>
+                <div class="holder">
+          <input type="checkbox" id = "btnBox">
+          <ul>
+            <li style="back-ground-image: url(https://www.pexels.com/photo/man-playing-with-dogs-on-a-beach-19597529/);"></li>
+            <li style="back-ground-image: url(https://www.pexels.com/photo/man-playing-with-dogs-on-a-beach-19597529/);"></li>
+            <li style="back-ground-image: url(https://www.pexels.com/photo/man-playing-with-dogs-on-a-beach-19597529/);"></li>
+            <li style="back-ground-image: url(https://www.pexels.com/photo/man-playing-with-dogs-on-a-beach-19597529/);"></li>
+            <li style="back-ground-image: url(https://www.pexels.com/photo/man-playing-with-dogs-on-a-beach-19597529/);"></li>
+            <li style="back-ground-image: url(https://www.pexels.com/photo/man-playing-with-dogs-on-a-beach-19597529/);"></li>
+          </ul>
 
+          <label for="btnBox" class="btn-area">
+            <span class="btn1"></span>
+            <span class="btn2"></span>
+        </div>
             </body>
         </html>

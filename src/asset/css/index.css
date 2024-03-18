@@ -3714,7 +3714,7 @@ body {
     padding: 0 0 var(--padding-10xs);
     box-sizing: border-box;
 }
-/* 
+
 .frame-parent18,
 .image-container {
     align-self: stretch;
@@ -3725,7 +3725,7 @@ body {
 .image-container {
     flex-direction: column;
     gap: 10px 0;
-} */
+}
 
 .travel-website2 {
     position: relative;

@@ -10,7 +10,6 @@
     }
     
     .country-cover {
-      display: flex;
       align-items: center;
       justify-content: center;
       height: 70%;
@@ -21,7 +20,6 @@
       object-fit: cover;
     }
     .image-container {
-      display: flex;
       justify-content: center;
       align-self: stretch;
       align-items: center; /* Optional for vertical centering */
@@ -31,12 +29,21 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 30vh;
-      width: 30vw;
+      height: 80vh;
+      width: 80vw;
       background-color: #f9f9f9;
       max-width: 70vw;
       max-height: 40vh;
-
+      margin: 0;
+      object-fit: cover;
+    }
+    .vert-small-photo{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 90%;
+      background-color: #f9f9f9;
       margin: 0;
       object-fit: cover;
     }
@@ -124,8 +131,7 @@
     
     .section-heading {
       text-align: left;
-      margin-bottom: 60px;
-      border-bottom: 1px solid #eee;
+      border-bottom: 3px solid black;
     }
     
     .section-heading h2 {
@@ -401,7 +407,7 @@
     /* Product Page */
     
     .products {
-      margin-top: 100px;
+      margin-top: px;
       align-self: stretch;
     }
     
@@ -503,7 +509,62 @@
       border-color: #f33f3f;
       color: #fff;
     }
-    
+
+    /*filter table css*/
+    .last\:mb-8:last-child {
+      margin-bottom:2rem
+    }
+    .mb-8 {
+      margin-bottom:2rem
+    }
+    .md\:mb-8 {
+      margin-bottom:2rem
+    }
+    .lg\:mb-8 {
+      margin-bottom:2rem
+    }
+    .my-8 {
+      margin-top: 2rem;
+      margin-bottom:2rem
+    }
+    .md\:my-8 {
+      margin-top: 2rem;
+      margin-bottom:2rem
+    }
+    .md\:mb-2 {
+      margin-bottom:.5rem
+    }
+    .lg\:mb-2 {
+      margin-bottom:.5rem
+    }
+    .mb-2 {
+      margin-bottom:.5rem
+    }
+    .lg\:pr-8 {
+      padding-right:2rem
+    }
+    .pr-8 {
+      padding-right:2rem
+    }
+    .-mt-1 {
+      margin-top:-.25rem
+    }
+    .mt-1\.5 {
+        margin-top:.375rem
+    }
+    .-mb-4 {
+      margin-bottom:-1rem
+    }
+    .mb-4 {
+      margin-bottom:1rem
+    }
+    .last\:mb-4:last-child {
+      margin-bottom:1rem
+    }
+    .md\:mb-4 {
+      margin-bottom:1rem
+    }
+
     
 
     /* Find Us */
@@ -773,3 +834,58 @@
 
 
     }
+
+    .holder{
+      width: 900px;
+      min-height: auto;
+      margin: 20px auto;
+    }
+    .holder ul{
+      list-style: none;
+      padding: 0;
+    }
+    .holder ul:after{
+      content: '';
+      display:table;
+      clear: both;
+    }
+    .holder ul li{
+      width: 30%;
+      margin: 30px 10px 0;
+      height: 150px;
+      background-size: cover;
+      background-position: center;
+      float: left;
+      box-shadow: 0 5px 5px 1px rgba(0,0,0,.5);
+    }
+    .holder ul li:nth-child(1n + 4){
+      max-height: 0;
+      opacity: 0;
+      transition: 0.2s ease-in;
+    }
+    .holder .btn-area{
+      display:block;
+      background: #7f2a4b;
+      color: #fff;
+      cursor: pointer;
+      text-align: center;
+      font-weight: 900;
+      width: 180px;
+      line-height: 50px;
+      margin: 50px auto 0;
+      border-radius: 50px;
+    }
+
+    .holder .btn-area .btn2{
+      display: none;
+    }
+
+    .holder #btnBox{
+      display: none;
+    }
+
+    .holder #btnBox:checked~ul li:nth-child(1n + 4){
+      max-height: 1000px;
+      opacity: 1;transition: 0.2s ease-in;
+    }
+    
