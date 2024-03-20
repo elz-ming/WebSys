@@ -54,20 +54,8 @@
           gravida varius. Massa mauris, cursus orci magna non enim fames
           et sed."
         </div>
-        <div class="col-3 profile"><img class="decision-node-icon" alt="" src="/asset/image/index/social-media.svg" /></div>
-      </div>
-      <div class="header-nav mt-3">
-        <nav>
-          <ul>
-            <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.php">About Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="package.php">Packages</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Contact us</a></li>
-          </ul>
-        </nav>
-      </div>  
         <div class="lets-go">Let's Go...</div>
+      </div>
     </div>
   </div>
   <section id="slider">
