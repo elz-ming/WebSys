@@ -6,19 +6,25 @@
 .header-container {
     box-sizing: border-box;
     max-width: 100%;
-    margin: 0;
-    padding: 0;
     color: white;
     position: relative;
     background-image: url(/asset/image/index/womantravelerwithbackpackwalkingyasakapagodasannenzakastreetkyotojapan.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    z-index: 0;
+    z-index: -1;
+    height: 100vh;
+    /* width: 100vw; */
+    margin: -182px 0 0 0
 }
 
-div.header-container {
-    height: 150vh;
+.top {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px;
+    padding: 10px 0px;
 }
 
 .header {
@@ -35,6 +41,7 @@ div.header-container {
     padding: 10px 0px;
     margin: 0px 30px;
     border-bottom: 1px solid white;
+    color: white;
 }
 
 .search-bar {
@@ -56,9 +63,11 @@ div.header-container {
 .header-nav {
     width: 100%;
     font-size: 24px;
+    /* Adjust if needed for larger screens */
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
 }
 
 .header-nav ul {
@@ -70,7 +79,8 @@ div.header-container {
 .header-nav li {
     display: flex;
     align-items: center;
-    padding: 0px 50px;
+    padding: 0 50px;
+    /* Adjusted padding for larger screens */
 }
 
 .header-nav ul li:after {
@@ -78,6 +88,39 @@ div.header-container {
     padding-top: 10px;
     text-decoration: none;
 }
+
+/* Tablets: Adjust padding and font size */
+@media screen and (max-width: 768px) {
+    .header-nav {
+        font-size: small;
+    }
+
+    .header-nav li {
+        padding: 0 30px;
+    }
+}
+
+/* Mobile devices: Stack items, adjust padding, and font size */
+@media screen and (max-width: 480px) {
+    .header-nav {
+        font-size: smaller;
+    }
+
+    .header-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-nav li {
+        padding: 10px 0;
+    }
+
+    /* Optional: Hide the after pseudo-element on smaller screens */
+    .header-nav ul li:after {
+        content: none;
+    }
+}
+
 
 .profile {
     display: flex;
@@ -112,7 +155,6 @@ div.header-container {
 }
 
 .intro-text {
-    margin: 0;
     font-size: 75px;
     font-weight: 700;
     justify-content: center;
@@ -140,7 +182,7 @@ div.header-container {
 }
 
 #slider {
-    height: 500px;
+    height: 50%;
     /* border: 1px solid black; */
     display: flex;
     justify-content: center;
@@ -216,7 +258,7 @@ h2 {
     background-image: url(/asset/image/index/rectangle-7@2x.png);
 }
 
-@media(max-width:1600px) {
+@media (max-width:1600px) {
     .carousel {
         width: 100%;
     }
@@ -237,6 +279,82 @@ h2 {
 
     footer.follow-icon {
         order: 3;
+    }
+
+    .video-background {
+        height: auto !important;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .video-background {
+        height: 30vh !important;
+    }
+
+    .header-container {
+        margin-top: -300px;
+    }
+}
+
+@media (min-width:769px) and (max-width:992px) {
+    .video-background {
+        height: 40vh !important;
+    }
+
+    .header-container {
+        margin-top: -300px
+    }
+}
+
+@media (min-width:993px) and (max-width: 1200px) {
+    .video-background {
+        height: 70vh !important;
+    }
+
+    .header-container {
+        margin-top: -300px
+    }
+}
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+    .video-background {
+        height: 78vh !important;
+    }
+
+    .header-container {
+        margin-top: -300px
+    }
+}
+
+@media only screen and (max-width:768px) {
+
+    .intro-text,
+    .intro-content {
+        font-size: smaller !important;
+    }
+}
+
+@media (min-width:769px) and (max-width:992px) {
+
+    .intro-text,
+    .intro-content {
+        font-size: small !important;
+    }
+}
+
+@media (min-width:993px) and (max-width: 1200px) {
+
+    .intro-text,
+    .intro-content {
+        font-size: medium !important;
+    }
+}
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+
+    .intro-text,
+    .intro-content {
+        font-size: large !important;
     }
 }
 
@@ -640,7 +758,7 @@ h5 {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: auto;
+    height: 100vh;
 }
 
 #background-video {
@@ -682,6 +800,7 @@ footer {
 .footer-nav {
     width: 100%;
     font-size: 24px;
+    /* Appropriate for desktop */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -698,8 +817,37 @@ footer {
 .footer-nav li {
     display: flex;
     align-items: center;
-    padding: 0px 50px;
+    padding: 0 50px;
+    /* Horizontal padding for desktop */
 }
+
+/* Tablets: Decrease font size and padding */
+@media screen and (max-width: 768px) {
+    .footer-nav {
+        font-size: small;
+    }
+
+    .footer-nav li {
+        padding: 0 20px;
+    }
+}
+
+/* Mobile devices: Stack items vertically, adjust padding */
+@media screen and (max-width: 480px) {
+    .footer-nav {
+        font-size: smaller;
+    }
+    .footer-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-nav li {
+        padding: 10px 0;
+        /* Vertical padding for stacked items */
+    }
+}
+
 
 
 .copyright,
