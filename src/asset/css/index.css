@@ -6,8 +6,6 @@
 .header-container {
     box-sizing: border-box;
     max-width: 100%;
-    margin: 0;
-    padding: 0;
     color: white;
     position: relative;
     background-image: url(/asset/image/index/womantravelerwithbackpackwalkingyasakapagodasannenzakastreetkyotojapan.png);
@@ -15,10 +13,6 @@
     background-size: cover;
     background-position: center center;
     z-index: 0;
-}
-
-div.header-container {
-    height: 150vh;
 }
 
 .header {
@@ -35,6 +29,7 @@ div.header-container {
     padding: 10px 0px;
     margin: 0px 30px;
     border-bottom: 1px solid white;
+    color: white;
 }
 
 .search-bar {
@@ -59,6 +54,7 @@ div.header-container {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
 }
 
 .header-nav ul {
@@ -104,15 +100,14 @@ div.header-container {
     flex-direction: column;
     justify-content: center;
     position: relative;
-    padding-top: 300px;
-    padding-bottom: 300px;
+    padding-top: 250px;
+    padding-bottom: 250px;
     display: flex;
     text-align: center;
     z-index: 2;
 }
 
 .intro-text {
-    margin: 0;
     font-size: 75px;
     font-weight: 700;
     justify-content: center;
@@ -140,7 +135,7 @@ div.header-container {
 }
 
 #slider {
-    height: 500px;
+    height: 50%;
     /* border: 1px solid black; */
     display: flex;
     justify-content: center;

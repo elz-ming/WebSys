@@ -24,41 +24,41 @@
 </head>
 
 <body>
-  <section class="header-container">
-    <div class="header">
-      <div class="header-bar row">
-        <h1 class="col-3 company">TravelTalk</h1>
-        <div class="col-6 search-bar">
-          <img class="decision-node-icon" alt="" src="/asset/image/index/decision-node.svg" />
-          <input placeholder="search" type="text" />
+  <header>
+    <div class="header-bar row">
+      <h1 class="col-3 company">TravelTalk</h1>
+      <div class="col-6 search-bar">
+        <img class="decision-node-icon" alt="" src="/asset/image/index/decision-node.svg" />
+        <input placeholder="search" type="text" />
+      </div>
+      <div class="col-3 profile"><img class="decision-node-icon" alt="" src="/asset/image/index/social-media.svg" /></div>
+    </div>
+  </header>
+  <nav class="header-nav mt-3">
+    <ul>
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+      <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Contact us</a></li>
+    </ul>
+  </nav>
+  <div id="landing-screen">
+    <div class="header-container" style="height: 100vh; margin: -200px 0 0 0; z-index: -1;">
+      <div class="overlay-bg"><img src="/asset/image/index/rectangle-1.svg" /></div>
+      <div class="row intro-container">
+        <h1 class="col-12 intro-text">Where will you go next?</h1>
+        <div class="intro-content">
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+          sed et donec purus viverra. Sit justo velit, eu sed
+          sollicitudin tempus, risus. Sed sit elit mauris adipiscing.
+          Lobortis pellentesque nulla accumsan id urna, ullamcorper
+          gravida varius. Massa mauris, cursus orci magna non enim fames
+          et sed."
         </div>
-        <div class="col-3 profile"><img class="decision-node-icon" alt="" src="/asset/image/index/social-media.svg" /></div>
-      </div>
-      <div class="header-nav mt-3">
-        <nav>
-          <ul>
-            <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.php">About Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Contact us</a></li>
-          </ul>
-        </nav>
+        <div class="lets-go">Let's Go...</div>
       </div>
     </div>
-    <div class="overlay-bg"><img src="/asset/image/index/rectangle-1.svg" /></div>
-    <div class="row intro-container">
-      <h1 class="col-12 intro-text">Where will you go next?</h1>
-      <div class="intro-content">
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-        sed et donec purus viverra. Sit justo velit, eu sed
-        sollicitudin tempus, risus. Sed sit elit mauris adipiscing.
-        Lobortis pellentesque nulla accumsan id urna, ullamcorper
-        gravida varius. Massa mauris, cursus orci magna non enim fames
-        et sed."
-      </div>
-      <div class="lets-go">Let's Go...</div>
-    </div>
-  </section>
+  </div>
   <section id="slider">
     <div class="carousel">
       <div class="subcarousel">
