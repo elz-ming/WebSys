@@ -1,0 +1,341 @@
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++ CSS common throughout all / most pages ++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.row {
+  margin: 0;
+  padding: 0;
+}
+
+/* ++++++++++++++++++++ CSS for <header> and everything inside ++++++++++++++++++++ */
+.header-bar {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0px;
+  margin: 0px 30px;
+  border-bottom: 1px solid white;
+  color: white;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  border: 1px solid black;
+  border-radius: 30px;
+  background-color: white;
+}
+
+.search-bar input {
+  margin: 10px;
+  border: none;
+  font-size: 18px;
+  width: 100%;
+}
+
+.profile {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ++++++++++++++++++++ CSS for <nav> and everything inside ++++++++++++++++++++ */
+.header-nav {
+  width: 100%;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.header-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-nav li {
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.header-nav ul li:after {
+  content: url(/asset/image/index/frame-1@2x.png);
+  padding-top: 10px;
+  text-decoration: none;
+}
+
+/* ++++++++++++++++++++ CSS for <div id="landing-screen"> and everything inside ++++++++++++++++++++ */
+.header-container {
+  box-sizing: border-box;
+  max-width: 100%;
+  color: white;
+  position: relative;
+  background-image: url(/asset/image/index/womantravelerwithbackpackwalkingyasakapagodasannenzakastreetkyotojapan.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  z-index: -1;
+  height: 100vh;
+  margin: -182px 0 0 0
+}
+
+.overlay-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.intro-container {
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding-top: 300px;
+  padding-bottom: 300px;
+  display: flex;
+  text-align: center;
+  z-index: 2;
+}
+
+.intro-text {
+  font-size: 75px;
+  font-weight: 700;
+  justify-content: center;
+
+}
+
+.intro-content {
+  flex: 1;
+  line-height: 196.3%;
+  display: inline-block;
+  max-width: 100%;
+  padding: 20px;
+  font-size: 24px;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.lets-go {
+  margin: 0;
+  font-size: 60px;
+  line-height: 196.3%;
+  font-weight: 700;
+  font-family: inherit;
+  color: orange;
+}
+
+/* ++++++++++++++++++++ CSS for <div id="ending-screen"> and everything inside ++++++++++++++++++++ */
+.video-background {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
+
+#background-video {
+  width: 100%;
+  height: auto;
+} 
+
+.video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+}
+
+.video-overlay h1 {
+  margin-bottom: 0.5em;
+}
+
+.video-overlay p {
+  margin-bottom: 1em;
+}
+
+
+/* ++++++++++++++++++++ CSS for <footer> and everything inside ++++++++++++++++++++ */
+footer {
+  background-color: #ffc107;
+}
+
+.footer-container p {
+  padding-top: 20px;
+}
+
+.footer-nav {
+  width: 100%;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.copyright {
+  font-size: 16px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.footer-nav li {
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+  /* Horizontal padding for desktop */
+}
+
+.copyright,
+footer.follow-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ++++++++++++++++++++ CSS for responsive design ++++++++++++++++++++ */
+/* MOBILE PHONES */
+@media screen and (max-width: 480px) {
+  .header-nav {
+      font-size: smaller;
+  }
+
+  .header-nav ul {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .header-nav li {
+      padding: 10px 0;
+  }
+
+  .header-nav ul li:after {
+      content: none;
+  }
+
+  .footer-nav {
+    font-size: smaller;
+  }
+  .footer-nav ul {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-nav li {
+      padding: 10px 0;
+      /* Vertical padding for stacked items */
+  }
+}
+
+@media only screen and (max-width:576px) {
+  .copyright {
+      order: 1;
+  }
+
+  .footer-nav-child {
+      order: 2;
+  }
+
+  footer.follow-icon {
+      order: 3;
+  }
+
+  .video-background {
+      height: auto !important;
+  }
+}
+
+/* TABLETS */
+@media screen and (max-width: 768px) {
+  .header-nav {
+      font-size: small;
+  }
+
+  .header-nav li {
+      padding: 0 30px;
+  }
+
+  .video-background {
+    height: 30vh !important;
+  }
+
+  .header-container {
+    margin-top: -300px;
+  }
+
+  .intro-text,
+  .intro-content {
+      font-size: smaller !important;
+  } 
+
+  .footer-nav {
+    font-size: small;
+  }
+
+  .footer-nav li {
+      padding: 0 20px;
+  }
+}
+
+@media (min-width:769px) and (max-width:992px) {
+  .video-background {
+      height: 40vh !important;
+  }
+
+  .header-container {
+      margin-top: -300px
+  }
+
+  .intro-text,
+  .intro-content {
+      font-size: small !important;
+  }
+}
+
+@media (min-width:993px) and (max-width: 1200px) {
+  .video-background {
+      height: 70vh !important;
+  }
+
+  .header-container {
+      margin-top: -300px
+  }
+
+  .intro-text,
+  .intro-content {
+      font-size: medium !important;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+  .video-background {
+      height: 78vh !important;
+  }
+
+  .header-container {
+      margin-top: -300px
+  }
+
+  .intro-text,
+  .intro-content {
+      font-size: large !important;
+  }
+}
