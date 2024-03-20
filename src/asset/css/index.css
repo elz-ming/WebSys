@@ -62,6 +62,7 @@
 .header-nav {
     width: 100%;
     font-size: 24px;
+    /* Adjust if needed for larger screens */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -77,7 +78,8 @@
 .header-nav li {
     display: flex;
     align-items: center;
-    padding: 0px 50px;
+    padding: 0 50px;
+    /* Adjusted padding for larger screens */
 }
 
 .header-nav ul li:after {
@@ -85,6 +87,39 @@
     padding-top: 10px;
     text-decoration: none;
 }
+
+/* Tablets: Adjust padding and font size */
+@media screen and (max-width: 768px) {
+    .header-nav {
+        font-size: small;
+    }
+
+    .header-nav li {
+        padding: 0 30px;
+    }
+}
+
+/* Mobile devices: Stack items, adjust padding, and font size */
+@media screen and (max-width: 480px) {
+    .header-nav {
+        font-size: smaller;
+    }
+
+    .header-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-nav li {
+        padding: 10px 0;
+    }
+
+    /* Optional: Hide the after pseudo-element on smaller screens */
+    .header-nav ul li:after {
+        content: none;
+    }
+}
+
 
 .profile {
     display: flex;
@@ -276,7 +311,7 @@ h2 {
     }
 
     .header-container {
-        margin-top: 0
+        margin-top: -300px
     }
 }
 
@@ -286,7 +321,7 @@ h2 {
     }
 
     .header-container {
-        margin-top: 0
+        margin-top: -300px
     }
 }
 
@@ -764,6 +799,7 @@ footer {
 .footer-nav {
     width: 100%;
     font-size: 24px;
+    /* Appropriate for desktop */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -780,8 +816,37 @@ footer {
 .footer-nav li {
     display: flex;
     align-items: center;
-    padding: 0px 50px;
+    padding: 0 50px;
+    /* Horizontal padding for desktop */
 }
+
+/* Tablets: Decrease font size and padding */
+@media screen and (max-width: 768px) {
+    .footer-nav {
+        font-size: small;
+    }
+
+    .footer-nav li {
+        padding: 0 20px;
+    }
+}
+
+/* Mobile devices: Stack items vertically, adjust padding */
+@media screen and (max-width: 480px) {
+    .footer-nav {
+        font-size: smaller;
+    }
+    .footer-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-nav li {
+        padding: 10px 0;
+        /* Vertical padding for stacked items */
+    }
+}
+
 
 
 .copyright,
