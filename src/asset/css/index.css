@@ -254,11 +254,19 @@ h2 {
     .video-background {
         height: 30vh !important;
     }
+
+    .header-container {
+        margin-top: -300px;
+    }
 }
 
 @media (min-width:769px) and (max-width:992px) {
     .video-background {
         height: 40vh !important;
+    }
+
+    .header-container {
+        margin-top: -300px
     }
 }
 
@@ -266,11 +274,19 @@ h2 {
     .video-background {
         height: 70vh !important;
     }
+
+    .header-container {
+        margin-top:
+    }
 }
 
 @media (min-width: 1201px) and (max-width: 1400px) {
     .video-background {
         height: 78vh !important;
+    }
+
+    .header-container {
+        margin-top:
     }
 }
 
