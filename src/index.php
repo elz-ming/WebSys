@@ -25,9 +25,9 @@
 
 <body>
   <header>
-    <div class="header-bar row">
-      <h1 class="col-3 company">TravelTalk</h1>
-      <div class="col-6 search-bar">
+    <div class="row header-bar ">
+      <h1 class="col-sm-6 col-lg-3 company">TravelTalk</h1>
+      <div class="col-sm-6 col-lg-6 search-bar">
         <img class="decision-node-icon" alt="" src="/asset/image/index/decision-node.svg" />
         <input placeholder="search" type="text" />
       </div>
@@ -43,7 +43,7 @@
     </ul>
   </nav>
   <div id="landing-screen">
-    <div class="header-container" style="height: 100vh; margin: -182px 0 0 0; z-index: -1;">
+    <div class="header-container">
       <div class="overlay-bg"><img src="/asset/image/index/rectangle-1.svg" /></div>
       <div class="row intro-container">
         <h1 class="col-12 intro-text">Where will you go next?</h1>
