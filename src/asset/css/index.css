@@ -15,6 +15,15 @@
     z-index: 0;
 }
 
+.top {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px;
+    padding: 10px 0px;
+}
+
 .header {
     position: relative;
     /* Ensure proper stacking context */
@@ -211,7 +220,7 @@ h2 {
     background-image: url(/asset/image/index/rectangle-7@2x.png);
 }
 
-@media(max-width:1600px) {
+@media (max-width:1600px) {
     .carousel {
         width: 100%;
     }
@@ -232,6 +241,66 @@ h2 {
 
     footer.follow-icon {
         order: 3;
+    }
+
+    .video-background {
+        height: auto !important;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .video-background {
+        height: 30vh !important;
+    }
+}
+
+@media (min-width:769px) and (max-width:992px) {
+    .video-background {
+        height: 40vh !important;
+    }
+}
+
+@media (min-width:993px) and (max-width: 1200px) {
+    .video-background {
+        height: 70vh !important;
+    }
+}
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+    .video-background {
+        height: 78vh !important;
+    }
+}
+
+@media only screen and (max-width:768px) {
+
+    .intro-text,
+    .intro-content {
+        font-size: smaller !important;
+    }
+}
+
+@media (min-width:769px) and (max-width:992px) {
+
+    .intro-text,
+    .intro-content {
+        font-size: small !important;
+    }
+}
+
+@media (min-width:993px) and (max-width: 1200px) {
+
+    .intro-text,
+    .intro-content {
+        font-size: medium !important;
+    }
+}
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+
+    .intro-text,
+    .intro-content {
+        font-size: large !important;
     }
 }
 
@@ -635,7 +704,7 @@ h5 {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: auto;
+    height: 100vh;
 }
 
 #background-video {

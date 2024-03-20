@@ -43,7 +43,7 @@
     </ul>
   </nav>
   <div id="landing-screen">
-    <div class="header-container" style="height: 100vh; margin: -200px 0 0 0; z-index: -1;">
+    <div class="header-container" style="height: 100vh; margin: -182px 0 0 0; z-index: -1;">
       <div class="overlay-bg"><img src="/asset/image/index/rectangle-1.svg" /></div>
       <div class="row intro-container">
         <h1 class="col-12 intro-text">Where will you go next?</h1>
@@ -417,8 +417,8 @@
     </div>
   </section>
   <br>
-  <footer>
-    <section class="video-background">
+  <div id="ending-screen">
+    <div class="video-background">
       <!-- The video -->
       <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
         <source src="https://assets.codepen.io/6093409/river.mp4" type="video/mp4">
@@ -428,37 +428,41 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         <!-- <a href="#" class="btn btn-primary video-button">Top</a> -->
       </div>
-      <footer class="footer-container">
-        <div class="row footer-nav mt-3">
-          <div class="col-xs-12 col-md copyright">
-            <p>Copyright &copy; ojjomedia All Right Reserved</p>
-          </div>
-          <div class="col-xs-12 col-md footer-nav-child">
-            <nav>
-              <ul>
-                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Privacy</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Terms</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
-              </ul>
-            </nav>
-          </div>
-          <div class="col-xs-12 col-md follow-icon">
-            <a href="https://www.facebook.com" target="_blank" class="social-icon">
-              <i class="fa-brands fa-facebook"></i>
-            </a>
-            <a href="https://www.twitter.com" target="_blank" class="social-icon">
-              <i class="fa-brands fa-twitter"></i>
-            </a>
-            <a href="https://www.instagram.com" target="_blank" class="social-icon">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.youtube.com" target="_blank" class="social-icon">
-              <i class="fa-brands fa-youtube"></i>
-          </div>
-        </div>
-      </footer>
-      <script src="/main.js"></script>
+    </div>
+  </div>
+
+  <footer class="footer-container">
+    <div class="row footer-nav">
+      <div class="col-xs-12 col-md copyright">
+        <p>Copyright &copy; ojjomedia All Right Reserved</p>
+      </div>
+      <div class="col-xs-12 col-md footer-nav-child">
+        <nav>
+          <ul>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Privacy</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Terms</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-xs-12 col-md follow-icon">
+        <a href="https://www.facebook.com" target="_blank" class="social-icon">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://www.twitter.com" target="_blank" class="social-icon">
+          <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com" target="_blank" class="social-icon">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com" target="_blank" class="social-icon">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script src="/main.js"></script>
 </body>
 
 </html>
