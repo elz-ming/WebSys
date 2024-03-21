@@ -1,98 +1,180 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+
+require '../PHPMailer/src/Exception.php';
+require '../PHPMailer/src/PHPMailer.php';
+require '../PHPMailer/src/SMTP.php';
 // Function to sanitize input data
 function sanitize_input($data)
 {
-    return htmlspecialchars(stripslashes(trim($data)));
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
 }
 
-// Initialize variables and error messages
-$email = $fname = $lname = $pwd_hashed = $errorMsg = "";
-$success = false; // Default to false, set to true only on successful registration
+function sendVerificationEmail($email, $id, $vkey)
+{
 
-// Database configuration file path
-$dbConfigPath = '/var/www/private/db-config.ini';
+    // Create a new PHPMailer instance
+    $mail = new PHPMailer();
+
+    // Server settings
+    $mail->isSMTP();
+    $mail->SMTPDebug = SMTP::DEBUG_OFF; // Set to DEBUG_OFF for production
+    $mail->Host = 'smtp.gmail.com';
+    $mail->Port = 465;
+    $mail->SMTPSecure = 'ssl';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'traveltalks1005@gmail.com';
+    $mail->Password = 'fivg kbsr golp tjtb';
+
+    // Recipients
+    $mail->setFrom('traveltalks1005@gmail.com', 'TravelTalks Team');
+    $mail->addAddress($email); // Add the user's email
+
+    // Content
+    $mail->isHTML(true);
+    $mail->Subject = 'Email Verification from TravelTalks';
+
+    // Create the verification link
+    $verification_link = "https://traveltalk.site//verify.php?id=$id&key=$vkey";
+
+    // Set email body
+    $mail->Body = "Thank You for registering with us. Click <a href='$verification_link'>here</a> to verify your account.";
+    $mail->AltBody = "Thank You for registering with us. Copy and paste the following link in your browser to verify your account: $verification_link";
+
+    // Send the email and check for errors
+    if (!$mail->send()) {
+        return 'Mailer Error: ' . $mail->ErrorInfo;
+    } else {
+        return 'Message sent!';
+    }
+}
 
 // Helper function to write the member data to the database
-function saveMemberToDB($fname, $lname, $email, $pwd_hashed, &$errorMsg)
+function saveMemberToDB()
 {
-    global $dbConfigPath;
-    $config = parse_ini_file($dbConfigPath);
+    global $fname, $lname, $email, $pwd_hashed, $errorMsg, $success;
+    // Load database config
+    $config = parse_ini_file('/var/www/private/db-config.ini');
     if (!$config) {
         $errorMsg = "Failed to read database config file.";
-        return false;
+        $success = false;
+        return;
     }
 
+    // Establish database connection
     $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
     if ($conn->connect_error) {
         $errorMsg = "Connection failed: " . $conn->connect_error;
-        return false;
+        $success = false;
+        return;
     }
 
-    $stmt = $conn->prepare("INSERT INTO world_of_pets_members (fname, lname, email, password) VALUES (?, ?, ?, ?)");
+
+    // Check if email already exists
+    $checkEmailStmt = $conn->prepare("SELECT email FROM user WHERE email = ?");
+    $checkEmailStmt->bind_param("s", $email);
+    $checkEmailStmt->execute();
+    $checkEmailStmt->store_result();
+    if ($checkEmailStmt->num_rows > 0) {
+        $errorMsg = "Email already registered.";
+        $success = false;
+        return; // Early return if email exists
+    }
+    $checkEmailStmt->close();
+
+    // Prepare insert statement
+    $stmt = $conn->prepare("INSERT INTO user (fname, lname, email, password, verified) VALUES (?, ?, ?, ?, ?)");
     if (!$stmt) {
         $errorMsg = "Prepare failed: (" . $conn->errno . ") " . $conn->error;
+        $success = false;
         $conn->close();
-        return false;
+        return;
     }
 
-    $stmt->bind_param("ssss", $fname, $lname, $email, $pwd_hashed);
+    $verified = 0; // Assuming 0 means unverified
+    $stmt->bind_param("ssssi", $fname, $lname, $email, $pwd_hashed, $verified);
     if (!$stmt->execute()) {
         $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+        $success = false;
+    } else {
+        $success = true;
+        $id = $stmt->insert_id;
+        $vkey = bin2hex(random_bytes(16)); // create a random verification key
+
+        // Update the user record with the verification key
+        $update_stmt = $conn->prepare("UPDATE user SET vkey = ? WHERE id = ?");
+        $update_stmt->bind_param("si", $vkey, $id);
+        $update_stmt->execute();
+        $update_stmt->close();
+
+        // Send verification email
+        $emailSendStatus = sendVerificationEmail($email, $id, $vkey);
+
         $stmt->close();
         $conn->close();
-        return false;
     }
-
-    $stmt->close();
-    $conn->close();
-    return true;
 }
 
-// Process POST request
+// Initialize variables
+$email = $errorMsg = "";
+$success = true; // Assume success until a test fails
+
+// Validate and sanitize input
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Validate and sanitize input
     if (empty ($_POST["email"])) {
         $errorMsg .= "Email is required.<br>";
+        $success = false;
     } else {
         $email = sanitize_input($_POST["email"]);
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errorMsg .= "Invalid email format.<br>";
+            $success = false;
         }
     }
 
     if (empty ($_POST["fname"])) {
         $errorMsg .= "First name is required.<br>";
+        $success = false;
     } else {
         $fname = sanitize_input($_POST["fname"]);
     }
 
     if (empty ($_POST["lname"])) {
         $errorMsg .= "Last name is required.<br>";
+        $success = false;
     } else {
         $lname = sanitize_input($_POST["lname"]);
     }
 
     if (empty ($_POST["pwd"]) || empty ($_POST["pwd_confirm"])) {
         $errorMsg .= "Password and Confirm password are required.<br>";
+        $success = false;
     } else {
         $password = $_POST["pwd"];
         $confirm_password = $_POST["pwd_confirm"];
         if ($password !== $confirm_password) {
             $errorMsg .= "Passwords do not match.<br>";
+            $success = false;
         } else {
             // Hash the password
             $pwd_hashed = password_hash($password, PASSWORD_DEFAULT);
         }
     }
 
-    // If no errors, save to DB
-    if (empty ($errorMsg)) {
-        $success = saveMemberToDB($fname, $lname, $email, $pwd_hashed, $errorMsg);
+    // If validation successful, save to DB
+    if ($success) {
+        saveMemberToDB();
     }
 }
-
-?>
-
 ?>
 
 <!DOCTYPE html>
@@ -108,9 +190,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             padding: 0;
             background-color: #f4f4f4;
             text-align: center;
-            background-image: url("images/RegistrationS.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
         }
 
         .container {
@@ -138,6 +217,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
+
+    <?php
+    ?>
     <div class="container">
         <?php
 
