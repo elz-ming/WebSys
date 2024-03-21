@@ -252,7 +252,7 @@
                     </div>
                     <div class="col-lg-12 text-center">
                     <fieldset>
-                        <button type="submit" id="form-submit" class="filled-button">Submit</button>
+                        <button type="submit" id="form-submit" class="filled-button">Load More</button>
                     </fieldset>
                     </div>
                 </div>
