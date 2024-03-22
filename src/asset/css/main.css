@@ -6,6 +6,9 @@
   padding: 0;
 }
 
+body {
+  overflow-x: hidden;
+}
 /* ++++++++++++++++++++ CSS for <header> and everything inside ++++++++++++++++++++ */
 .header-bar {
   display: flex;
