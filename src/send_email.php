@@ -1,11 +1,6 @@
-<?php
+<!-- Debugging Purposes (Darryl), can be deleted at the end of development -->
 
-/**
- * This example shows settings to use when sending via Google's Gmail servers.
- * This uses traditional id & password authentication - look at the gmail_xoauth.phps
- * example to see how to use XOAUTH2.
- * The IMAP section shows how to save this message to the 'Sent Mail' folder using IMAP commands.
- */
+<?php
 
 //Import PHPMailer classes into the global namespace
 use PHPMailer\PHPMailer\PHPMailer;
@@ -35,7 +30,6 @@ $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
 //Set the SMTP port number:
 // - 465 for SMTP with implicit TLS, a.k.a. RFC8314 SMTPS or
-// - 587 for SMTP+STARTTLS
 $mail->Port = 465;
 
 //Set the encryption mechanism to use:
@@ -56,7 +50,7 @@ $mail->Password = 'fivg kbsr golp tjtb';
 //Note that with gmail you can only use your account address (same as `Username`)
 //or predefined aliases that you have configured within your account.
 //Do not use user-submitted addresses in here
-$mail->setFrom('traveltalks1005@gmail.com', 'First Last');
+$mail->setFrom('traveltalks1005@gmail.com', 'TravelTalks Team');
 
 
 //Set who the message is to be sent to
@@ -67,10 +61,10 @@ $mail->Subject = 'PHPMailer GMail SMTP test';
 
 
 // Content
-$mail->isHTML(true);                                  // Set email format to HTML
-$mail->Subject = 'Here is the subject';
-$mail->Body = 'This is the HTML message body <b>in bold!</b>';
-$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+$mail->isHTML(true);                                 
+$mail->Subject = 'Email Verification from TravelTalks';
+$mail->Body = 'Thank You for registrating with us. Click here to verify your account: <b>Token</b>';
+$mail->AltBody = 'Thank You for registrating with us. Click here to verify your account: <b>Token</b>';
 
 
 //send the message, check for errors
