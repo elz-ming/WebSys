@@ -1,3 +1,8 @@
+h2 {
+    font-size: 150%;
+    border-bottom: 1px solid black;
+}
+
 .blog-container{
     width: 100%;
     padding-right: 15px;

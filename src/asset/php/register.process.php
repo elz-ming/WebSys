@@ -84,7 +84,7 @@ function saveMemberToDB()
     $checkEmailStmt = $conn->prepare("SELECT email FROM user WHERE email = ?");
     $checkEmailStmt->bind_param("s", $email);
     $checkEmailStmt->execute();
-    $checkEmailStmt->store_result();
+        
     if ($checkEmailStmt->num_rows > 0) {
         $errorMsg = "Email already registered.";
         $success = false;
