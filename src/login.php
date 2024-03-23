@@ -20,13 +20,13 @@
                 </h1>
 
                 <div class="mb-3">
-                    <label for="fname" class="form-label"></label>
-                    <input required maxlength="45" type="text" id="fname" name="fname" class="form-control"
+                    <label for="first_name" class="form-label"></label>
+                    <input required maxlength="45" type="text" id="first_name" name="first_name" class="form-control"
                         placeholder="Enter first name">
                 </div>
                 <div class="mb-3">
-                    <label for="lname" class="form-label"></label>
-                    <input required maxlength="45" type="text" id="lname" name="lname" class="form-control"
+                    <label for="last_name" class="form-label"></label>
+                    <input required maxlength="45" type="text" id="last_name" name="last_name" class="form-control"
                         placeholder="Enter last name">
                 </div>
                 <div class="mb-3">

@@ -7,9 +7,10 @@ error_reporting(E_ALL);
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
-require '../PHPMailer/src/Exception.php';
-require '../PHPMailer/src/PHPMailer.php';
-require '../PHPMailer/src/SMTP.php';
+require '../../../PHPMailer/src/Exception.php';
+require '../../../PHPMailer/src/PHPMailer.php';
+require '../../../PHPMailer/src/SMTP.php';
+
 // Function to sanitize input data
 function sanitize_input($data)
 {
@@ -61,7 +62,7 @@ function sendVerificationEmail($email, $id, $vkey)
 // Helper function to write the member data to the database
 function saveMemberToDB()
 {
-    global $fname, $lname, $email, $pwd_hashed, $errorMsg, $success;
+    global $first_name, $last_name, $email, $pwd_hashed, $errorMsg, $success;
     // Load database config
     $config = parse_ini_file('/var/www/private/db-config.ini');
     if (!$config) {
@@ -92,7 +93,7 @@ function saveMemberToDB()
     $checkEmailStmt->close();
 
     // Prepare insert statement
-    $stmt = $conn->prepare("INSERT INTO user (fname, lname, email, password, verified) VALUES (?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO user (first_name, last_name, email, password, verified) VALUES (?, ?, ?, ?, ?)");
     if (!$stmt) {
         $errorMsg = "Prepare failed: (" . $conn->errno . ") " . $conn->error;
         $success = false;
@@ -101,7 +102,7 @@ function saveMemberToDB()
     }
 
     $verified = 0; // Assuming 0 means unverified
-    $stmt->bind_param("ssssi", $fname, $lname, $email, $pwd_hashed, $verified);
+    $stmt->bind_param("ssssi", $first_name, $last_name, $email, $pwd_hashed, $verified);
     if (!$stmt->execute()) {
         $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
         $success = false;
@@ -141,18 +142,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    if (empty ($_POST["fname"])) {
+    if (empty ($_POST["first_name"])) {
         $errorMsg .= "First name is required.<br>";
         $success = false;
     } else {
-        $fname = sanitize_input($_POST["fname"]);
+        $first_name = sanitize_input($_POST["first_name"]);
     }
 
-    if (empty ($_POST["lname"])) {
+    if (empty ($_POST["last_name"])) {
         $errorMsg .= "Last name is required.<br>";
         $success = false;
     } else {
-        $lname = sanitize_input($_POST["lname"]);
+        $last_name = sanitize_input($_POST["last_name"]);
     }
 
     if (empty ($_POST["pwd"]) || empty ($_POST["pwd_confirm"])) {
@@ -227,7 +228,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Registration successful
             // You can perform database operations here if needed
             echo "<h2 class='success'>Registration Successful!</h2>";
-            echo "<p>Welcome, $fname $lname! Thank you for registering with us.</p>";
+            echo "<p>Welcome, $first_name $last_name! Thank you for registering with us.</p>";
         } else {
             // Registration failed
             echo "<h2 class='error'>Registration Failed</h2>";
