@@ -32,9 +32,9 @@
 
 <body>
   <?php
-  include "component/header.component.php";
-  include "component/nav.component.php";
-  include "component/landing-screen.component.php";
+    include "component/header.component.php";
+    include "component/nav.component.php";
+    include "component/landing-screen.component.php";
   ?>
 
   <main class="containers">
@@ -42,8 +42,51 @@
       <h1>Choose a Category</h1>
       <div class="carousel">
         <div class="subcarousel">
-          <div class="slider-wrapper">
-            <br>
+
+              <?php
+                $config = parse_ini_file('..\db-config.ini');
+
+                if (!$config) {
+                  echo "Failed to read database config file.";
+                } else {
+                    $conn = new mysqli(
+                      $config['servername'],
+                      $config['username'],
+                      $config['password'],
+                      $config['dbname']
+                    );
+
+                    if ($conn->connect_error) {
+                      echo "Connection failed: " . $conn->connect_error;
+                  } else {
+                      // Prepare the SELECT statement
+                      $stmt = $conn->prepare("SELECT name, image_path FROM category");
+              
+                      // Execute the query
+                      $stmt->execute();
+              
+                      // Bind the results
+                      $stmt->bind_result($category_name, $image_path);
+              
+                      // Fetch the results one by one
+                      while ($stmt->fetch()) {
+                          // Here, print out the HTML structure for each category
+                          echo "<div class='slide'>";
+                          echo "<div class='slide-img' style='background-image: url(\"" . htmlspecialchars($image_path) . "\");'>";
+                          echo "<a href='#'>" . htmlspecialchars($category_name) . "</a>";
+                          echo "</div>"; // Closing slide-img div
+                          echo "</div>"; // Closing slide div
+                      }
+              
+                      // Close the statement
+                      $stmt->close();
+                  }
+                }
+              ?>
+            </div>
+          </div>
+
+          <!-- <div class="slider-wrapper">
             <div class="my-slider">
               <div class="slide">
                 <div class="slide-img img-1">
@@ -67,97 +110,15 @@
               </div>
               <div class="slide">
                 <div class="slide-img img-5">
-                  <a href="#">Osean Travel</a>
+                  <a href="#">Ocean Travel</a>
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
+
         </div>
       </div>
     </section>
-
-    <!-- <section class="row card-container">
-        <h1>Travel Guides</h1>
-        <div class="col-4 card">
-          <img src="/asset/image/index/rectangle-17@2x.png">
-          <div class="card-content">
-            <h3>Best 10 Things To Do in Egypt</h3>
-            <p>Lorem ipsum dolor sit amet, con turadip
-              iscingelit. In sed et donec purus viverra. Sit
-              justo velit, eu sed</p>
-            <a href="#">Solo Travel</a>
-            <p>By Edmund Lin</p>
-          </div>
-        </div>
-        <div class="col-4 card">
-          <img src="/asset/image/index/rectangle-17@2x.png">
-          <div class="card-content">
-            <h3>Best 10 Things To Do in Egypt</h3>
-            <p>Lorem ipsum dolor sit amet, con turadip
-              iscingelit. In sed et donec purus viverra. Sit
-              justo velit, eu sed</p>
-            <a href="#">Solo Travel</a>
-            <p>By Edmund Lin</p>
-          </div>
-        </div>
-        <div class="col-4 card">
-          <img src="/asset/image/index/rectangle-17@2x.png">
-          <div class="card-content">
-            <h3>Best 10 Things To Do in Egypt</h3>
-            <p>Lorem ipsum dolor sit amet, con turadip
-              iscingelit. In sed et donec purus viverra. Sit
-              justo velit, eu sed</p>
-            <a href="#">Solo Travel</a>
-            <p>By Edmund Lin</p>
-          </div>
-        </div>
-        <div class="col-4 card">
-          <img src="/asset/image/index/rectangle-17@2x.png">
-          <div class="card-content">
-            <h3>Best 10 Things To Do in Egypt</h3>
-            <p>Lorem ipsum dolor sit amet, con turadip
-              iscingelit. In sed et donec purus viverra. Sit
-              justo velit, eu sed</p>
-            <a href="#">Solo Travel</a>
-            <p>By Edmund Lin</p>
-          </div>
-        </div>
-        <div class="col-4 card">
-          <img src="/asset/image/index/rectangle-17@2x.png">
-          <div class="card-content">
-            <h3>Best 10 Things To Do in Egypt</h3>
-            <p>Lorem ipsum dolor sit amet, con turadip
-              iscingelit. In sed et donec purus viverra. Sit
-              justo velit, eu sed</p>
-            <a href="#">Solo Travel</a>
-            <p>By Edmund Lin</p>
-          </div>
-        </div>
-        <div class="col-4 card">
-          <img src="/asset/image/index/rectangle-17@2x.png">
-          <div class="card-content">
-            <h3>Best 10 Things To Do in Egypt</h3>
-            <p>Lorem ipsum dolor sit amet, con turadip
-              iscingelit. In sed et donec purus viverra. Sit
-              justo velit, eu sed</p>
-            <a href="#">Solo Travel</a>
-            <p>By Edmund Lin</p>
-          </div>
-        </div>
-      </section> -->
-
-    <!-- <section class="num-nav mt-3">
-        <nav>
-          <ul>
-            <span class="arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
-            <li class="nav-item"><a class="nav-link" href="#">1</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">2</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">3</a></li>
-            <i class="fa-solid fa-chevron-right"></i>
-          </ul>
-        </nav>
-      </section> -->
-
     <section class="pop-container">
       <h1>Popular Post</h1>
       <div class="row">
@@ -222,21 +183,6 @@
               </div>
             </div>
           </div>
-          <!-- <div class="pop-wrapper">
-            <img src="/asset/image/index/rectangle-64@2x.png" width="300" height="245">
-            <div class="pop-text">
-              <h3>13 Things I'd Tell Any New Travler</h3>
-              <div class="post-author">
-                <a href="#" class="post-link">Post</a>
-                <span class="author-name">By Adam Smith</span>
-              </div>
-              <div class="post-meta">
-                <span class="post-date">10 Nov, 2020</span>
-                <span class="symbol">&#8212</span>
-                <span class="post-comments">50 comments</span>
-              </div>
-            </div>
-          </div> -->
         </div>
         <div class="col-md-12  col-xl-3">
           <div class="country-post">
@@ -265,29 +211,7 @@
                 <h3>countryname</h3>
               </div>
             </div>
-            <!-- <div class="country-wrapper">
-              <img src="/asset/image/index/rectangle-63@2x.png" width="114" height="79">
-              <div class="country-text">
-                <h3>countryname</h3>
-              </div>
-            </div> -->
           </div>
-          <!-- <div class="follow-post">
-              <h4>Follow Us</h4>
-              <div class="follow-icon">
-                <a href="https://www.facebook.com" target="_blank" class="social-icon">
-                  <i class="fa-brands fa-facebook"></i>
-                </a>
-                <a href="https://www.twitter.com" target="_blank" class="social-icon">
-                  <i class="fa-brands fa-twitter"></i>
-                </a>
-                <a href="https://www.instagram.com" target="_blank" class="social-icon">
-                  <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="https://www.youtube.com" target="_blank" class="social-icon">
-                  <i class="fa-brands fa-youtube"></i>
-              </div>
-            </div> -->
           <div class="subscribe-container">
             <h4>Subscribe Today</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. In sed et donec purus viverra. Sit justo</p>
@@ -301,21 +225,6 @@
               <button type="submit" class="subscribe-btn">SUBSCRIBE</button>
             </form>
           </div>
-          <!-- <br>
-          <div class="tags-container">
-            <h4>Tags</h4>
-            <div class="tags">
-              <span class="tag">Travel Website</span>
-              <span class="tag">Travel Tips</span>
-              <span class="tag">Travel Trick</span>
-              <span class="tag">Travel Website</span>
-              <span class="tag">Travel Tips</span>
-              <span class="tag">Travel Trick</span>
-              <span class="tag">Travel Website</span>
-              <span class="tag">Travel Tips</span>
-              <span class="tag">Travel Trick</span>
-            </div>
-          </div> -->
         </div>
     </section>
 
@@ -330,51 +239,11 @@
         </ul>
       </nav>
     </section>
-
-    <!-- <section class="row card-container">
-        <h1>Pick A Country & Start Exploring</h1>
-        <div class="col-4 card">
-          <img src="/asset/image/index/rectangle-17@2x.png">
-          <div class="card-content">
-            <h5>Egypt</h5>
-          </div>
-        </div>
-        <div class="col-4 card">
-          <img src="/asset/image/index/rectangle-17@2x.png">
-          <div class="card-content">
-            <h5>Egypt</h5>
-          </div>
-        </div>
-        <div class="col-4 card">
-          <img src="/asset/image/index/rectangle-17@2x.png">
-          <div class="card-content">
-            <h5>Egypt</h5>
-          </div>
-        </div>
-        <div class="col-4 card">
-          <img src="/asset/image/index/rectangle-17@2x.png">
-          <div class="card-content">
-            <h5>Egypt</h5>
-          </div>
-        </div>
-        <div class="col-4 card">
-          <img src="/asset/image/index/rectangle-17@2x.png">
-          <div class="card-content">
-            <h5>Egypt</h5>
-          </div>
-        </div>
-        <div class="col-4 card">
-          <img src="/asset/image/index/rectangle-17@2x.png">
-          <div class="card-content">
-            <h5>Egypt</h5>
-          </div>
-        </div>
-      </section> -->
   </main>
 
   <?php
-  include "component/ending-screen.component.php";
-  include "component/footer.component.php";
+    include "component/ending-screen.component.php";
+    include "component/footer.component.php";
   ?>
 </body>
 
