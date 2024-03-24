@@ -1,10 +1,8 @@
 <div id="landing-screen">
   <div class="header-container">
-    
     <div class="overlay-bg">
       <img src="/asset/image/index/rectangle-1.svg" />
     </div>
-
     <div class="row intro-container">
       <h1 class="col-12 intro-text">Where will you go next?</h1>
       <div class="intro-content">
@@ -17,6 +15,5 @@
       </div>
       <div class="lets-go">Let's Go...</div>
     </div>
-    
   </div>
 </div>

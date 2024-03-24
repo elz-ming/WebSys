@@ -78,9 +78,9 @@ function getBlogPosts()
 
 <body>
   <?php
-  include "component/header.component.php";
-  include "component/nav.component.php";
-  include "component/landing-screen.component.php";
+    include "component/header.component.php";
+    include "component/nav.component.php";
+    include "component/landing-screen.component.php";
   ?>
 
   <main class="containers">
@@ -423,8 +423,8 @@ function getBlogPosts()
   </main>
 
   <?php
-  include "component/ending-screen.component.php";
-  include "component/footer.component.php";
+    include "component/ending-screen.component.php";
+    include "component/footer.component.php";
   ?>
 </body>
 
