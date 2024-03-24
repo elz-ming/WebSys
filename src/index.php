@@ -1,3 +1,49 @@
+<?php 
+    
+function getBlogPosts() 
+{ 
+    global $errorMsg, $success; 
+    $blogs = []; 
+
+    // Create database connection. 
+    $config = parse_ini_file('/var/www/private/db-config.ini'); 
+    if (!$config) { 
+        $errorMsg = "Failed to read database config file."; 
+        $success = false; 
+    } else { 
+        $conn = new mysqli( 
+            $config['servername'], 
+            $config['username'], 
+            $config['password'], 
+            $config['dbname'] 
+        ); 
+
+        // Check connection 
+        if ($conn->connect_error) { 
+            $errorMsg = "Connection failed: " . $conn->connect_error; 
+            $success = false; 
+        } else { 
+            $stmt = $conn->prepare("SELECT title, content, like_count, comment_count FROM blog ORDER BY like_count DESC, comment_count DESC LIMIT 5"); 
+            $stmt->execute(); 
+            $result = $stmt->get_result(); 
+
+            if ($result->num_rows > 0) { 
+                while ($row = $result->fetch_assoc()) { 
+                    $blogs[] = $row;
+                } 
+            } else { 
+                $errorMsg = "No blog posts found."; 
+                $success = false; 
+            } 
+            $stmt->close(); 
+        } 
+        $conn->close(); 
+    } 
+
+    return $blogs; 
+} 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -162,6 +208,9 @@
       <h1>Popular Post</h1>
       <div class="row">
         <div class="col-md-12 col-xl-8 pop-post">
+        <?php 
+          $blogPosts = getBlogPosts();
+          foreach ($blogPosts as $blog) : ?>
           <div class="pop-wrapper">
             <img src="/asset/image/index/rectangle-60@2x.png" width="300" height="195">
             <div class="pop-text">
@@ -177,7 +226,8 @@
               </div>
             </div>
           </div>
-          <div class="pop-wrapper">
+          <?php endforeach; ?>
+          <!-- <div class="pop-wrapper">
             <img src="/asset/image/index/rectangle-61@2x.png" width="300" height="195">
             <div class="pop-text">
               <h3>13 Things I'd Tell Any New Travler</h3>
@@ -221,7 +271,7 @@
                 <span class="post-comments">50 comments</span>
               </div>
             </div>
-          </div>
+          </div> -->
           <!-- <div class="pop-wrapper">
             <img src="/asset/image/index/rectangle-64@2x.png" width="300" height="245">
             <div class="pop-text">
