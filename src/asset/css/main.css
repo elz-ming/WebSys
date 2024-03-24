@@ -9,6 +9,7 @@
 body {
   overflow-x: hidden;
 }
+
 /* ++++++++++++++++++++ CSS for <header> and everything inside ++++++++++++++++++++ */
 .header-bar {
   display: flex;
@@ -150,7 +151,7 @@ body {
 #background-video {
   width: 100%;
   height: auto;
-} 
+}
 
 .video-overlay {
   position: absolute;
@@ -207,73 +208,89 @@ footer {
   /* Horizontal padding for desktop */
 }
 
+.footer-nav a {
+  text-decoration: none;
+  /* Removes underline */
+  color: #FFFFFF;
+  /* Change the color to match your design */
+  transition: color 0.3s ease;
+  /* Optional: for smooth color transition on hover */
+}
+
+.footer-nav a:hover {
+  color: #CCCCCC;
+  /* Change the hover color to match your design */
+}
+
+
 .copyright,
 footer.follow-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ++++++++++++++++++++ CSS for responsive design ++++++++++++++++++++ */
 /* MOBILE PHONES */
 @media screen and (max-width: 480px) {
   .header-nav {
-      font-size: smaller;
+    font-size: smaller;
   }
 
   .header-nav ul {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .header-nav li {
-      padding: 10px 0;
+    padding: 10px 0;
   }
 
   .header-nav ul li:after {
-      content: none;
+    content: none;
   }
 
   .footer-nav {
     font-size: smaller;
   }
+
   .footer-nav ul {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .footer-nav li {
-      padding: 10px 0;
-      /* Vertical padding for stacked items */
+    padding: 10px 0;
+    /* Vertical padding for stacked items */
   }
 }
 
 @media only screen and (max-width:576px) {
   .copyright {
-      order: 1;
+    order: 1;
   }
 
   .footer-nav-child {
-      order: 2;
+    order: 2;
   }
 
   footer.follow-icon {
-      order: 3;
+    order: 3;
   }
 
   .video-background {
-      height: auto !important;
+    height: auto !important;
   }
 }
 
 /* TABLETS */
 @media screen and (max-width: 768px) {
   .header-nav {
-      font-size: small;
+    font-size: small;
   }
 
   .header-nav li {
-      padding: 0 30px;
+    padding: 0 30px;
   }
 
   .video-background {
@@ -286,59 +303,76 @@ footer.follow-icon {
 
   .intro-text,
   .intro-content {
-      font-size: smaller !important;
-  } 
+    font-size: smaller !important;
+  }
 
   .footer-nav {
     font-size: small;
   }
 
   .footer-nav li {
-      padding: 0 20px;
+    padding: 0 20px;
   }
 }
 
 @media (min-width:769px) and (max-width:992px) {
   .video-background {
-      height: 40vh !important;
+    height: 40vh !important;
   }
 
   .header-container {
-      margin-top: -300px
+    margin-top: -300px
   }
 
   .intro-text,
   .intro-content {
-      font-size: small !important;
+    font-size: small !important;
   }
 }
 
 @media (min-width:993px) and (max-width: 1200px) {
   .video-background {
-      height: 70vh !important;
+    height: 70vh !important;
   }
 
   .header-container {
-      margin-top: -300px
+    margin-top: -300px
   }
 
   .intro-text,
   .intro-content {
-      font-size: medium !important;
+    font-size: medium !important;
   }
 }
 
 @media (min-width: 1201px) and (max-width: 1400px) {
   .video-background {
-      height: 78vh !important;
+    height: 78vh !important;
   }
 
   .header-container {
-      margin-top: -300px
+    margin-top: -300px
   }
 
   .intro-text,
   .intro-content {
-      font-size: large !important;
+    font-size: large !important;
   }
+}
+
+.social-icon {
+  text-decoration: none;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.social-icon i {
+  background-color: #ffc107;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
 }

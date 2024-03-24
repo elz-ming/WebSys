@@ -1,47 +1,73 @@
-<?php 
-    
-function getBlogPosts() 
-{ 
-    global $errorMsg, $success; 
-    $blogs = []; 
+<?php
 
-    // Create database connection. 
-    $config = parse_ini_file('/var/www/private/db-config.ini'); 
-    if (!$config) { 
-        $errorMsg = "Failed to read database config file."; 
-        $success = false; 
-    } else { 
-        $conn = new mysqli( 
-            $config['servername'], 
-            $config['username'], 
-            $config['password'], 
-            $config['dbname'] 
-        ); 
+function getBlogPostsAndCategories()
+{
+  global $errorMsg, $success;
+  $blogs = [];
+  $categories = [];
 
-        // Check connection 
-        if ($conn->connect_error) { 
-            $errorMsg = "Connection failed: " . $conn->connect_error; 
-            $success = false; 
-        } else { 
-            $stmt = $conn->prepare("SELECT title, content, like_count, comment_count FROM blog ORDER BY like_count DESC, comment_count DESC LIMIT 5"); 
-            $stmt->execute(); 
-            $result = $stmt->get_result(); 
+  // Create database connection.
+  $config = parse_ini_file('../db-config.ini');
+  if (!$config) {
+    $errorMsg = "Failed to read database config file.";
+    $success = false;
+    return ['blogs' => $blogs, 'categories' => $categories]; // Return even if config file cannot be read
+  }
 
-            if ($result->num_rows > 0) { 
-                while ($row = $result->fetch_assoc()) { 
-                    $blogs[] = $row;
-                } 
-            } else { 
-                $errorMsg = "No blog posts found."; 
-                $success = false; 
-            } 
-            $stmt->close(); 
-        } 
-        $conn->close(); 
-    } 
+  $conn = new mysqli(
+    $config['servername'],
+    $config['username'],
+    $config['password'],
+    $config['dbname']
+  );
 
-    return $blogs; 
-} 
+  // Check connection
+  if ($conn->connect_error) {
+    $errorMsg = "Connection failed: " . $conn->connect_error;
+    $success = false;
+    return ['blogs' => $blogs, 'categories' => $categories]; // Return if connection failed
+  } else {
+    // Retrieve blog posts with user information and formatted date
+    $stmt = $conn->prepare("
+          SELECT b.*, u.first_name, u.last_name, DATE_FORMAT(b.created_at, '%e %M %Y') AS formatted_date
+          FROM blog b
+          LEFT JOIN user u ON b.user_id = u.id
+          ORDER BY b.like_count DESC, b.comment_count DESC
+          LIMIT 5
+      ");
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+      while ($row = $result->fetch_assoc()) {
+        $blogs[] = $row;
+      }
+    } else {
+      $errorMsg = "No blog posts found.";
+      $success = false;
+    }
+    $stmt->close();
+
+    // Retrieve categories
+    $stmt = $conn->prepare("SELECT name, image_path FROM category");
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+      while ($row = $result->fetch_assoc()) {
+        $categories[] = $row;
+      }
+    } else {
+      $errorMsg = "No categories found.";
+      $success = false;
+    }
+    $stmt->close();
+  }
+  $conn->close();
+
+  return ['blogs' => $blogs, 'categories' => $categories]; // Return the final results
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -78,13 +104,13 @@ function getBlogPosts()
 
 <body>
   <?php
-    include "component/header.component.php";
-    include "component/nav.component.php";
-    include "component/landing-screen.component.php";
+  include "component/header.component.php";
+  include "component/nav.component.php";
+  include "component/landing-screen.component.php";
   ?>
 
   <main class="containers">
-    <section id="slider">
+    <!-- <section id="slider">
       <h1>Choose a Category</h1>
       <div class="carousel">
         <div class="subcarousel">
@@ -116,6 +142,36 @@ function getBlogPosts()
                   <a href="#">Osean Travel</a>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section id="slider">
+      <h1>Choose a Category</h1>
+      <div class="carousel">
+        <div class="subcarousel">
+          <div class="slider-wrapper">
+            <br>
+            <div class="my-slider">
+              <?php
+              $data = getBlogPostsAndCategories(); // Assuming this function returns an array with 'blogs' and 'categories'
+              if (!empty ($data['categories'])) {
+                foreach ($data['categories'] as $category) {
+                  $name = htmlspecialchars($category['name']);
+                  $imagePath = htmlspecialchars($category['image_path']);
+                  // Use echo to output the HTML structure
+                  echo "<div class='slide'>";
+                  echo "<div class='slide-img' style='background-image: url(\"$imagePath\");'>";
+                  echo "<a href='#'>$name</a>"; // Replace '#' with the actual link to the category
+                  echo "</div>";
+                  echo "</div>";
+                }
+              } else {
+                echo "<p>No categories found.</p>";
+              }
+              ?>
             </div>
           </div>
         </div>
@@ -203,31 +259,53 @@ function getBlogPosts()
           </ul>
         </nav>
       </section> -->
-
     <section class="pop-container">
       <h1>Popular Post</h1>
       <div class="row">
         <div class="col-md-12 col-xl-8 pop-post">
-        <?php 
-          $blogPosts = getBlogPosts();
-          foreach ($blogPosts as $blog) : ?>
-          <div class="pop-wrapper">
-            <img src="/asset/image/index/rectangle-60@2x.png" width="300" height="195">
-            <div class="pop-text">
-              <h3>13 Things I'd Tell Any New Travler</h3>
-              <div class="post-author">
-                <a href="#" class="post-link">Post</a>
-                <span class="author-name">By Adam Smith</span>
-              </div>
-              <div class="post-meta">
-                <span class="post-date">10 Nov, 2020</span>
-                <span class="symbol">&#8212</span>
-                <span class="post-comments">50 comments</span>
-              </div>
-            </div>
-          </div>
-          <?php endforeach; ?>
-          <!-- <div class="pop-wrapper">
+          <?php
+          $data = getBlogPostsAndCategories();
+          if (!empty ($data['blogs'])) {
+            foreach ($data['blogs'] as $blog) {
+              $imagePath = isset ($blog['image_path']) ? htmlspecialchars($blog['image_path']) : 'default-image-path.jpg';
+              $title = isset ($blog['title']) ? htmlspecialchars($blog['title']) : 'No Title';
+
+              $firstName = isset ($blog['first_name']) ? htmlspecialchars($blog['first_name']) : '';
+              $lastName = isset ($blog['last_name']) ? htmlspecialchars($blog['last_name']) : '';
+              $authorFullName = trim($firstName . ' ' . $lastName);
+              $authorFullName = !empty ($authorFullName) ? $authorFullName : 'Unknown Author';
+
+              $formattedDate = $blog['formatted_date'] ?? 'No Date';
+              $commentCount = (int) ($blog['comment_count'] ?? 0);
+              $likesCount = (int) ($blog['like_count'] ?? 0);
+
+              echo "<div class='pop-wrapper'>";
+              echo "<img src='{$imagePath}' alt='{$title}' width='300' height='175'>";
+              echo "<div class='pop-text'>";
+              echo "<h3>{$title}</h3>";
+              echo "<div class='post-author'>";
+              echo "<a href='#' class='post-link'>Post</a>";
+              echo "<span class='author-name'>By {$authorFullName}</span>";
+              echo "</div>";
+              echo "<div class='post-meta'>";
+              // Inside your HTML where you're outputting the date:
+              echo "<span class='post-date'>{$blog['formatted_date']}</span>";
+              echo "<span class='symbol'>&#8212;</span>";
+              echo "<span class='post-comments'>{$commentCount} comments</span> | ";
+              echo "<span class='post-likes'>{$likesCount} likes</span>";
+              echo "</div>";
+              echo "</div>";
+              echo "</div>";
+            }
+          } else {
+            echo "<p>No popular posts to display.</p>";
+          }
+          ?>
+        </div>
+
+        <!-- </div> -->
+
+        <!-- <div class="pop-wrapper">
             <img src="/asset/image/index/rectangle-61@2x.png" width="300" height="195">
             <div class="pop-text">
               <h3>13 Things I'd Tell Any New Travler</h3>
@@ -272,7 +350,7 @@ function getBlogPosts()
               </div>
             </div>
           </div> -->
-          <!-- <div class="pop-wrapper">
+        <!-- <div class="pop-wrapper">
             <img src="/asset/image/index/rectangle-64@2x.png" width="300" height="245">
             <div class="pop-text">
               <h3>13 Things I'd Tell Any New Travler</h3>
@@ -287,7 +365,7 @@ function getBlogPosts()
               </div>
             </div>
           </div> -->
-        </div>
+        <!-- </div> -->
         <div class="col-md-12  col-xl-3">
           <div class="country-post">
             <h4>Pick a Country</h4>
@@ -423,8 +501,8 @@ function getBlogPosts()
   </main>
 
   <?php
-    include "component/ending-screen.component.php";
-    include "component/footer.component.php";
+  include "component/ending-screen.component.php";
+  include "component/footer.component.php";
   ?>
 </body>
 
