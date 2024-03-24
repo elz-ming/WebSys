@@ -12,22 +12,61 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form>
-                <h1>Create Account</h1>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <input type="password" placeholder="Confirm Password">
-                <button>Sign Up</button>
+            <form action="/asset/php/register.process.php" method="post">
+                <h1>
+                    <span>C</span><span>r</span><span>e</span><span>a</span><span>t</span><span>e</span>
+                    <span> </span>
+                    <span>A</span><span>c</span><span>c</span><span>o</span><span>u</span><span>n</span><span>t</span>
+                </h1>
+
+                <div class="mb-3">
+                    <label for="first_name" class="form-label"></label>
+                    <input required maxlength="45" type="text" id="first_name" name="first_name" class="form-control"
+                        placeholder="Enter first name">
+                </div>
+                <div class="mb-3">
+                    <label for="last_name" class="form-label"></label>
+                    <input required maxlength="45" type="text" id="last_name" name="last_name" class="form-control"
+                        placeholder="Enter last name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label"></label>
+                    <input required type="email" id="email" name="email" class="form-control" placeholder="Enter email">
+                </div>
+                <div class="mb-3">
+                    <label for="pwd" class="form-label"></label>
+                    <input required maxlength="30" minlength="8" type="password" id="pwd" name="pwd" class="form-control"
+                        placeholder="Enter password">
+                </div>
+                <div class="mb-3">
+                    <label for="pwd_confirm" class="form-label"></label>
+                    <input required maxlength="30" minlength="8" type="password" id="pwd_confirm" name="pwd_confirm"
+                        class="form-control" placeholder="Confirm password">
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
             </form>
         </div>
         <div class="form-container sign-in">
-            <form>
-                <h1>Welcome Back</h1>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <a href="#">Forget Your Password?</a>
-                <button>Sign In</button>
+            <form action="process_login.php" method="post" class="login-form">
+                <h1>
+                    <span>W</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span>
+                    <span> </span>
+                    <span>B</span><span>a</span><span>c</span><span>k</span>
+                </h1>
+                <div class="mb-3">
+                    <label for="email" class="form-label"></label>
+                    <input required type="email" id="email" name="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="mb-3">
+                    <label for="pwd" class="form-label"></label>
+                    <input required maxlength="30" minlength="8" type="password" id="pwd" name="pwd" class="form-control"
+                        placeholder="Password">
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
             </form>
         </div>
         <div class="toggle-container">
@@ -46,7 +85,7 @@
         </div>
     </div>
 
-    <script src="/src/js/LoginScript.js"></script>
+    <script src="asset/js/LoginScript.js"></script>
 </body>
 
 </html>

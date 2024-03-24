@@ -1,153 +1,7 @@
-.row {
-    margin: 0;
-    padding: 0;
-}
-
-.header-container {
-    box-sizing: border-box;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-    color: white;
-    position: relative;
-    background-image: url(/asset/image/index/womantravelerwithbackpackwalkingyasakapagodasannenzakastreetkyotojapan.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    z-index: 0;
-}
-
-div.header-container {
-    height: 150vh;
-}
-
-.header {
-    position: relative;
-    /* Ensure proper stacking context */
-    z-index: 2;
-}
-
-.header-bar {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 0px;
-    margin: 0px 30px;
-    border-bottom: 1px solid white;
-}
-
-.search-bar {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    border: 1px solid black;
-    border-radius: 30px;
-    background-color: white;
-}
-
-.search-bar input {
-    margin: 10px;
-    border: none;
-    font-size: 18px;
-    width: 100%;
-}
-
-.header-nav {
-    width: 100%;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.header-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-}
-
-.header-nav li {
-    display: flex;
-    align-items: center;
-    padding: 0px 50px;
-}
-
-.header-nav ul li:after {
-    content: url(/asset/image/index/frame-1@2x.png);
-    padding-top: 10px;
-    text-decoration: none;
-}
-
-.profile {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.overlay-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.overlay-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-}
-
-.intro-container {
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    padding-top: 300px;
-    padding-bottom: 300px;
-    display: flex;
-    text-align: center;
-    z-index: 2;
-}
-
-.intro-text {
-    margin: 0;
-    font-size: 75px;
-    font-weight: 700;
-    justify-content: center;
-
-}
-
-.intro-content {
-    flex: 1;
-    line-height: 196.3%;
-    display: inline-block;
-    max-width: 100%;
-    padding: 20px;
-    font-size: 24px;
-    padding-left: 15%;
-    padding-right: 15%;
-}
-
-.lets-go {
-    margin: 0;
-    font-size: 60px;
-    line-height: 196.3%;
-    font-weight: 700;
-    font-family: inherit;
-    color: orange;
-}
-
-#slider {
-    height: 500px;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-h2 {
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++ CSS exclusive for index.php and everything inside ++++++++++++++++++++ */
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+section h1 {
     text-align: center;
     padding-bottom: 20px;
     padding-top: 20px;
@@ -156,6 +10,10 @@ h2 {
 .carousel {
     width: 1600px;
     margin: auto;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .subcarousel {
@@ -216,27 +74,9 @@ h2 {
     background-image: url(/asset/image/index/rectangle-7@2x.png);
 }
 
-@media(max-width:1600px) {
+@media (max-width:1600px) {
     .carousel {
         width: 100%;
-    }
-}
-
-.copyright {
-    font-size: 16px;
-}
-
-@media only screen and (max-width:576px) {
-    .copyright {
-        order: 1;
-    }
-
-    .footer-nav-child {
-        order: 2;
-    }
-
-    footer.follow-icon {
-        order: 3;
     }
 }
 
@@ -247,7 +87,7 @@ h2 {
     font-family: sans-serif;
 }
 
-.card-container {
+/* .card-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -282,7 +122,7 @@ h2 {
     color: #666;
     font-size: 15px;
     line-height: 1.3;
-}
+} */
 
 .num-nav {
     width: 100%;
@@ -316,19 +156,19 @@ h2 {
     padding-top: 5px;
 }
 
-.hikes-post {
+.pop-post {
     display: flex;
     align-items: center;
     min-height: 100vh;
     flex-direction: column;
 }
 
-.hikes-wrapper {
+.pop-wrapper {
     margin: 5px auto;
     width: 70%;
 }
 
-.hikes-wrapper img {
+.pop-wrapper img {
     max-width: 320px;
     float: left;
     border: 3px solid white;
@@ -336,20 +176,20 @@ h2 {
     margin-right: 15px;
 }
 
-.hikes-text {
+.pop-text {
     color: black;
 }
 
-.hikes-text h3 {
+.pop-text h3 {
     font-size: 24px;
     padding-top: 50px;
 }
 
-.hikes-text p {
+.pop-text p {
     font-size: 16px;
 }
 
-.popular-post {
+.country-post {
     /* Adjust padding and margins as needed */
     padding: 16px;
     /* This should match the design's background */
@@ -362,9 +202,10 @@ h2 {
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
     max-width: 100%;
     border-radius: 8px;
+    max-height: 100%;
 }
 
-.popular-post h4 {
+.country-post h4 {
     padding-left: 10px;
 }
 
@@ -375,14 +216,14 @@ h4 {
     margin-bottom: 1rem;
 }
 
-.pop-wrapper {
+.country-wrapper {
     display: flex;
     align-items: center;
     gap: 16px;
     /* Adjust the gap to match the design */
 }
 
-.pop-text h3 {
+.country-text h3 {
     font-size: 1.25rem;
     /* Adjust the font size to match the design */
     margin-bottom: 0.5rem;
@@ -390,7 +231,7 @@ h4 {
     /* Adjust the color to match the design */
 }
 
-.pop-text a {
+.country-text a {
     display: block;
     /* This makes the link take its own line */
     color: #007bff;
@@ -399,7 +240,7 @@ h4 {
     padding-top: 9px;
 }
 
-.pop-text p {
+.country-text p {
     font-size: 0.875rem;
     color: #666;
     /* Adjust the color to match the design */
@@ -524,6 +365,7 @@ h4 {
     padding: 20px;
     border-radius: 8px;
     /* Rounded corners */
+    gap: 8px;
     margin-top: 20px;
     /* Space from the Follow Us section */
 }
@@ -590,155 +432,48 @@ h4 {
     /* Darker color on hover */
 }
 
-.tags-container {
-    background-color: #fff;
-    /* Set to your preferred color */
-    padding: 20px;
-    border-radius: 8px;
-    /* Rounded corners like in the image */
-    margin-top: 20px;
-    /* Space from the "Subscribe Today" section */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Optional: adds shadow for depth */
-}
+/* .tags-container { */
+/* background-color: #fff; */
+/* Set to your preferred color */
+/* padding: 20px;
+    border-radius: 8px; */
+/* Rounded corners like in the image */
+/* margin-top: 20px; */
+/* Space from the "Subscribe Today" section */
+/* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+/* Optional: adds shadow for depth */
+/* } */
 
-.tags-container h4 {
+/* .tags-container h4 {
     margin-bottom: 15px;
-}
+} */
 
-.tags {
-    display: flex;
-    /* You can use flex-wrap if tags need to wrap */
-    flex-wrap: wrap;
-    gap: 10px;
-    /* Adjust the gap between tags as needed */
-}
+/* .tags {
+    display: flex; */
+/* You can use flex-wrap if tags need to wrap */
+/* flex-wrap: wrap;
+    gap: 10px; */
+/* Adjust the gap between tags as needed */
+/* } */
 
-.tag {
-    background-color: #FFA500;
-    /* Example color, adjust as needed */
-    color: #fff;
-    /* White text */
-    padding: 5px 15px;
-    border-radius: 20px;
-    /* Gives the tag a pill-like shape */
-    cursor: pointer;
-    /* Indicates the tag is clickable */
-}
+/* .tag {
+    background-color: #FFA500; */
+/* Example color, adjust as needed */
+/* color: #fff; */
+/* White text */
+/* padding: 5px 15px;
+    border-radius: 20px; */
+/* Gives the tag a pill-like shape */
+/* cursor: pointer; */
+/* Indicates the tag is clickable */
+/* } */
 
 /* Hover effect for tags */
-.tag:hover {
-    background-color: #e5a00d;
-    /* Darker background on hover */
-}
+/* .tag:hover {
+    background-color: #e5a00d; */
+/* Darker background on hover */
+/* } */
 
 h5 {
     text-align: center;
-}
-
-.video-background {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: auto;
-}
-
-#background-video {
-    width: 100%;
-    height: auto;
-}
-
-.video-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    text-align: center;
-    color: #fff;
-    /* Assuming you want white text over the video */
-}
-
-.video-overlay h1 {
-    margin-bottom: 0.5em;
-}
-
-.video-overlay p {
-    margin-bottom: 1em;
-}
-
-.video-button {
-    /* Styling for the button, you can use Bootstrap classes here */
-}
-
-footer {
-    background-color: #ffc107;
-}
-
-.footer-container p {
-    padding-top: 20px;
-}
-
-.footer-nav {
-    width: 100%;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-}
-
-.footer-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 20px;
-}
-
-.footer-nav li {
-    display: flex;
-    align-items: center;
-    padding: 0px 50px;
-}
-
-
-.copyright,
-footer.follow-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* About us */
-.abt-post {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.abt-wrapper {
-    margin: 5px auto;
-    width: 70%;
-}
-
-.abt-wrapper img {
-    max-width: 320px;
-    float: left;
-    border: 3px solid white;
-    border-radius: 10px;
-    margin-right: 15px;
-}
-
-.abt-text {
-    color: black;
-}
-
-.abt-text h3 {
-    font-size: 24px;
-    padding-top: 15px;
-}
-
-.abt-text p {
-    font-size: 16px;
-    padding-top: 20px;
 }
