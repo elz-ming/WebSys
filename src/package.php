@@ -24,6 +24,9 @@
 </head>
 
 <body>
+  <main>
+    
+</main>
    <!-- Package Start -->
    <div class="container-xxl py-5">
         <div class="container">
@@ -37,12 +40,12 @@
                             <img class="img-fluid" src="/asset/image/pic1.jpeg" alt="">
                         </div>
                         <div class="d-flex border-bottom">
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Thailand</small>
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 Person</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Destination</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>Duration</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-usd text-primary me-2"></i>Price</small>
                         </div>
                         <div class="text-center p-4">
-                            <h3 class="mb-0">$149.00</h3>
+                            <h3 class="mb-0">Pname</h3>
                             <div class="mb-3">
                                 <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
@@ -50,10 +53,12 @@
                                 <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
                             </div>
-                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
+                            <p>Content</p>
                             <div class="d-flex justify-content-center mb-2">
                                 <a href="checkout.php" class="btn btn-sm btn-primary px-3" style="border-radius: 30px 30px 30px 30px;">Book Now</a>
                             </div>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="#packageModal1" class="btn btn-sm btn-primary px-3" style="border-radius: 30px 30px 30px 30px;" data-bs-toggle="modal">View Package</a>                            </div>
                         </div>
                     </div>
                 </div>
@@ -141,126 +146,6 @@
     </div>
     <!-- Package End -->
 
-    <!-- Package Start -->
-   <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h1 class="mb-5">Packages</h1>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <!-- First Package -->
-                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">                    <div class="package-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="/asset/image/pic1.jpeg" alt="">
-                        </div>
-                        <div class="d-flex border-bottom">
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Thailand</small>
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 Person</small>
-                        </div>
-                        <div class="text-center p-4">
-                            <h3 class="mb-0">$149.00</h3>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                            </div>
-                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                            <div class="d-flex justify-content-center mb-2">
-                                <a href="checkout.php" class="btn btn-sm btn-primary px-3" style="border-radius: 30px 30px 30px 30px;">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                              <!-- Second Package -->
-                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="package-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="/asset/image/pic2.jpeg" alt="">
-                        </div>
-                        <div class="d-flex border-bottom">
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Indonesia</small>
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 Person</small>
-                        </div>
-                        <div class="text-center p-4">
-                            <h3 class="mb-0">$139.00</h3>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                            </div>
-                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                            <div class="d-flex justify-content-center mb-2">
-                                <a href="#" class="btn btn-sm btn-primary px-3" style="border-radius: 30px 30px 30px 30px;">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 <!-- Second Row -->
-                 <div class="row g-4 justify-content-center">
-                <!-- First Package -->
-                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">                    <div class="package-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="/asset/image/pic1.jpeg" alt="">
-                        </div>
-                        <div class="d-flex border-bottom">
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Thailand</small>
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 Person</small>
-                        </div>
-                        <div class="text-center p-4">
-                            <h3 class="mb-0">$149.00</h3>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                            </div>
-                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                            <div class="d-flex justify-content-center mb-2">
-                                <a href="checkout.php" class="btn btn-sm btn-primary px-3" style="border-radius: 30px 30px 30px 30px;">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                              <!-- Second Package -->
-                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="package-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="/asset/image/pic2.jpeg" alt="">
-                        </div>
-                        <div class="d-flex border-bottom">
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Indonesia</small>
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 Person</small>
-                        </div>
-                        <div class="text-center p-4">
-                            <h3 class="mb-0">$139.00</h3>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                            </div>
-                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                            <div class="d-flex justify-content-center mb-2">
-                                <a href="#" class="btn btn-sm btn-primary px-3" style="border-radius: 30px 30px 30px 30px;">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Package End -->
-
     <!-- Process Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -305,6 +190,31 @@
         </div>
     </div>
     <!-- Process Start -->
+
+
+    <!-- Modal for Package 1 -->
+  <div class="modal fade" id="packageModal1" tabindex="-1" aria-labelledby="packageModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="packageModal1Label">Package Details - Thailand</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img class="img-fluid mb-3" src="/asset/image/pic1.jpeg" alt="Thailand">
+          <h3 class="mb-2">$149.00</h3>
+          <p class="mb-1"><strong>Destination:</strong> Thailand</p>
+          <p class="mb-1"><strong>Duration:</strong> 3 days</p>
+          <p class="mb-1"><strong>Content:</strong> Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href="checkout.php" class="btn btn-primary">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   
 </body>
 

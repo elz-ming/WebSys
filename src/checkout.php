@@ -3,70 +3,89 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Checkout Page</title>
-<link rel="stylesheet" href="/asset/css/checkout.css">
-<style>
-/* Add a checkout label */
-.checkout-label {
-  background: #3498db; /* blue background color */
-  color: white;
-  padding: 10px;
-  text-align: center;
-  font-size: 1.5rem;
-}
-</style>
+<!-- Make sure to add a version query to your CSS file to avoid caching issues -->
+<link rel="stylesheet" href="/asset/css/checkout.css?v=1.0">
 </head>
 <body>
-  <div class="checkout-label">Checkout</div>
-  <div class="model">
-    <div class="room">
-      <div class="text-cover">
-        <h1>Danny's House</h1>
-        <p class="price"> 120.00 <span>USD</span> / Night</p>
-        <hr>
-        <p>Entire Home for 1 guest</p>
-        <p>Tues, Oct 2, 2017 to Friday, Oct 5, 2017</p>
-      </div>
-    </div><div class="payment">
-      <div class="receipt-box">
-        <h3>Reciept Summary</h3>
-        <table class="table">
-          <tr>
-            <td>120 x 2 nights</td>
-            <td>240.00 USD</td>
-          </tr>
-          <tr>
-            <td>Discount</td>
-            <td>0 USD</td>
-          </tr>
-          <tr>
-            <td>Subtotal</td>
-            <td>240 USD</td>
-          </tr>
-          <tr>
-            <td>Tax</td>
-            <td>10 USD</td>
-          </tr>
-          <tfoot>
+<div class='container'>
+  <div class='window'>
+    <div class='order-info'>
+      <div class='order-info-content'>
+        <h2>Order Summary</h2>
+        <div class='line'></div>
+        <table class='order-table'>
+          <tbody>
             <tr>
-              <td>Sum</td>
-              <td>$180</td>
+              <td><img src='https://dl.dropboxusercontent.com/s/sim84r2xfedj99n/%24_32.JPG' class='full-width'></td>
+              <td>
+                <br> <span class='thin'>PNAME</span>
+                <br>
+                <span>Free Run 3.0 Women</span>
+                <br>
+                <span class='thin small'> Color: Grey/Orange, Size: 10.5</span>
+              </td>
             </tr>
-          </tfoot>
+            <tr>
+              <td>
+                <div class='price'>PRICE</div>
+              </td>
+            </tr>
+          </tbody>
         </table>
+        <div class='line'></div>
+        <div class='total'>
+          <span style='float:left;'>
+            <span>TOTAL</span>
+          </span>
+          <span style='float:right; text-align:right;'>
+            <span>PRICE</span>
+          </span>
+        </div>
       </div>
-      <div class="payment-info">
-        <h3>Payment Info</h3>
-        <form>
-        <label>Name on Credit Card</label>
-        <input type="text" name="firstname" value="Mickey">
-        <label>Credit Card Number</label>
-        <input type="text" name="lastname" value="Mouse">
-        <br><br>
-        <input class="btn" type="submit" value="Book Securly">
-      </form>
+    </div>
+    <div class='credit-info'>
+      <div class='credit-info-content'>
+        <table class='half-input-table'>
+          <tr>
+            <td>Please select your card: </td>
+            <td>
+              <div class='dropdown' id='card-dropdown'>
+                <div class='dropdown-btn' id='current-card'>Visa</div>
+                <div class='dropdown-select'>
+                  <ul>
+                    <li>Master Card</li>
+                    <li>American Express</li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <img src='https://dl.dropboxusercontent.com/s/ubamyu6mzov5c80/visa_logo%20%281%29.png' height='80' class='credit-card-image' id='credit-card-image'>
+        Card Number
+        <input class='input-field' id='card-number'>
+        Card Holder
+        <input class='input-field' id='card-holder'>
+        <table class='half-input-table'>
+          <tr>
+            <td> 
+              <span>Expires</span>
+              <input class='input-field' id='expires'>
+            </td>
+            <td>
+              <span>CVC</span>
+              <input class='input-field' id='cvc'>
+            </td>
+          </tr>
+        </table>
+        <button class='pay-btn'>Checkout</button>
+        <!-- Back button -->
+        <br><br><br>
+        <button class='back-btn' onclick="window.location.href='package.php'">Back</button>
       </div>
     </div>
   </div>
+</div>
+<script src="asset/js/checkout.js"></script>
 </body>
 </html>
