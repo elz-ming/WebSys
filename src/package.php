@@ -25,7 +25,89 @@
 
 <body>
   <main>
-    
+  <?php
+  // Database connection variables
+  $host = "localhost"; // or your database host
+  $user = "username"; // your database username
+  $password = "password"; // your database password
+  $dbname = "database_name"; // your database name
+
+  // Create connection
+  $conn = new mysqli($host, $user, $password, $dbname);
+
+  // Check connection
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  }
+
+  // Fetch packages from database
+  $sql = "SELECT * FROM package"; // Replace package_table with your actual table name
+  $result = $conn->query($sql);
+  ?>
+
+  <!-- Package Start -->
+  <div class="container-xxl py-5">
+      <div class="container">
+          <div class="row g-4 justify-content-center">
+              <?php if ($result->num_rows > 0): ?>
+                  <?php while($row = $result->fetch_assoc()): ?>
+                      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                          <div class="package-item">
+                              <!-- Image -->
+                              <div class="overflow-hidden">
+                                  <img class="img-fluid" src="/asset/image/<?php echo $row['image_path']; ?>" alt="">
+                              </div>
+                              <!-- Package details -->
+                              <div class="d-flex border-bottom">
+                                  <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i><?php echo $row['destination']; ?></small>
+                                  <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i><?php echo $row['duration']; ?></small>
+                                  <small class="flex-fill text-center py-2"><i class="fa fa-usd text-primary me-2"></i><?php echo $row['price']; ?></small>
+                              </div>
+                              <div class="text-center p-4">
+                                  <h3 class="mb-0"><?php echo $row['pname']; ?></h3>
+                                  <p><?php echo $row['content']; ?></p>
+                                  <!-- ... buttons and other HTML ... -->
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- Modal for Package -->
+                      <div class="modal fade" id="packageModal<?php echo $row['id']; ?>" tabindex="-1" aria-labelledby="packageModal<?php echo $row['id']; ?>Label" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                  <div class="modal-header">
+                                      <h5 class="modal-title" id="packageModal<?php echo $row['id']; ?>Label">Package Details - <?php echo $row['pname']; ?></h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  </div>
+                                  <div class="modal-body">
+                                      <img class="img-fluid mb-3" src="/asset/image/<?php echo $row['image_path']; ?>" alt="<?php echo $row['pname']; ?>">
+                                      <h3 class="mb-2"><?php echo $row['price']; ?></h3>
+                                      <p class="mb-1"><strong>Destination:</strong> <?php echo $row['destination']; ?></p>
+                                      <p class="mb-1"><strong>Duration:</strong> <?php echo $row['duration']; ?></p>
+                                      <p class="mb-1"><strong>Content:</strong> <?php echo $row['content']; ?></p>
+                                  </div>
+                                  <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                      <a href="checkout.php" class="btn btn-primary">Book Now</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  <?php endwhile; ?>
+              <?php else: ?>
+                  <p>No packages found.</p>
+              <?php endif; ?>
+          </div>
+
+          <!-- ... rest of your HTML after the package items ... -->
+      </div>
+  </div>
+  <!-- Package End -->
+
+  <?php
+  $conn->close();
+  ?>
+
 </main>
    <!-- Package Start -->
    <div class="container-xxl py-5">
