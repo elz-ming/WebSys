@@ -24,33 +24,6 @@
 </head>
 
 <body>
-  <section class="header-container">
-    <div class="header">
-      <div class="header-bar row">
-        <h1 class="col-3 company">TravelTalk</h1>
-        <div class="col-6 search-bar">
-          <img class="decision-node-icon" alt="" src="/asset/image/index/decision-node.svg" />
-          <input placeholder="search" type="text" />
-        </div>
-        <div class="col-3 profile"><img class="decision-node-icon" alt="" src="/asset/image/index/social-media.svg" /></div>
-      </div>
-      <div class="header-nav mt-3">
-        <nav>
-          <ul>
-            <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.php">About Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="package.php">Packages</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Contact us</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-    <div class="overlay-bg"><img src="/asset/image/index/rectangle-1.svg" /></div>
-    <div class="row intro-container">
-      <h1 class="col-12 intro-text">Packages</h1>
-    </div>
-  </section>
    <!-- Package Start -->
    <div class="container-xxl py-5">
         <div class="container">
@@ -58,7 +31,7 @@
                 <h1 class="mb-5">Packages</h1>
             </div>
             <div class="row g-4 justify-content-center">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="package-item">
                         <div class="overflow-hidden">
                             <img class="img-fluid" src="/asset/image/pic1.jpeg" alt="">
@@ -84,7 +57,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                
+              <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="package-item">
                         <div class="overflow-hidden">
                             <img class="img-fluid" src="/asset/image/pic2.jpeg" alt="">
@@ -110,7 +84,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+              <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="package-item">
                         <div class="overflow-hidden">
                             <img class="img-fluid" src="/asset/image/pic3.jpeg" alt="">
@@ -135,12 +109,157 @@
                             </div>
                         </div>
                     </div>
-                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="/asset/image/pic3.jpeg" alt="">
+                        </div>
+                        <div class="d-flex border-bottom">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Malaysia</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 Person</small>
+                        </div>
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">$189.00</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="#" class="btn btn-sm btn-primary px-3" style="border-radius: 30px 30px 30px 30px;">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
             </div>
         </div>
     </div>
     <!-- Package End -->
 
+    <!-- Package Start -->
+   <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h1 class="mb-5">Packages</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- First Package -->
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="/asset/image/pic1.jpeg" alt="">
+                        </div>
+                        <div class="d-flex border-bottom">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Thailand</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 Person</small>
+                        </div>
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">$149.00</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="checkout.php" class="btn btn-sm btn-primary px-3" style="border-radius: 30px 30px 30px 30px;">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                              <!-- Second Package -->
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="/asset/image/pic2.jpeg" alt="">
+                        </div>
+                        <div class="d-flex border-bottom">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Indonesia</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 Person</small>
+                        </div>
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">$139.00</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="#" class="btn btn-sm btn-primary px-3" style="border-radius: 30px 30px 30px 30px;">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Second Row -->
+                 <div class="row g-4 justify-content-center">
+                <!-- First Package -->
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="/asset/image/pic1.jpeg" alt="">
+                        </div>
+                        <div class="d-flex border-bottom">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Thailand</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 Person</small>
+                        </div>
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">$149.00</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="checkout.php" class="btn btn-sm btn-primary px-3" style="border-radius: 30px 30px 30px 30px;">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                              <!-- Second Package -->
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="/asset/image/pic2.jpeg" alt="">
+                        </div>
+                        <div class="d-flex border-bottom">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Indonesia</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 Person</small>
+                        </div>
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">$139.00</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="#" class="btn btn-sm btn-primary px-3" style="border-radius: 30px 30px 30px 30px;">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Package End -->
 
     <!-- Process Start -->
     <div class="container-xxl py-5">
@@ -186,48 +305,7 @@
         </div>
     </div>
     <!-- Process Start -->
-  <footer>
-    <section class="video-background">
-      <!-- The video -->
-      <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
-        <source src="https://assets.codepen.io/6093409/river.mp4" type="video/mp4">
-      </video>
-      <div class="video-overlay">
-        <h1>Trips For Your First Solo Traveling</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <!-- <a href="#" class="btn btn-primary video-button">Top</a> -->
-      </div>
-      <footer class="footer-container">
-        <div class="row footer-nav mt-3">
-          <div class="col-xs-12 col-md copyright">
-            <p>Copyright &copy; ojjomedia All Right Reserved</p>
-          </div>
-          <div class="col-xs-12 col-md footer-nav-child">
-            <nav>
-              <ul>
-                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Privacy</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Terms</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
-              </ul>
-            </nav>
-          </div>
-          <div class="col-xs-12 col-md follow-icon">
-            <a href="https://www.facebook.com" target="_blank" class="social-icon">
-              <i class="fa-brands fa-facebook"></i>
-            </a>
-            <a href="https://www.twitter.com" target="_blank" class="social-icon">
-              <i class="fa-brands fa-twitter"></i>
-            </a>
-            <a href="https://www.instagram.com" target="_blank" class="social-icon">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.youtube.com" target="_blank" class="social-icon">
-              <i class="fa-brands fa-youtube"></i>
-          </div>
-        </div>
-      </footer>
-      <script src="/main.js"></script>
+  
 </body>
 
 </html>
