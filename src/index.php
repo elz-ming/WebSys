@@ -32,9 +32,9 @@
 
 <body>
   <?php
-    include "component/header.component.php";
-    include "component/nav.component.php";
-    include "component/landing-screen.component.php";
+  include "component/header.component.php";
+  include "component/nav.component.php";
+  include "component/landing-screen.component.php";
   ?>
 
   <main class="containers">
@@ -288,18 +288,65 @@
                   <i class="fa-brands fa-youtube"></i>
               </div>
             </div> -->
-          <div class="subscribe-container">
+          <div class="subscribe-container" id="subscribe">
             <h4>Subscribe Today</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. In sed et donec purus viverra. Sit justo</p>
-            <form class="subscribe-form">
-              <input type="text" placeholder="Full Name" required>
-              <input type="email" placeholder="Your Email" required>
+            <p>Embark on adventures with us! Subscribe now for exclusive travel tips, inspiring stories, and special
+              package offers delivered directly to your inbox</p>
+            <form action="/asset/php/subscribe.process.php" method="post" class="subscribe-form">
+              <input type="text" name="fullname" placeholder="Full Name" required maxlength="45">
+              <input type="email" name="email" placeholder="Your Email" required>
               <div class="checkbox-container">
                 <input type="checkbox" id="privacy-policy" required>
                 <label for="privacy-policy">You Agree To Our Company Privacy Policy</label>
               </div>
               <button type="submit" class="subscribe-btn">SUBSCRIBE</button>
             </form>
+          </div>
+          <!-- Thank You Modal -->
+          <div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="thankYouModalLabel">Thank You</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Thank you for subscribing!
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Already Subscribed Modal -->
+          <div class="modal fade" id="alreadySubscribedModal" tabindex="-1"
+            aria-labelledby="alreadySubscribedModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="alreadySubscribedModalLabel">Already Subscribed</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  The email is already subscribed.
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Failure Modal -->
+          <div class="modal fade" id="failureModal" tabindex="-1" role="dialog" aria-labelledby="failureModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="failureModalLabel">Oops!</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Something went wrong with your subscription. Please try again later.
+                </div>
+              </div>
+            </div>
           </div>
           <!-- <br>
           <div class="tags-container">
@@ -373,8 +420,8 @@
   </main>
 
   <?php
-    include "component/ending-screen.component.php";
-    include "component/footer.component.php";
+  include "component/ending-screen.component.php";
+  include "component/footer.component.php";
   ?>
 </body>
 

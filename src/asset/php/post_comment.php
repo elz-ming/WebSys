@@ -1,5 +1,9 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['blog_id']) && !empty($_POST['comment'])) {
     $blog_id = $_POST['blog_id'];
     // Sanitize input to prevent XSS attacks
@@ -22,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['blog_id']) && !empty($
     if ($stmt->execute()) {
         //Choose correct location based on your file structure
         //header("Location: https://traveltalk.site//blog/post.php?blog_id=" . $blog_id . '#comments');
-        header("Location: http://localhost:54839/blog/post.php?blog_id=" . $blog_id . '#comments'); 
+        header("Location: http://localhost:59891/blog/post.php?blog_id=" . $blog_id . '#comments'); 
     } else {
         echo "Error: " . $stmt->error;
     }

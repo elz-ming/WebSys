@@ -166,9 +166,52 @@ h2 {
 
 .contact-form button.filled-button:hover {
 	background-color: #121212;
-	color: #fff;
+	color: #fff;    
 }
-.comments{
+
+.comment-block {
+    margin-bottom: 30px; /* Adjusts space between each comment block */
+    background-color: lightblue;
+  }
+
+.empty-container-before-comment {
+    display: flex;
+    align-items: center; /* Centers the items vertically */
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 50px; /* Adjust based on your design */
+    background-color: #978d8d;
+    padding: 0 10px;
+  }
+  
+  .profile-pic {
+    width: 50px; /* Adjust the size as needed */
+    height: 50px; /* Adjust the size as needed */
+    border-radius: 50%; /* This creates the rounded corners */
+    object-fit: cover; /* Ensures the image covers the area without distorting aspect ratio */
+    margin-right: 15px; /* Adds some space between the image and the text */
+  }
+  
+
+  .comments{
 
     margin-bottom: 10px;
+}
+
+.comment{
+    padding: 0 10px;
+    padding-bottom: 10px;
+}
+
+.comment-info span {
+    margin-right: 100%; /* Optional: adds some spacing between the name and timestamp */
+  }
+  
+  .profile-section, .comment-info {
+    flex-grow: 1; /* Allows these sections to grow */
+}
+
+.timestamp {
+    flex-grow: 0; /* Prevents the timestamp from growing, aligning it to the right */
+    white-space: nowrap; /* Keeps it from wrapping */
 }

@@ -1,4 +1,8 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 function getBlog()
 {
   global $blog;
@@ -38,14 +42,14 @@ function getComments($blog_id)
     die ("Connection failed: " . $conn->connect_error);
   }
 
-  $stmt = $conn->prepare("SELECT content FROM comment WHERE blog_id = ? ORDER BY id DESC");
+  $stmt = $conn->prepare("SELECT content, created_at FROM comment WHERE blog_id = ? ORDER BY id DESC");
   $stmt->bind_param("i", $blog_id);
   $stmt->execute();
   $result = $stmt->get_result();
 
   $comments = [];
   while ($row = $result->fetch_assoc()) {
-    $comments[] = $row['content']; // Just fetching the content of each comment
+    $comments[] = $row;
   }
 
   $stmt->close();
@@ -53,6 +57,53 @@ function getComments($blog_id)
 
   return $comments;
 }
+
+// To covert the created_at timestamp to a human-readable format
+function time_elapsed_string($datetime, $full = false)
+{
+  $now = new DateTime();
+  $ago = new DateTime($datetime);
+  $diff = $now->diff($ago);
+
+  $weeks = floor($diff->d / 7);
+  $daysAfterWeeks = $diff->d % 7;
+
+  $string = array(
+    'y' => 'year',
+    'm' => 'month',
+    'w' => 'week',
+    'd' => 'day',
+    'h' => 'hour',
+    'i' => 'minute',
+    's' => 'second',
+  );
+
+  $stringValues = array(
+    'y' => $diff->y,
+    'm' => $diff->m,
+    'w' => $weeks,
+    'd' => $daysAfterWeeks,
+    'h' => $diff->h,
+    'i' => $diff->i,
+    's' => $diff->s,
+  );
+
+  foreach ($string as $key => &$value) {
+    if ($stringValues[$key]) {
+      $value = $stringValues[$key] . ' ' . $value . ($stringValues[$key] > 1 ? 's' : '');
+    } else {
+      unset($string[$key]);
+    }
+  }
+
+  if (!$full) {
+    $string = array_slice($string, 0, 1);
+  }
+
+  return $string ? implode(', ', $string) . ' ago' : 'just now';
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -147,17 +198,28 @@ function getComments($blog_id)
 
   <section class="comments">
     <div class="send-message">
-      <div class="container" id= "comments">
+      <div class="container" id="comments">
         <h3>Comments</h3>
         <?php $comments = getComments($blog['id']); ?>
         <?php if (!empty ($comments)): ?>
-          <ul class="comments-list">
+          <div class="comments-container">
             <?php foreach ($comments as $comment): ?>
-              <li>
-                <?php echo htmlspecialchars($comment); ?>
-              </li>
+              <div class="comment-block">
+                <div class="empty-container-before-comment">
+                  <img src="/asset/image/blog/avatar1.jpg" alt="Profile Picture" class="profile-pic">
+                  <div class="comment-info">
+                    <span>Edmund Lin </span>
+                    <span class="timestamp">
+                    Posted: <?php echo time_elapsed_string($comment['created_at']); ?>
+                    </span>
+                  </div>
+                </div>
+                <div class="comment">
+                  <?php echo htmlspecialchars($comment['content']); ?>
+                </div>
+              </div>
             <?php endforeach; ?>
-          </ul>
+          </div>
         <?php else: ?>
           <p>No comments yet. Be the first to comment!</p>
         <?php endif; ?>
@@ -193,6 +255,7 @@ function getComments($blog_id)
           </div>
         </div>
   </section>
+
   <?php
   include "../component/footer.component.php";
   ?>
