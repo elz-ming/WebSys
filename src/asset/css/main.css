@@ -342,3 +342,13 @@ footer.follow-icon {
       font-size: large !important;
   }
 }
+
+.orange-button {
+  width: 100%;
+  padding: 15px;
+  background-color: orange;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
