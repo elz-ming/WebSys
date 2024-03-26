@@ -1,3 +1,49 @@
+<?php
+function getPackages() {
+    global $packages;
+
+    // Load database config
+    $config = parse_ini_file('../db-config.ini'); // Adjust the path as needed
+    if (!$config) {
+        echo "Failed to read database config file.";
+        return;
+    }
+
+    // Establish database connection
+    $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
+    if ($conn->connect_error) {
+        echo "Connection failed: " . $conn->connect_error;
+        return;
+    }
+
+    // Prepare the SQL statement
+    $getPackages = $conn->prepare("SELECT * FROM travel_talk.package");
+    $getPackages->execute();
+    $result = $getPackages->get_result();
+
+    // Fetch all the packages
+    $packages = $result->fetch_all(MYSQLI_ASSOC);
+}
+
+// Check if a packageId is provided in the query string
+if (isset($_GET['packageId'])) {
+    // Fetch package details based on packageId
+    $packageId = $_GET['packageId'];
+    $getPackageDetails = $conn->prepare("SELECT * FROM travel_talk.package WHERE id = ?");
+    $getPackageDetails->bind_param("i", $packageId);
+    $getPackageDetails->execute();
+    $result = $getPackageDetails->get_result();
+    $package = $result->fetch_assoc();
+
+    // Return the package details as JSON
+    header('Content-Type: application/json');
+    echo json_encode($package);
+    exit;
+}
+
+getPackages(); // Call the function to retrieve packages
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,208 +71,42 @@
 
 <body>
   <main>
-  <?php
-  // Database connection variables
-  $host = "localhost"; // or your database host
-  $user = "username"; // your database username
-  $password = "password"; // your database password
-  $dbname = "database_name"; // your database name
-
-  // Create connection
-  $conn = new mysqli($host, $user, $password, $dbname);
-
-  // Check connection
-  if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-  }
-
-  // Fetch packages from database
-  $sql = "SELECT * FROM package"; // Replace package_table with your actual table name
-  $result = $conn->query($sql);
-  ?>
-
-  <!-- Package Start -->
-  <div class="container-xxl py-5">
-      <div class="container">
-          <div class="row g-4 justify-content-center">
-              <?php if ($result->num_rows > 0): ?>
-                  <?php while($row = $result->fetch_assoc()): ?>
-                      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                          <div class="package-item">
-                              <!-- Image -->
-                              <div class="overflow-hidden">
-                                  <img class="img-fluid" src="/asset/image/<?php echo $row['image_path']; ?>" alt="">
-                              </div>
-                              <!-- Package details -->
-                              <div class="d-flex border-bottom">
-                                  <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i><?php echo $row['destination']; ?></small>
-                                  <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i><?php echo $row['duration']; ?></small>
-                                  <small class="flex-fill text-center py-2"><i class="fa fa-usd text-primary me-2"></i><?php echo $row['price']; ?></small>
-                              </div>
-                              <div class="text-center p-4">
-                                  <h3 class="mb-0"><?php echo $row['pname']; ?></h3>
-                                  <p><?php echo $row['content']; ?></p>
-                                  <!-- ... buttons and other HTML ... -->
-                              </div>
-                          </div>
-                      </div>
-
-                      <!-- Modal for Package -->
-                      <div class="modal fade" id="packageModal<?php echo $row['id']; ?>" tabindex="-1" aria-labelledby="packageModal<?php echo $row['id']; ?>Label" aria-hidden="true">
-                          <div class="modal-dialog modal-dialog-centered">
-                              <div class="modal-content">
-                                  <div class="modal-header">
-                                      <h5 class="modal-title" id="packageModal<?php echo $row['id']; ?>Label">Package Details - <?php echo $row['pname']; ?></h5>
-                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                  </div>
-                                  <div class="modal-body">
-                                      <img class="img-fluid mb-3" src="/asset/image/<?php echo $row['image_path']; ?>" alt="<?php echo $row['pname']; ?>">
-                                      <h3 class="mb-2"><?php echo $row['price']; ?></h3>
-                                      <p class="mb-1"><strong>Destination:</strong> <?php echo $row['destination']; ?></p>
-                                      <p class="mb-1"><strong>Duration:</strong> <?php echo $row['duration']; ?></p>
-                                      <p class="mb-1"><strong>Content:</strong> <?php echo $row['content']; ?></p>
-                                  </div>
-                                  <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                      <a href="checkout.php" class="btn btn-primary">Book Now</a>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  <?php endwhile; ?>
-              <?php else: ?>
-                  <p>No packages found.</p>
-              <?php endif; ?>
-          </div>
-
-          <!-- ... rest of your HTML after the package items ... -->
-      </div>
-  </div>
-  <!-- Package End -->
-
-  <?php
-  $conn->close();
-  ?>
-
-</main>
-   <!-- Package Start -->
-   <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h1 class="mb-5">Packages</h1>
-            </div>
-            <div class="row g-4 justify-content-center">
-              <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+<!-- Package Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="mb-5">Packages</h1>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <?php foreach($packages as $package): ?>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="package-item">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="/asset/image/pic1.jpeg" alt="">
+                            <img class="img-fluid" src="<?= htmlspecialchars($package['image_path']) ?>" alt="">
                         </div>
                         <div class="d-flex border-bottom">
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Destination</small>
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>Duration</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-usd text-primary me-2"></i>Price</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i><?= htmlspecialchars($package['destination']) ?></small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i><?= htmlspecialchars($package['duration']) ?></small>
+                            <small class="flex-fill text-center py-2"><i class="fa fa-usd text-primary me-2"></i><?= htmlspecialchars($package['price']) ?></small>
                         </div>
                         <div class="text-center p-4">
-                            <h3 class="mb-0">Pname</h3>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                            </div>
-                            <p>Content</p>
+                            <h3 class="mb-0"><?= htmlspecialchars($package['pname']) ?></h3>
+                            <p><?= htmlspecialchars($package['content']) ?></p>
                             <div class="d-flex justify-content-center mb-2">
                                 <a href="checkout.php" class="btn btn-sm btn-primary px-3" style="border-radius: 30px 30px 30px 30px;">Book Now</a>
                             </div>
                             <div class="d-flex justify-content-center mb-2">
-                                <a href="#packageModal1" class="btn btn-sm btn-primary px-3" style="border-radius: 30px 30px 30px 30px;" data-bs-toggle="modal">View Package</a>                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-              <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="package-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="/asset/image/pic2.jpeg" alt="">
-                        </div>
-                        <div class="d-flex border-bottom">
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Indonesia</small>
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 Person</small>
-                        </div>
-                        <div class="text-center p-4">
-                            <h3 class="mb-0">$139.00</h3>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                            </div>
-                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                            <div class="d-flex justify-content-center mb-2">
-                                <a href="#" class="btn btn-sm btn-primary px-3" style="border-radius: 30px 30px 30px 30px;">Book Now</a>
+                              <a href="#packageModal" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#packageModal" data-package-id="<?= $package['id'] ?>">View Package</a>
                             </div>
                         </div>
                     </div>
                 </div>
-              <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="package-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="/asset/image/pic3.jpeg" alt="">
-                        </div>
-                        <div class="d-flex border-bottom">
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Malaysia</small>
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 Person</small>
-                        </div>
-                        <div class="text-center p-4">
-                            <h3 class="mb-0">$189.00</h3>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                            </div>
-                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                            <div class="d-flex justify-content-center mb-2">
-                                <a href="#" class="btn btn-sm btn-primary px-3" style="border-radius: 30px 30px 30px 30px;">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-              </div>
-              <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="package-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="/asset/image/pic3.jpeg" alt="">
-                        </div>
-                        <div class="d-flex border-bottom">
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>Malaysia</small>
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 Person</small>
-                        </div>
-                        <div class="text-center p-4">
-                            <h3 class="mb-0">$189.00</h3>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                            </div>
-                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                            <div class="d-flex justify-content-center mb-2">
-                                <a href="#" class="btn btn-sm btn-primary px-3" style="border-radius: 30px 30px 30px 30px;">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>  
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
-    <!-- Package End -->
+</div>
+<!-- Package End -->
+</main>
 
     <!-- Process Start -->
     <div class="container-xxl py-5">
@@ -273,31 +153,49 @@
     </div>
     <!-- Process Start -->
 
-
-    <!-- Modal for Package 1 -->
-  <div class="modal fade" id="packageModal1" tabindex="-1" aria-labelledby="packageModal1Label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="packageModal1Label">Package Details - Thailand</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!-- Package Modal -->
+    <div class="modal fade" id="packageModal" tabindex="-1" aria-labelledby="packageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="packageModalLabel">Package Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img class="img-fluid mb-3" id="modalPackageImage" alt="Package Image">
+                    <h3 id="modalPackagePrice"></h3>
+                    <p><strong>Destination:</strong> <span id="modalPackageDestination"></span></p>
+                    <p><strong>Duration:</strong> <span id="modalPackageDuration"></span></p>
+                    <p><strong>Content:</strong> <span id="modalPackageContent"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="checkout.php" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          <img class="img-fluid mb-3" src="/asset/image/pic1.jpeg" alt="Thailand">
-          <h3 class="mb-2">$149.00</h3>
-          <p class="mb-1"><strong>Destination:</strong> Thailand</p>
-          <p class="mb-1"><strong>Duration:</strong> 3 days</p>
-          <p class="mb-1"><strong>Content:</strong> Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a href="checkout.php" class="btn btn-primary">Book Now</a>
-        </div>
-      </div>
     </div>
-  </div>
-
   
+    <script>
+    // JavaScript for fetching and displaying the package details in the modal
+    document.addEventListener('DOMContentLoaded', function () {
+        const packageModal = document.getElementById('packageModal');
+        packageModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const packageId = button.getAttribute('data-package-id');
+
+            fetch(`package.php?packageId=${packageId}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('modalPackageImage').src = data.image_path;
+                document.getElementById('modalPackagePrice').textContent = `$${data.price}`;
+                document.getElementById('modalPackageDestination').textContent = data.destination;
+                document.getElementById('modalPackageDuration').textContent = data.duration;
+                document.getElementById('modalPackageContent').textContent = data.content;
+            });
+        });
+    });
+    </script>
 </body>
 
 </html>
