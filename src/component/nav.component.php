@@ -1,4 +1,4 @@
-<nav class="header-nav mt-3">
+<nav class="header-nav" id="navbar">
   <ul>
     <li class="nav-item">
       <a class="nav-link" href="/index.php">Home</a>
@@ -18,3 +18,5 @@
     
   </ul>
 </nav>
+
+<script src="main.js"></script>

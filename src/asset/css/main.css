@@ -51,6 +51,7 @@ body {
   align-items: center;
   justify-content: center;
   color: white;
+  margin-top: 0;
 }
 
 .header-nav ul {
@@ -63,7 +64,39 @@ body {
   display: flex;
   align-items: center;
   padding: 0 50px;
+  height: 60px;
+  /* Example height, adjust as needed */
 }
+
+.header-nav a {
+  /* Use flexbox to center contents */
+  display: flex;
+  align-items: center;
+  /* This will center the text vertically */
+  justify-content: center;
+  /* This will center the text horizontally */
+  height: 100%;
+  /* Make the anchors fill the entire height of the li */
+  text-decoration: none;
+  /* Typically used to remove the underline from links */
+  color: white;
+  /* Assuming you want the text color to be white */
+  /* Add any padding if needed, for example */
+  padding: 10px;
+}
+
+
+.header-nav.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  /* Adjust as needed */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Darker semi-transparent background when sticky */
+}
+
 
 /* ++++++++++++++++++++ CSS for <div id="landing-screen"> and everything inside ++++++++++++++++++++ */
 .header-container {
