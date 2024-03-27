@@ -53,17 +53,30 @@ echo '<header>';
 echo '  <div class="row header-bar">';
 echo '    <h1 class="col-sm-6 col-lg-3">TravelTalk</h1>';
 echo '    <div class="col-sm-6 col-lg-6 search-bar">';
-echo '      <img class="decision-node-icon" alt="" src="/asset/image/index/decision-node.svg" />';
-echo '      <input placeholder="search" type="text" list="titleList"/>';
-echo '      <datalist id="titleList">';
+
+// Start form element
+echo '      <form action="blog/index.php" method="GET" class="search-form">';
+
+// Decision node icon placed before the input
+echo '        <img class="decision-node-icon" alt="Search" src="/asset/image/index/decision-node.svg" />';
+
+// Update input to include a name attribute and have the form control inline
+echo '        <input name="keyword" class="search-input" placeholder="search" type="text" list="titleList"/>';
+
+echo '        <datalist id="titleList">';
 foreach ($titles as $title) {
-  echo '        <option value="' . htmlspecialchars($title) . '"></option>';
+  echo '          <option value="' . htmlspecialchars($title) . '"></option>';
 }
-echo '      </datalist>';
+echo '        </datalist>';
+
+// Close form element
+echo '      </form>';
+
 echo '    </div>';
 echo '    <div class="col-3 profile">';
 echo '      <img class="decision-node-icon" alt="" src="/asset/image/index/social-media.svg" />';
 echo '    </div>';
 echo '  </div>';
 echo '</header>';
+
 ?>

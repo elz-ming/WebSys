@@ -38,6 +38,22 @@ body {
   width: 100%;
 }
 
+.search-form {
+  width: 100%;
+  /* Adjust this to fit your layout, could be 100% or another value */
+  display: flex;
+  /* This will allow you to place elements in a row */
+  align-items: center;
+  /* This will vertically center the items in the form */
+}
+
+.search-input {
+  flex-grow: 1;
+  /* This will make the input expand to fill the available space */
+  border: none;
+  outline: none;
+}
+
 .profile {
   display: flex;
   justify-content: flex-end;
