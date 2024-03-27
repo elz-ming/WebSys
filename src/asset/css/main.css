@@ -65,12 +65,6 @@ body {
   padding: 0 50px;
 }
 
-.header-nav ul li:after {
-  content: url(/asset/image/index/frame-1@2x.png);
-  padding-top: 10px;
-  text-decoration: none;
-}
-
 /* ++++++++++++++++++++ CSS for <div id="landing-screen"> and everything inside ++++++++++++++++++++ */
 .header-container {
   box-sizing: border-box;

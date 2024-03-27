@@ -157,7 +157,7 @@ function getBlogPostsAndCategories()
             <div class="my-slider">
               <?php
               $data = getBlogPostsAndCategories(); // Assuming this function returns an array with 'blogs' and 'categories'
-              if (!empty ($data['categories'])) {
+              if (!empty($data['categories'])) {
                 foreach ($data['categories'] as $category) {
                   $name = htmlspecialchars($category['name']);
                   $imagePath = htmlspecialchars($category['image_path']);
@@ -265,15 +265,15 @@ function getBlogPostsAndCategories()
         <div class="col-md-12 col-xl-8 pop-post">
           <?php
           $data = getBlogPostsAndCategories();
-          if (!empty ($data['blogs'])) {
+          if (!empty($data['blogs'])) {
             foreach ($data['blogs'] as $blog) {
-              $imagePath = isset ($blog['image_path']) ? htmlspecialchars($blog['image_path']) : 'default-image-path.jpg';
-              $title = isset ($blog['title']) ? htmlspecialchars($blog['title']) : 'No Title';
+              $imagePath = isset($blog['image_path']) ? htmlspecialchars($blog['image_path']) : 'default-image-path.jpg';
+              $title = isset($blog['title']) ? htmlspecialchars($blog['title']) : 'No Title';
 
-              $firstName = isset ($blog['first_name']) ? htmlspecialchars($blog['first_name']) : '';
-              $lastName = isset ($blog['last_name']) ? htmlspecialchars($blog['last_name']) : '';
+              $firstName = isset($blog['first_name']) ? htmlspecialchars($blog['first_name']) : '';
+              $lastName = isset($blog['last_name']) ? htmlspecialchars($blog['last_name']) : '';
               $authorFullName = trim($firstName . ' ' . $lastName);
-              $authorFullName = !empty ($authorFullName) ? $authorFullName : 'Unknown Author';
+              $authorFullName = !empty($authorFullName) ? $authorFullName : 'Unknown Author';
 
               $formattedDate = $blog['formatted_date'] ?? 'No Date';
               $commentCount = (int) ($blog['comment_count'] ?? 0);
