@@ -279,9 +279,9 @@ function getBlogPostsAndCategories()
               $commentCount = (int) ($blog['comment_count'] ?? 0);
               $likesCount = (int) ($blog['like_count'] ?? 0);
 
-              echo "<div class='pop-wrapper'>";
-              echo "<img src='{$imagePath}' alt='{$title}' width='300' height='175'>";
-              echo "<div class='pop-text'>";
+              echo "<div class='row col-8 pop-wrapper mx-auto'>";
+              echo "<img class='col-xs-12 col-md-6' src='{$imagePath}' alt='{$title}' width='300' height='175'>";
+              echo "<div class='col-xs-12 col-md-6 pop-text'>";
               echo "<h3>{$title}</h3>";
               echo "<div class='post-author'>";
               echo "<a href='#' class='post-link'>Post</a>";
