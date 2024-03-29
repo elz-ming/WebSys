@@ -1,3 +1,16 @@
+<style>
+  .profile .user-info {
+  display: flex;        /* Establish flex container */
+  align-items: center;  /* Center flex items vertically */
+  justify-content: flex-end; /* Aligns items to the end of the container, you can adjust as needed */
+}
+
+.profile .user-name {
+  margin-right: 10px; /* Adjust space between name and icon as needed */
+  margin-top: 15px; /* Adjust space between name and icon as needed */
+}
+</style>
+
 <header>
   <div class="row header-bar">
 
@@ -9,7 +22,18 @@
     </div>
 
     <div class="col-3 profile">
-      <img class="decision-node-icon" alt="" src="/asset/image/index/social-media.svg" />
+      <?php if (isset($isLoggedIn) && $isLoggedIn): ?>
+        <span class="user-name">
+          <?php echo htmlspecialchars($userFirstName) . ' ' . htmlspecialchars($userLastName); ?>
+        </span>
+        <a href="profile.php">
+          <img class="decision-node-icon" alt="Profile" src="/asset/image/index/social-media.svg" />
+        </a>
+      <?php else: ?>
+        <a href="login.php">
+          <img class="decision-node-icon" alt="Login" src="/asset/image/index/login-icon.svg" /> <!-- Assume you have a login icon -->
+        </a>
+      <?php endif; ?>
     </div>
 
   </div>

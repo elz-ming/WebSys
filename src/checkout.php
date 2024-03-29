@@ -78,7 +78,7 @@
             </td>
           </tr>
         </table>
-        <button class='pay-btn'>Checkout</button>
+        <button href="checkoutsuccess.php" class='pay-btn'>Checkout</button>
         <!-- Back button -->
         <br><br><br>
         <button class='back-btn' onclick="window.location.href='package.php'">Back</button>
