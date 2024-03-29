@@ -19,12 +19,25 @@
   // Determine the SQL query based on the type of filter
   $query = "";
   if ($type == 'country') {
-      $query = "SELECT * FROM blog JOIN user ON blog.user_id = user.id WHERE country = ?";
+      $query = "
+        SELECT blog.id, blog.title, blog.subtitle, blog.image_path, user.first_name, user.last_name 
+        FROM blog 
+        JOIN user ON blog.user_id = user.id 
+        WHERE country = ?";
+        
   } elseif ($type == 'category') {
-      $query = "SELECT * FROM blog JOIN user ON blog.user_id = user.id WHERE category = ?";
+      $query = "
+        SELECT blog.id, blog.title, blog.subtitle, blog.image_path, user.first_name, user.last_name 
+        FROM blog 
+        JOIN user ON blog.user_id = user.id 
+        WHERE category = ?";
+
   } else {
       // Default case, maybe handle errors or set a default query
-      $query = "SELECT * FROM blog JOIN user ON blog.user_id = user.id";
+      $query = "
+        SELECT blog.id, blog.title, blog.subtitle, blog.image_path, user.first_name, user.last_name 
+        FROM blog 
+        JOIN user ON blog.user_id = user.id";
   }
 
   // Prepare, bind, execute, and fetch results

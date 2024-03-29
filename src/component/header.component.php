@@ -73,11 +73,11 @@ function getDistinctTitles()
         <span class="user-name">
           <?php echo htmlspecialchars($userFirstName) . ' ' . htmlspecialchars($userLastName); ?>
         </span>
-        <a href="/profile.php">
+        <a href="/asset/php/logout.process.php">
           <img class="decision-node-icon" alt="Profile" src="/asset/image/index/social-media.svg" />
         </a>
       <?php else: ?>
-        <a href=" /login.php">
+        <a href="/login.php">
           <img class="decision-node-icon" alt="Login" src="/asset/image/index/social-media.svg" />
         </a>
       <?php endif; ?>

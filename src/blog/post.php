@@ -43,7 +43,7 @@ function getComments($blog_id)
     die ("Connection failed: " . $conn->connect_error);
   }
 
-  $stmt = $conn->prepare("SELECT content, created_at FROM comment WHERE blog_id = ? ORDER BY id DESC");
+  $stmt = $conn->prepare("SELECT comment.content, comment.created_at, user.first_name, user.last_name FROM comment JOIN user ON comment.user_id = user.id WHERE blog_id = ? ORDER BY comment.created_at DESC");
   $stmt->bind_param("i", $blog_id);
   $stmt->execute();
   $result = $stmt->get_result();
@@ -145,6 +145,12 @@ function time_elapsed_string($datetime, $full = false)
   <?php
   include "../component/header.component.php";
   include "../component/nav.component.php";
+
+  session_start();
+  if (!isset($_SESSION['user_id'])) { 
+    // Store the current URL or relevant identifier in the session
+    $_SESSION['redirect_after_login'] = '/blog/post.php?blog_id=' . $_GET['blog_id'];
+  }
   ?>
   <div id="landing-screen">
     <?php
@@ -209,14 +215,14 @@ function time_elapsed_string($datetime, $full = false)
                 <div class="empty-container-before-comment">
                   <img src="/asset/image/blog/avatar1.jpg" alt="Profile Picture" class="profile-pic">
                   <div class="comment-info">
-                    <span>Edmund Lin </span>
+                    <span><?php echo $comment['first_name'] . '' . $comment['last_name']; ?></span>
                     <span class="timestamp">
                     Posted: <?php echo time_elapsed_string($comment['created_at']); ?>
                     </span>
                   </div>
                 </div>
                 <div class="comment">
-                  <?php echo htmlspecialchars($comment['content']); ?>
+                  <?php echo html_entity_decode($comment['content']); ?>
                 </div>
               </div>
             <?php endforeach; ?>
@@ -240,15 +246,13 @@ function time_elapsed_string($datetime, $full = false)
                       <!-- Hidden field for the blog ID -->
                       <input type="hidden" name="blog_id" value="<?php echo htmlspecialchars($blog['id']); ?>">
                       <!-- Textarea for the comment -->
-                      <textarea name="comment" rows="6" class="form-control" id="message" placeholder="Your Message" required="" style="width: 100%; height: 200px;">
-                        <?php 
+                      <textarea name="comment" rows="6" class="form-control" id="message" placeholder="Your Message" required="" style="width: 100%; height: 200px;"><?php 
                           if (isset($_SESSION['temp_comment']) && $_SESSION['temp_blog_id'] == $blog['id']) {
-                              echo htmlspecialchars($_SESSION['temp_comment']);
+                              echo html_entity_decode($_SESSION['temp_comment']);
                               unset($_SESSION['temp_comment']); // Clear after displaying
                               unset($_SESSION['temp_blog_id']); // Clear after displaying
                           }
-                        ?>
-                      </textarea>
+                        ?></textarea>
                     </fieldset>
                   </div>
                   <div class="col-lg-12 text-center">
