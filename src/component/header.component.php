@@ -6,7 +6,7 @@ function getDistinctTitles()
   $titles = [];
 
   // Create database connection.
-  $config = parse_ini_file('../db-config.ini');
+  $config = parse_ini_file('../../db-config.ini');
   if (!$config) {
     $errorMsg = "Failed to read database config file.";
     $success = false;

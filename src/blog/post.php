@@ -239,8 +239,7 @@ function time_elapsed_string($datetime, $full = false)
                       <!-- Hidden field for the blog ID -->
                       <input type="hidden" name="blog_id" value="<?php echo htmlspecialchars($blog['id']); ?>">
                       <!-- Textarea for the comment -->
-                      <textarea name="comment" rows="6" class="form-control" id="message" placeholder="Your Message"
-                        required="" style="width: 100%; height: 200px;"></textarea>
+                      <textarea name="comment" rows="6" class="form-control" id="message" placeholder="Your Message" required="" style="width: 100%; height: 200px;"></textarea>
                     </fieldset>
                   </div>
                   <div class="col-lg-12 text-center">
@@ -257,7 +256,7 @@ function time_elapsed_string($datetime, $full = false)
   </section>
 
   <?php
-  include "../component/footer.component.php";
+    include "../component/footer.component.php";
   ?>
 </body>
 
