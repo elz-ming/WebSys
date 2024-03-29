@@ -3,6 +3,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
 function getBlog()
 {
   global $blog;
@@ -239,7 +240,15 @@ function time_elapsed_string($datetime, $full = false)
                       <!-- Hidden field for the blog ID -->
                       <input type="hidden" name="blog_id" value="<?php echo htmlspecialchars($blog['id']); ?>">
                       <!-- Textarea for the comment -->
-                      <textarea name="comment" rows="6" class="form-control" id="message" placeholder="Your Message" required="" style="width: 100%; height: 200px;"></textarea>
+                      <textarea name="comment" rows="6" class="form-control" id="message" placeholder="Your Message" required="" style="width: 100%; height: 200px;">
+                        <?php 
+                          if (isset($_SESSION['temp_comment']) && $_SESSION['temp_blog_id'] == $blog['id']) {
+                              echo htmlspecialchars($_SESSION['temp_comment']);
+                              unset($_SESSION['temp_comment']); // Clear after displaying
+                              unset($_SESSION['temp_blog_id']); // Clear after displaying
+                          }
+                        ?>
+                      </textarea>
                     </fieldset>
                   </div>
                   <div class="col-lg-12 text-center">
