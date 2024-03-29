@@ -1,4 +1,8 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 function getBlog()
 {
   global $blog;
@@ -6,7 +10,6 @@ function getBlog()
   // Load database config
   $config = parse_ini_file('../../db-config.ini');
   //$config = parse_ini_file('/var/www/private/db-config.ini');
-
   if (!$config) {
     $errorMsg = "Failed to read database config file.";
     $success = false;
@@ -20,7 +23,7 @@ function getBlog()
     return;
   }
 
-  $blog_id = isset($_GET['blog_id']) ? (int) $_GET['blog_id'] : 1;
+  $blog_id = isset ($_GET['blog_id']) ? (int) $_GET['blog_id'] : 1;
   $getBlog = $conn->prepare("SELECT * FROM blog WHERE id = ?");
   $getBlog->bind_param("s", $blog_id);
   $getBlog->execute();
@@ -28,6 +31,79 @@ function getBlog()
 
   $blog = $getBlog->fetch_assoc();
 }
+
+function getComments($blog_id)
+{
+  // Assuming $config and connection code is correct as per previous examples
+  $config = parse_ini_file('../../db-config.ini');
+  $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
+
+  if ($conn->connect_error) {
+    die ("Connection failed: " . $conn->connect_error);
+  }
+
+  $stmt = $conn->prepare("SELECT content, created_at FROM comment WHERE blog_id = ? ORDER BY id DESC");
+  $stmt->bind_param("i", $blog_id);
+  $stmt->execute();
+  $result = $stmt->get_result();
+
+  $comments = [];
+  while ($row = $result->fetch_assoc()) {
+    $comments[] = $row;
+  }
+
+  $stmt->close();
+  $conn->close();
+
+  return $comments;
+}
+
+// To covert the created_at timestamp to a human-readable format
+function time_elapsed_string($datetime, $full = false)
+{
+  $now = new DateTime();
+  $ago = new DateTime($datetime);
+  $diff = $now->diff($ago);
+
+  $weeks = floor($diff->d / 7);
+  $daysAfterWeeks = $diff->d % 7;
+
+  $string = array(
+    'y' => 'year',
+    'm' => 'month',
+    'w' => 'week',
+    'd' => 'day',
+    'h' => 'hour',
+    'i' => 'minute',
+    's' => 'second',
+  );
+
+  $stringValues = array(
+    'y' => $diff->y,
+    'm' => $diff->m,
+    'w' => $weeks,
+    'd' => $daysAfterWeeks,
+    'h' => $diff->h,
+    'i' => $diff->i,
+    's' => $diff->s,
+  );
+
+  foreach ($string as $key => &$value) {
+    if ($stringValues[$key]) {
+      $value = $stringValues[$key] . ' ' . $value . ($stringValues[$key] > 1 ? 's' : '');
+    } else {
+      unset($string[$key]);
+    }
+  }
+
+  if (!$full) {
+    $string = array_slice($string, 0, 1);
+  }
+
+  return $string ? implode(', ', $string) . ' ago' : 'just now';
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -119,9 +195,34 @@ function getBlog()
       ?>
     </section>
   </main>
+
   <section class="comments">
     <div class="send-message">
-      <div class="container">
+      <div class="container" id="comments">
+        <h3>Comments</h3>
+        <?php $comments = getComments($blog['id']); ?>
+        <?php if (!empty ($comments)): ?>
+          <div class="comments-container">
+            <?php foreach ($comments as $comment): ?>
+              <div class="comment-block">
+                <div class="empty-container-before-comment">
+                  <img src="/asset/image/blog/avatar1.jpg" alt="Profile Picture" class="profile-pic">
+                  <div class="comment-info">
+                    <span>Edmund Lin </span>
+                    <span class="timestamp">
+                    Posted: <?php echo time_elapsed_string($comment['created_at']); ?>
+                    </span>
+                  </div>
+                </div>
+                <div class="comment">
+                  <?php echo htmlspecialchars($comment['content']); ?>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        <?php else: ?>
+          <p>No comments yet. Be the first to comment!</p>
+        <?php endif; ?>
         <div class="row">
           <div class="col-md-12">
             <div class="section-heading">
@@ -130,40 +231,31 @@ function getBlog()
           </div>
           <div class="col-md-8">
             <div class="contact-form">
-              <form id="contact" action="" method="post">
+              <!-- Single form with the correct action attribute -->
+              <form id="contact" action="../asset/php/post_comment.php" method="post">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12">
-                    <div class="col-lg-12">
-                      <fieldset>
-                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message"
-                          required=""></textarea>
-                      </fieldset>
-                    </div>
-                    <div class="row">
-                      <div class="fifty-box">
-                        <fieldset>
-                          <input name="name" type="text" class="form-control" id="name" placeholder="Full Name"
-                            required="">
-                        </fieldset>
-                      </div>
-                      <div class="fifty-box">
-                        <fieldset>
-                          <input name="email" type="text" class="form-control" id="email" placeholder="E-Mail Address"
-                            required="">
-                        </fieldset>
-                      </div>
-                    </div>
+                    <fieldset>
+                      <!-- Hidden field for the blog ID -->
+                      <input type="hidden" name="blog_id" value="<?php echo htmlspecialchars($blog['id']); ?>">
+                      <!-- Textarea for the comment -->
+                      <textarea name="comment" rows="6" class="form-control" id="message" placeholder="Your Message"
+                        required="" style="width: 100%; height: 200px;"></textarea>
+                    </fieldset>
                   </div>
                   <div class="col-lg-12 text-center">
                     <fieldset>
-                      <button type="submit" id="form-submit" class="filled-button">Load More</button>
+                      <!-- Submit button for the form -->
+                      <button type="submit" id="form-submit" class="filled-button">Post Comment</button>
                     </fieldset>
                   </div>
                 </div>
               </form>
             </div>
           </div>
+        </div>
   </section>
+
   <?php
   include "../component/footer.component.php";
   ?>
