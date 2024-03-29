@@ -49,7 +49,7 @@
             </form>
         </div>
         <div class="form-container sign-in">
-            <form action="process_login.php" method="post" class="login-form">
+            <form action="/asset/php/login.process.php" method="post" class="login-form">
                 <h1>
                     <span>W</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span>
                     <span> </span>

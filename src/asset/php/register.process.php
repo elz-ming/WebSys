@@ -64,7 +64,7 @@ function saveMemberToDB()
 {
     global $first_name, $last_name, $email, $pwd_hashed, $errorMsg, $success;
     // Load database config
-    $config = parse_ini_file('/var/www/private/db-config.ini');
+    $config = parse_ini_file('../../../db-config.ini');
     if (!$config) {
         $errorMsg = "Failed to read database config file.";
         $success = false;
