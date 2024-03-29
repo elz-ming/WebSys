@@ -9,6 +9,7 @@
 body {
   overflow-x: hidden;
 }
+
 /* ++++++++++++++++++++ CSS for <header> and everything inside ++++++++++++++++++++ */
 .header-bar {
   display: flex;
@@ -37,6 +38,22 @@ body {
   width: 100%;
 }
 
+.search-form {
+  width: 100%;
+  /* Adjust this to fit your layout, could be 100% or another value */
+  display: flex;
+  /* This will allow you to place elements in a row */
+  align-items: center;
+  /* This will vertically center the items in the form */
+}
+
+.search-input {
+  flex-grow: 1;
+  /* This will make the input expand to fill the available space */
+  border: none;
+  outline: none;
+}
+
 .profile {
   display: flex;
   justify-content: flex-end;
@@ -50,6 +67,7 @@ body {
   align-items: center;
   justify-content: center;
   color: white;
+  margin-top: 0;
 }
 
 .header-nav ul {
@@ -62,13 +80,43 @@ body {
   display: flex;
   align-items: center;
   padding: 0 50px;
+  height: 60px;
+  /* Example height, adjust as needed */
 }
 
-.header-nav ul li:after {
-  content: url(/asset/image/index/frame-1@2x.png);
-  padding-top: 10px;
+.header-nav a {
+  /* Use flexbox to center contents */
+  display: flex;
+  align-items: center;
+  /* This will center the text vertically */
+  justify-content: center;
+  /* This will center the text horizontally */
+  height: 100%;
+  /* Make the anchors fill the entire height of the li */
   text-decoration: none;
+  /* Typically used to remove the underline from links */
+  color: white;
+  /* Assuming you want the text color to be white */
+  /* Add any padding if needed, for example */
+  padding: 10px;
 }
+
+
+.navbar.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  /* Adjust as needed */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Darker semi-transparent background when sticky */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='%23FFF' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")!important;
+}
+
 
 /* ++++++++++++++++++++ CSS for <div id="landing-screen"> and everything inside ++++++++++++++++++++ */
 .header-container {
@@ -150,7 +198,7 @@ body {
 #background-video {
   width: 100%;
   height: auto;
-} 
+}
 
 .video-overlay {
   position: absolute;
@@ -207,73 +255,95 @@ footer {
   /* Horizontal padding for desktop */
 }
 
+.footer-nav a {
+  text-decoration: none;
+  /* Removes underline */
+  color: #FFFFFF;
+  /* Change the color to match your design */
+  transition: color 0.3s ease;
+  /* Optional: for smooth color transition on hover */
+}
+
+.footer-nav a:hover {
+  color: #CCCCCC;
+  /* Change the hover color to match your design */
+}
+
+
 .copyright,
 footer.follow-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ++++++++++++++++++++ CSS for responsive design ++++++++++++++++++++ */
 /* MOBILE PHONES */
 @media screen and (max-width: 480px) {
   .header-nav {
-      font-size: smaller;
+    font-size: smaller;
   }
 
   .header-nav ul {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .header-nav li {
-      padding: 10px 0;
+    padding: 10px 0;
   }
 
   .header-nav ul li:after {
-      content: none;
+    content: none;
   }
 
   .footer-nav {
     font-size: smaller;
   }
+
   .footer-nav ul {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .footer-nav li {
-      padding: 10px 0;
-      /* Vertical padding for stacked items */
+    padding: 10px 0;
+    /* Vertical padding for stacked items */
   }
 }
 
 @media only screen and (max-width:576px) {
   .copyright {
-      order: 1;
+    order: 1;
   }
 
   .footer-nav-child {
-      order: 2;
+    order: 2;
   }
 
   footer.follow-icon {
-      order: 3;
+    order: 3;
   }
 
   .video-background {
-      height: auto !important;
+    height: auto !important;
   }
+
+  .follow-icon {
+    display: flex;
+    justify-content: center;
+  }
+
 }
 
 /* TABLETS */
 @media screen and (max-width: 768px) {
   .header-nav {
-      font-size: small;
+    font-size: small;
   }
 
   .header-nav li {
-      padding: 0 30px;
+    padding: 0 30px;
   }
 
   .video-background {
@@ -286,69 +356,85 @@ footer.follow-icon {
 
   .intro-text,
   .intro-content {
-      font-size: smaller !important;
-  } 
+    font-size: smaller !important;
+  }
 
   .footer-nav {
     font-size: small;
   }
 
   .footer-nav li {
-      padding: 0 20px;
+    padding: 0 20px;
+  }
+
+  .follow-icon {
+    display: flex;
+    justify-content: center;
   }
 }
 
 @media (min-width:769px) and (max-width:992px) {
+  .header-nav {
+    font-size: medium;
+  }
+
   .video-background {
-      height: 40vh !important;
+    height: 40vh !important;
   }
 
   .header-container {
-      margin-top: -300px
+    margin-top: -300px
   }
 
   .intro-text,
   .intro-content {
-      font-size: small !important;
+    font-size: small !important;
   }
 }
 
 @media (min-width:993px) and (max-width: 1200px) {
   .video-background {
-      height: 70vh !important;
+    height: 70vh !important;
   }
 
   .header-container {
-      margin-top: -300px
+    margin-top: -300px
   }
 
   .intro-text,
   .intro-content {
-      font-size: medium !important;
+    font-size: medium !important;
   }
 }
 
 @media (min-width: 1201px) and (max-width: 1400px) {
   .video-background {
-      height: 78vh !important;
+    height: 78vh !important;
   }
 
   .header-container {
-      margin-top: -300px
+    margin-top: -300px
   }
 
   .intro-text,
   .intro-content {
-      font-size: large !important;
+    font-size: large !important;
   }
 }
 
-.orange-button {
-  width: 100%;
-  padding: 15px;
-  background-color: orange;
+.social-icon {
+  text-decoration: none;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.social-icon i {
+  background-color: #ffc107;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   color: white;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
 }
