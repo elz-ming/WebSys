@@ -36,23 +36,10 @@
 </head>
 <body>
     <div class="container">
-        <?php
-        if ($success) {
-            // Login successful
-            echo "<h2 class='success'>Login Successful!</h2>";
-            echo "<p>Welcome back, " . htmlspecialchars($first_name) . " " . htmlspecialchars($last_name) . "!</p>";
-            echo "<p><a href='../../index.php'>Return to Home</a></p>";
-        } else {
-            // Login failed
-            echo "<h2 class='error'>Login Failed</h2>";
-            if (!empty($errorMsg)) {
-                echo "<p>The following errors occurred:</p>";
-                echo "<div class='error'>" . nl2br(htmlspecialchars($errorMsg)) . "</div>";
-            }
-            echo "<p>Please go back and try again.</p>";
-            echo "<p><a href='../../login.php'>Return to Login</a></p>";
-        }
-        ?>
+        <!-- Assuming the checkout is always successful -->
+        <h2 class='success'>Checkout Successful!</h2>
+        <p>Your order has been placed successfully!</p>
+        <p><a href='index.html'>Return to Home</a></p>
     </div>
 </body>
 </html>
