@@ -1,122 +1,88 @@
-<?php
-// Load database config
-$config = parse_ini_file('../db-config.ini');
-if (!$config) {
-    die("Failed to read database config file.");
-}
-
-// Establish database connection
-$conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Fetch package details from the database
-if (isset($_GET['package_id'])) {
-    $package_id = $conn->real_escape_string($_GET['package_id']);
-    $sql = "SELECT * FROM package WHERE id = '$package_id'";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        $package = $result->fetch_assoc();
-    } else {
-        die("Package not found.");
-    }
-} else {
-    die("No package ID provided.");
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/asset/css/checkout.css?v=1.0">
-    <title>Checkout</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout</title>
+<link rel="stylesheet" href="asset/css/checkout.css">
+<script src="asset/js/checkout.js"></script>
 </head>
 <body>
-<div class='container'>
-    <div class='window'>
-        <div class='order-info'>
-            <div class='order-info-content'>
-                <h2>Order Summary</h2>
-                <div class='line'></div>
-                <table class='order-table'>
-                    <tbody>
-                        <tr>
-                            <td><img src='<?php echo $package["image_path"]; ?>' class='full-width'></td>
-                            <td>
-                                <br> <span class='thin'><?php echo $package["pname"]; ?></span>
-                                <br>
-                                <span class='thin small'>Package Destination: <?php echo $package["destination"]; ?></span>
-                                <br>
-                                <span class='thin small'>Package Duration: <?php echo $package["duration"]; ?></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class='price'><?php echo $package["price"]; ?></div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class='line'></div>
-                <div class='total'>
-                    <span style='float:left;'>
-                        <span>TOTAL</span>
-                    </span>
-                    <span style='float:right; text-align:right;'>
-                        <span><?php echo $package["price"]; ?></span>
-                    </span>
+
+<div class="header">
+    ORDER ONLINE OR CALL US @ (1800) 000 8080
+</div>
+
+<div class="container">
+    <?php
+    // Load database config
+    $config = parse_ini_file('../db-config.ini');
+    if (!$config) {
+        echo "Failed to read database config file.";
+        exit;
+    }
+
+    // Establish database connection
+    $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
+    if ($conn->connect_error) {
+        echo "Connection failed: " . $conn->connect_error;
+        exit;
+    }
+
+    // Get the package ID from the query string
+    $package_id = isset($_GET['package_id']) ? (int)$_GET['package_id'] : 0;
+
+    // Fetch package details from the database
+    $sql = "SELECT * FROM package WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $package_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $total = 0;
+    ?>
+    <div class="cart" id="cart">
+    <?php
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $total += $row['price'];
+            ?>
+            <div class="book-item">
+                <img src="<?php echo htmlspecialchars($row['image_path']); ?>" alt="<?php echo htmlspecialchars($row['pname']); ?>" style="width: 100px; height: 150px;">
+                <div class="book-details">
+                    <div class="book-title"><?php echo htmlspecialchars($row['pname']); ?></div>
+                    <br>
+                    <div>Destination: <?php echo htmlspecialchars($row['destination']); ?></div>
+                    <div>Duration: <?php echo htmlspecialchars($row['duration']); ?></div>
+                    <div class="book-price" data-original-price="<?php echo htmlspecialchars($row['price']); ?>">$<?php echo htmlspecialchars($row['price']); ?></div>
+                    <br>
+                    <div class="remove" onclick="removePackage(this)">Remove</div>
+                </div>
+                <div class="quantity-controls">
+                    <button onclick="decreaseQuantity(this)">-</button>
+                    <input type="text" value="1" style="width: 30px;" readonly>
+                    <button onclick="addPackage(this)">+</button>
                 </div>
             </div>
-        </div>
-        <!-- Credit info and other inputs -->
-        <div class='credit-info'>
-      <div class='credit-info-content'>
-        <table class='half-input-table'>
-          <tr>
-            <td>Please select your card: </td>
-            <td>
-              <div class='dropdown' id='card-dropdown'>
-                <div class='dropdown-btn' id='current-card'>Visa</div>
-                <div class='dropdown-select'>
-                  <ul>
-                    <li>Master Card</li>
-                    <li>American Express</li>
-                  </ul>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </table>
-        <img src='https://dl.dropboxusercontent.com/s/ubamyu6mzov5c80/visa_logo%20%281%29.png' height='80' class='credit-card-image' id='credit-card-image'>
-        Card Number
-        <input class='input-field' id='card-number'>
-        Card Holder
-        <input class='input-field' id='card-holder'>
-        <table class='half-input-table'>
-          <tr>
-            <td> 
-              <span>Expires</span>
-              <input class='input-field' id='expires'>
-            </td>
-            <td>
-              <span>CVC</span>
-              <input class='input-field' id='cvc'>
-            </td>
-          </tr>
-        </table>
-        <button href="/checkoutsuccess.php" class='pay-btn'>Checkout</button>
-        <!-- Back button -->
-        <br><br><br>
-        <button class='back-btn' href='package.php'>Back</button>
-      </div>
+            <?php
+        }
+    } else {
+        echo "<p>No packages in the order.</p>";
+    }
+    $stmt->close();
+    $conn->close();
+    ?>
     </div>
+
+    <div class="summary">
+        <h2>Order Summary</h2>
+        <div class="summary-item total">Total Cart Value: <span id="totalCartValue">$<?php echo htmlspecialchars($total); ?></span></div>
+        <textarea class="special-instruction" placeholder="Special Request"></textarea>
+        <button onclick="window.location.href='/checkoutsuccess.php'" class="checkout">Checkout</button>
+        <br><br>
+        <button onclick="window.location.href='/package.php'" class="checkout">Back</button>
     </div>
 </div>
-<script src="asset/js/checkout.js"></script>
+
 </body>
 </html>
-<?php
-$conn->close();
-?>
