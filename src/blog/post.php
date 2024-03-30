@@ -62,12 +62,6 @@
 
   <body>
     <?php
-
-      session_start(); // Start the session at the very beginning
-
-      $isLoggedIn = isset($_SESSION['user_id']); // Check if the user is logged in.
-      $userFirstName = $isLoggedIn ? $_SESSION['first_name'] : '';
-      $userLastName = $isLoggedIn ? $_SESSION['last_name'] : '';
       include "../component/header.component.php";
       include "../component/nav.component.php";
     ?>
