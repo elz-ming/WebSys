@@ -1,4 +1,18 @@
-/*** Package ***/
+.overlay-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
 .package-item {
     box-shadow: 0 0 45px rgba(0, 0, 0, .08);
 }
@@ -12,6 +26,7 @@
 }
 
 .process-container {
-    margin-top: 20px; /* Reduce the top margin of the container */
-    margin-bottom: 20px; /* Reduce the bottom margin of the container */
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
+
