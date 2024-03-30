@@ -62,6 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $_SESSION['user_id'] = $row['id'];
                         $_SESSION['first_name'] = $first_name; // Store first name in session
                         $_SESSION['last_name'] = $last_name; // Store last name in session
+                        $_SESSION['loggedin'] = true;
 
                         // A redirection to another page could also go here
                         if (isset($_SESSION['redirect_after_login'])) {
@@ -74,7 +75,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             header('Location: /index.php');
                             exit;
                         }
-                        exit();
                     } else {
                         $errorMsg = "Your account is not verified. Please check your email to verify it.";
                     }
