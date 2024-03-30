@@ -25,3 +25,27 @@ let slider = tns({
     }
   }
 });
+
+document.addEventListener("DOMContentLoaded", function(){
+  var urlParams = new URLSearchParams(window.location.search);
+  var subscribe = urlParams.get('subscribe');
+
+  if(subscribe === 'success') {
+    var successModal = new bootstrap.Modal(document.getElementById('thankYouModal'), {});
+    successModal.show();
+  } else if(subscribe === 'exists') {
+    var existsModal = new bootstrap.Modal(document.getElementById('alreadySubscribedModal'), {});
+    existsModal.show();
+  } else if(subscribe === 'failure') {
+    var failureModal = new bootstrap.Modal(document.getElementById('failureModal'), {});
+    failureModal.show();
+  }
+
+  // Explicitly scroll to the subscribe-container if not automatically done by the browser
+  if (window.location.hash === '#subscribe') {
+      const subscribeSection = document.getElementById('subscribe');
+      if (subscribeSection) {
+          subscribeSection.scrollIntoView({ behavior: 'smooth' });
+      }
+  }
+});

@@ -56,15 +56,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $success = true;
                         $first_name = $row['first_name']; // Get the user's first name
                         $last_name = $row['last_name']; // Get the user's last name
+
                         // Set session variables and perform any other login actions here
                         session_start();
                         $_SESSION['user_id'] = $row['id'];
                         $_SESSION['first_name'] = $first_name; // Store first name in session
                         $_SESSION['last_name'] = $last_name; // Store last name in session
-                        $_SESSION['loggedin'] = true; // Indicate that the user is logged in
+                        $_SESSION['loggedin'] = true;
+
                         // A redirection to another page could also go here
-                        header("Location: ../../index.php");
-                        exit();
+                        if (isset($_SESSION['redirect_after_login'])) {
+                            $url = $_SESSION['redirect_after_login'];
+                            unset($_SESSION['redirect_after_login']); // Clear it after use
+                            header('Location: ' . $url);
+                            exit;
+                        } else {
+                            // Default redirect if no specific page was stored
+                            header('Location: /index.php');
+                            exit;
+                        }
                     } else {
                         $errorMsg = "Your account is not verified. Please check your email to verify it.";
                     }
@@ -76,6 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             $stmt->close();
             $conn->close();
+            header('Location: /login.php');
         }
     }
 }

@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   
     function loadMoreBlogs() {
-      currentPostCount += 2;
+      currentPostCount += 4;
       fetch(
         `../../../asset/php/post.process.php?type=all&detail=&start=${currentPostCount}`
       )
