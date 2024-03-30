@@ -104,10 +104,8 @@ function getBlogPostsAndCategories()
 
 <body>
   <?php
-
-    include "component/header.component.php";
-    include "component/nav.component.php";
-    include "component/landing-screen.component.php";
+  include "component/header.component.php";
+  include "component/landing-screen.component.php";
   ?>
 
   <main class="containers">
