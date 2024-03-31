@@ -20,6 +20,7 @@ body {
   margin: 0px 30px;
   border-bottom: 1px solid white;
   color: white;
+  background: rgba(0, 0, 0, 0.9);
 }
 
 .search-bar {
@@ -114,7 +115,7 @@ body {
 }
 
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='%23FFF' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")!important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='%23FFF' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
 
 
@@ -438,6 +439,7 @@ footer.follow-icon {
   line-height: 40px;
   font-size: 20px;
 }
+
 .orange-button {
   width: 100%;
   padding: 15px;
@@ -446,4 +448,4 @@ footer.follow-icon {
   font-weight: bold;
   cursor: pointer;
   border: none;
-  }
+}
