@@ -32,20 +32,8 @@
       include "component/header.component.php";
       include "component/landing-screen.component.php";
 
-      // Load database config
-      $config = parse_ini_file('../db-config.ini');
-      if (!$config) {
-          $errorMsg = "Failed to read database config file.";
-          $success = false;
-          return;
-      }
-
       // Establish database connection
-      $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
-      if ($conn->connect_error) {
-          $errorMsg = "Connection failed: " . $conn->connect_error;
-          return;
-      }
+      include "connectDB.php";
 
       // Fetch packages from the database
       $sql = "SELECT * FROM package"; // Adjust the table name and columns as per your database

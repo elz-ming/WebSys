@@ -15,19 +15,8 @@
 
 <div class="container">
     <?php
-    // Load database config
-    $config = parse_ini_file('../db-config.ini');
-    if (!$config) {
-        echo "Failed to read database config file.";
-        exit;
-    }
-
     // Establish database connection
-    $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
-    if ($conn->connect_error) {
-        echo "Connection failed: " . $conn->connect_error;
-        exit;
-    }
+    include "connectDB.php";
 
     // Get the package ID from the query string
     $package_id = isset($_GET['package_id']) ? (int)$_GET['package_id'] : 0;

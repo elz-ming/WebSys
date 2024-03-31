@@ -9,19 +9,8 @@ $isLoggedIn = isset($_SESSION['user_id']); // Check if the user is logged in.
 $userFirstName = $isLoggedIn ? $_SESSION['first_name'] : '';
 $userLastName = $isLoggedIn ? $_SESSION['last_name'] : '';
 
- // Load database config
- $config = parse_ini_file('../db-config.ini');
- if (!$config) {
-     echo "Failed to read database config file.";
-     exit;
- }
-
 // Establish database connection
-$conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
-if ($conn->connect_error) {
-    echo "Connection failed: " . $conn->connect_error;
-    exit;
-}
+include "connectDB.php";
 
 // Check if the user is logged in
 if ($isLoggedIn) {

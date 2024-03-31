@@ -18,17 +18,8 @@ if (isset ($_GET['id']) && isset ($_GET['key'])) {
     $id = sanitize_input($_GET['id']);
     $vkey = sanitize_input($_GET['key']);
 
-    $config = parse_ini_file('/var/www/private/db-config.ini');
-    if (!$config) {
-        echo "Failed to read database config file.";
-        return;
-    }
-
-    $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
-    if ($conn->connect_error) {
-        echo "Connection failed: " . $conn->connect_error;
-        return;
-    }
+    // Establish database connection
+    include "connectDB.php";
 
     // Binding to use 'id' and 'vkey' directly
     $stmt = $conn->prepare("SELECT id FROM user WHERE id = ? AND vkey = ?");

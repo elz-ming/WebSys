@@ -6,13 +6,8 @@ function getBlogPostsAndCategories()
   $blogs = [];
   $categories = [];
 
-  // Create database connection.
-  $config = parse_ini_file('../db-config.ini');
-  if (!$config) {
-    $errorMsg = "Failed to read database config file.";
-    $success = false;
-    return ['blogs' => $blogs, 'categories' => $categories]; // Return even if config file cannot be read
-  }
+  // Establish database connection
+    include "connectDB.php";
 
   $conn = new mysqli(
     $config['servername'],

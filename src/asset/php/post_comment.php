@@ -17,15 +17,9 @@
         $user_id = htmlspecialchars($_SESSION['user_id']);
         $blog_id = htmlspecialchars($_POST['blog_id']);
         $content = htmlspecialchars($_POST['comment']);
-
-        // Load database config and create connection
-        $config = parse_ini_file('../../../db-config.ini'); // Adjust the path as needed
-        $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
-
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
+        
+        // Establish database connection
+        include "connectDB.php";
 
         // Prepare the INSERT statement
         $stmt = $conn->prepare("INSERT INTO comment (user_id, blog_id, content) VALUES (?, ?, ?)");

@@ -1,17 +1,6 @@
 <?php
-  // Include database configuration
-  $config = parse_ini_file('../../../db-config.ini');
-  //$config = parse_ini_file('/var/www/private/db-config.ini');
-  if (!$config) {
-      echo "Failed to read database config file.";
-      exit;
-  }
-
-  // Establish database connection
-  $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
-  if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-  }
+  /// Establish database connection
+  include "connectDB.php";
 
   $type = $_GET['type'];
   $detail = $conn->real_escape_string($_GET['detail']); // Prevent SQL injection

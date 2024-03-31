@@ -54,17 +54,8 @@ function sendThankYouEmail($email)
 // Save subscriber to DB
 function saveSubscriberToDB($fullname, $email)
 {
-
-    // Include database configuration
-    $config = parse_ini_file('../../../db-config.ini');
-    //$config = parse_ini_file('/var/www/private/db-config.ini');
-
     // Establish database connection
-    $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
-
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    include "connectDB.php";
 
     // Check if the email already exists
     $stmt = $conn->prepare("SELECT email FROM subscribers WHERE email = ?");
