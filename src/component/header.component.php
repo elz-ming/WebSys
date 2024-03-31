@@ -1,3 +1,15 @@
+<?php
+  // Check if session is not already started
+  if (session_status() == PHP_SESSION_NONE) {
+      session_start(); // Start the session
+  }
+
+  // Now, check if the user is logged in and set the variables.
+  $isLoggedIn = isset($_SESSION['loggedin']); // Check if the user is logged in.
+  $userFirstName = $isLoggedIn ? $_SESSION['first_name'] : '';
+  $userLastName = $isLoggedIn ? $_SESSION['last_name'] : '';
+?>
+
 <header id="header-bar-js">
   <div class="row header-bar">
     <h1 class="col-sm-6 col-lg-3">TravelTalk</h1>

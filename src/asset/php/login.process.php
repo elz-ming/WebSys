@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         include "connectDB.php";
 
         // Prepare the SQL statement
-        $stmt = $conn->prepare("SELECT id, first_name, last_name, password, verified FROM user WHERE email = ?");
+        $stmt = $conn->prepare("SELECT id, first_name, last_name, password, verified, admin FROM user WHERE email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -55,6 +55,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION['first_name'] = $first_name; // Store first name in session
                     $_SESSION['last_name'] = $last_name; // Store last name in session
                     $_SESSION['loggedin'] = true;
+
+                    if ($row['admin'] == 1) {
+                        $_SESSION['admin'] = true;
+                    }
 
                     // A redirection to another page could also go here
                     if (isset($_SESSION['redirect_after_login'])) {
