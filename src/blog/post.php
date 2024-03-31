@@ -8,21 +8,8 @@ function getBlog()
 {
   global $blog;
 
-  // Load database config
-  $config = parse_ini_file('../../db-config.ini');
-  //$config = parse_ini_file('/var/www/private/db-config.ini');
-  if (!$config) {
-    $errorMsg = "Failed to read database config file.";
-    $success = false;
-    return;
-  }
-
   // Establish database connection
-  $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
-  if ($conn->connect_error) {
-    $errorMsg = "Connection failed: " . $conn->connect_error;
-    return;
-  }
+  include "connectDB.php";
 
   $blog_id = isset ($_GET['blog_id']) ? (int) $_GET['blog_id'] : 1;
   $getBlog = $conn->prepare("SELECT * FROM blog WHERE id = ?");
@@ -35,15 +22,10 @@ function getBlog()
 
 function getComments($blog_id)
 {
-  // Assuming $config and connection code is correct as per previous examples
-  $config = parse_ini_file('../../db-config.ini');
-  $conn = new mysqli($config['servername'], $config['username'], $config['password'], $config['dbname']);
+  // Establish database connection
+  include "connectDB.php";
 
-  if ($conn->connect_error) {
-    die ("Connection failed: " . $conn->connect_error);
-  }
-
-  $stmt = $conn->prepare("SELECT comment.content, comment.created_at, user.first_name, user.last_name FROM comment JOIN user ON comment.user_id = user.id WHERE blog_id = ? ORDER BY comment.created_at DESC");
+  $stmt = $conn->prepare("SELECT comment.content, comment.created_at, user.first_name, user.last_name, user.image_path FROM comment JOIN user ON comment.user_id = user.id WHERE blog_id = ? ORDER BY comment.created_at DESC");
   $stmt->bind_param("i", $blog_id);
   $stmt->execute();
   $result = $stmt->get_result();
@@ -145,7 +127,10 @@ function time_elapsed_string($datetime, $full = false)
   <?php
   include "../component/header.component.php";
 
-  session_start();
+  if (session_status() == PHP_SESSION_NONE) {
+    session_start(); // Start the session
+  }
+
   if (!isset($_SESSION['user_id'])) { 
     // Store the current URL or relevant identifier in the session
     $_SESSION['redirect_after_login'] = '/blog/post.php?blog_id=' . $_GET['blog_id'];
@@ -212,7 +197,7 @@ function time_elapsed_string($datetime, $full = false)
             <?php foreach ($comments as $comment): ?>
               <div class="comment-block">
                 <div class="empty-container-before-comment">
-                  <img src="/asset/image/blog/avatar1.jpg" alt="Profile Picture" class="profile-pic">
+                  <img src=<?php echo $comment['image_path']; ?> alt="Profile Picture" class="profile-pic">
                   <div class="comment-info">
                     <span><?php echo $comment['first_name'] . '' . $comment['last_name']; ?></span>
                     <span class="timestamp">
