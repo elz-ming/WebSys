@@ -70,7 +70,7 @@ if (isset ($_GET['id']) && isset ($_GET['key'])) {
 <body>
     <div class="container">
         <header>
-            <h1>Travel Talk</h1>
+            <h1><a href="Login.php">Travel Talk</a></h1>
         </header>
         <main>
             <div class="verification-message">
@@ -84,32 +84,32 @@ if (isset ($_GET['id']) && isset ($_GET['key'])) {
         <div class="cube-container">
             <div class="cube initial-position">
                 <img class="cube-face-image image-1"
-                    src="https://images.unsplash.com/photo-1445810694374-0a94739e4a03?w=300&h=300&fit=crop">
+                    src="https://source.unsplash.com/man-in-swimming-pool-during-daytime-IzP7jvgwXo0/300x300">
                 <img class="cube-face-image image-2"
-                    src="https://images.unsplash.com/photo-1515260268569-9271009adfdb?w=300&h=300&fit=crop">
+                    src="https://source.unsplash.com/woman-in-red-and-orange-sweater-stands-on-stone-beside-water-JQ0YTMFhN5Q/300x300">
                 <img class="cube-face-image image-3"
-                    src="https://images.unsplash.com/photo-1506045412240-22980140a405?w=300&h=300&fit=crop">
+                    src="https://source.unsplash.com/a-man-on-a-motorcycle-carrying-a-large-bundle-of-leaves-dhx1hRfS5CY/300x300">
                 <img class="cube-face-image image-4"
-                    src="https://images.unsplash.com/photo-1514041181368-bca62cceffcd?w=300&h=300&fit=crop">
+                    src="https://source.unsplash.com/portrait-of-a-young-traveler-dressed-in-bright-jacket-and-hat-enjoying-a-trip-highly-in-the-mountains-traveling-on-tenerife-island-spain-v633pKkykvs/300x300">
                 <img class="cube-face-image image-5"
-                    src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=300&h=300&fit=crop">
+                    src="https://source.unsplash.com/a-tree-that-is-standing-in-the-water-bCwYbTmixiw/300x300">
                 <img class="cube-face-image image-6"
-                    src="https://images.unsplash.com/photo-1486334803289-1623f249dd1e?w=300&h=300&fit=crop">
+                    src="https://source.unsplash.com/people-on-beach-during-daytime-kbMao2VbNuY/300x300">
             </div>
         </div>
         <div class="image-buttons">
             <input type="image" class="show-image-1"
-                src="https://images.unsplash.com/photo-1445810694374-0a94739e4a03?w=100&h=100&fit=crop"></input>
+                src="https://source.unsplash.com/man-in-swimming-pool-during-daytime-IzP7jvgwXo0/100x100"></input>
             <input type="image" class="show-image-2"
-                src="https://images.unsplash.com/photo-1515260268569-9271009adfdb?w=100&h=100&fit=crop"></input>
+                src="https://source.unsplash.com/woman-in-red-and-orange-sweater-stands-on-stone-beside-water-JQ0YTMFhN5Q/100x100"></input>
             <input type="image" class="show-image-3"
-                src="https://images.unsplash.com/photo-1506045412240-22980140a405?w=100&h=100&fit=crop"></input>
+                src="https://source.unsplash.com/a-man-on-a-motorcycle-carrying-a-large-bundle-of-leaves-dhx1hRfS5CY/100x100"></input>
             <input type="image" class="show-image-4"
-                src="https://images.unsplash.com/photo-1514041181368-bca62cceffcd?w=100&h=100&fit=crop"></input>
+                src="https://source.unsplash.com/portrait-of-a-young-traveler-dressed-in-bright-jacket-and-hat-enjoying-a-trip-highly-in-the-mountains-traveling-on-tenerife-island-spain-v633pKkykvs/100x100"></input>
             <input type="image" class="show-image-5"
-                src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=100&h=100&fit=crop"></input>
+                src="https://source.unsplash.com/a-tree-that-is-standing-in-the-water-bCwYbTmixiw/100x100"></input>
             <input type="image" class="show-image-6"
-                src="https://images.unsplash.com/photo-1486334803289-1623f249dd1e?w=100&h=100&fit=crop"></input>
+                src="https://source.unsplash.com/people-on-beach-during-daytime-kbMao2VbNuY/100x100"></input>
         </div>
     </div>
     </main>

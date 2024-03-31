@@ -1,6 +1,6 @@
 body {
   font-family: "Roboto", sans-serif;
-  background-image: url("../image/LoginJapan.jpg");
+  background-image: url("../image/login&logout/LoginJapan.jpg");
   background-size: cover; /* Ensure the background covers the entire container */
   background-position: center; /* Center the background image */
   display: flex;
