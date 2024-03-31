@@ -1,0 +1,20 @@
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #fff; }
+.header { padding: 10px; text-align: center; background-color: #f4f4f4; margin-bottom: 20px; }
+.container { display: flex; justify-content: center; padding: 20px; }
+.cart { width: 60%; padding-right: 20px; }
+.summary { width: 30%; padding: 20px; border: 1px solid #ccc; }
+.summary h2 { color: #d3a625; }
+.book-item { display: flex; align-items: flex-start; padding-bottom: 20px; border-bottom: 1px solid #e1e1e1; }
+.book-item img { margin-right: 10px; }
+.book-details { flex-grow: 1; }
+.book-title { font-size: 18px; font-weight: 700; margin-bottom: 5px; }
+.book-price { color: #d3a625; font-weight: 700; }
+.remove { color: #d3a625; cursor: pointer; text-align: left; font-weight: 700; display: block; margin-top: 8px; } /* Added display:block and margin-top */
+.quantity-controls { display: flex; margin-top: 10px; align-items: center; }
+.quantity-controls button, .quantity-controls input { margin-right: 5px; }
+.quantity-controls input { text-align: center; }
+.summary-item { margin-bottom: 10px; }
+.summary-item span { font-weight: 700; }
+.checkout { background-color: #d3a625; color: white; border: none; padding: 10px 20px; cursor: pointer; width: 100%; }
+.special-instruction { width: 100%; margin-bottom: 10px; }

@@ -1,0 +1,70 @@
+body {
+    display: flex;
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center */
+    min-height: 100vh; /* Ensure the body takes up at least the full height of the viewport */
+    background-image: url('../image/login&logout/RegisterBg.jpg');
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+    position: relative; 
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: -1; 
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 60px; /* Increased padding for more inner space */
+    max-width: 800px; /* Increased max-width for more horizontal space */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #333;
+}
+
+.success {
+    color: #008000;
+}
+
+.error {
+    color: #FF0000;
+    text-align: center;
+}
+
+.back-btn {
+    background-color: #ffa902; 
+    color: white;
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    transition: background-color 0.3s ease; 
+}
+
+.back-btn:hover {
+    background-color: #f4a507; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px; 
+        max-width: 95%; 
+        margin: 20px; 
+    }
+}

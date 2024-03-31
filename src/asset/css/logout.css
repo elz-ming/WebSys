@@ -1,0 +1,66 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-image: url("../image/login&logout/LoginJapan.jpg");
+  background-size: cover; /* Ensure the background covers the entire container */
+  background-position: center; /* Center the background image */
+  display: flex;
+  justify-content: center;
+  overflow: hidden; /* Prevent scrolling caused by the sliding images */
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  background-color: #e6f2ff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.home-button {
+  background-color: #ff9966;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: wave 1s ease-in-out infinite;
+}
+
+.home-button:hover {
+  background-color: #ff7f50;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
