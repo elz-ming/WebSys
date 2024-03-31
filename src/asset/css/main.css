@@ -438,3 +438,12 @@ footer.follow-icon {
   line-height: 40px;
   font-size: 20px;
 }
+.orange-button {
+  width: 100%;
+  padding: 15px;
+  background-color: orange;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  }
