@@ -144,7 +144,6 @@ function time_elapsed_string($datetime, $full = false)
 <body>
   <?php
   include "../component/header.component.php";
-  include "../component/nav.component.php";
 
   session_start();
   if (!isset($_SESSION['user_id'])) { 
@@ -236,7 +235,7 @@ function time_elapsed_string($datetime, $full = false)
               <h2>Leave A Comment</h2>
             </div>
           </div>
-          <div class="col-md-8">
+          <div class="col-md-12">
             <div class="contact-form">
               <!-- Single form with the correct action attribute -->
               <form id="contact" action="../asset/php/post_comment.php" method="post">
