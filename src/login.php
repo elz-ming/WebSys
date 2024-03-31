@@ -29,6 +29,7 @@
                     <input required maxlength="45" type="text" id="last_name" name="last_name" class="form-control"
                         placeholder="Enter last name">
                 </div>
+
                 <div class="mb-3">
                     <label for="email" class="form-label"></label>
                     <input required type="email" id="email" name="email" class="form-control" placeholder="Enter email">

@@ -1,9 +1,5 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
@@ -70,10 +66,12 @@ function saveMemberToDB()
     $checkEmailStmt = $conn->prepare("SELECT email FROM user WHERE email = ?");
     $checkEmailStmt->bind_param("s", $email);
     $checkEmailStmt->execute();
-        
+    $checkEmailStmt->store_result(); // Store the result to get the correct num_rows
+
     if ($checkEmailStmt->num_rows > 0) {
         $errorMsg = "Email already registered.";
         $success = false;
+        $checkEmailStmt->close();
         return; // Early return if email exists
     }
     $checkEmailStmt->close();
@@ -167,63 +165,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/registerprocess.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <title>Registration Result</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #333;
-        }
-
-        .success {
-            color: #008000;
-        }
-
-        .error {
-            color: #FF0000;
-            text-align: center;
-        }
-    </style>
 </head>
 
 <body>
-
-    <?php
-    ?>
     <div class="container">
         <?php
-
-        if ($success) {
-            // Registration successful
-            // You can perform database operations here if needed
-            echo "<h2 class='success'>Registration Successful!</h2>";
-            echo "<p>Welcome, $first_name $last_name! Thank you for registering with us.</p>";
+        // Check if the variables are set and not empty
+        if (isset($first_name, $last_name) && $first_name != "" && $last_name != "") {
+            if ($success) {
+                echo "<h2 class='success'><i class='fa fa-check-circle'></i> Registration Successful!</h2>";
+                echo "<p>Welcome, $first_name $last_name! Thank you for registering with us.</p>";
+                echo "<p>Please check your email for verification link!</p>";
+            } else {
+                echo "<h2 class='error'>Registration Failed</h2>";
+                echo "<p>The following errors occurred:</p>";
+                echo "<ol>";
+                foreach (explode("<br>", $errorMsg) as $error) {
+                    echo "<li>" . htmlspecialchars($error) . "</li>";
+                }
+                echo "</ol>";
+                echo "<p>Please go back and correct the errors.</p>";
+            }
         } else {
-            // Registration failed
-            echo "<h2 class='error'>Registration Failed</h2>";
-            echo "<p>The following errors occurred:</p>";
-            echo "<ol>";
-            echo "<li>$errorMsg</li>";
-            echo "</ol>";
-            echo "<p>Please go back and correct the errors.</p>";
+            // If the variables are not set or are empty, prompt the user to go back to the homepage.
+            echo "<h2 class='notice'>Information Not Available</h2>";
+            echo "<p>Please go back to the homepage.</p>";
         }
         ?>
+        <button onclick="window.location.href='../../Login.php';" class="back-btn">Go Back</button>
     </div>
 </body>
+
+</html>

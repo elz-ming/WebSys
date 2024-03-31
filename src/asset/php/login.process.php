@@ -4,7 +4,8 @@ $email = $password = $errorMsg = $first_name = $last_name = "";
 $success = false; // Assume failure until verification
 
 // Function to sanitize input data
-function sanitize_input($data) {
+function sanitize_input($data)
+{
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
@@ -13,7 +14,7 @@ function sanitize_input($data) {
 
 // Validate and sanitize input
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (empty($_POST["email"])) {
+    if (empty ($_POST["email"])) {
         $errorMsg .= "Email is required.<br>";
     } else {
         $email = sanitize_input($_POST["email"]);
@@ -22,14 +23,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    if (empty($_POST["pwd"])) {
+    if (empty ($_POST["pwd"])) {
         $errorMsg .= "Password is required.<br>";
     } else {
         $password = sanitize_input($_POST["pwd"]);
     }
 
     // If validation successful, attempt to log in
-    if (empty($errorMsg)) {
+    if (empty ($errorMsg)) {
         // Establish database connection
         include "connectDB.php";
 

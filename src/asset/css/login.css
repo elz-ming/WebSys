@@ -23,7 +23,7 @@ h1 span {
 }
 
 h1 span:hover {
-  color: #ffa902; /* Change to yellow on hover */
+  color: #ffa902; 
 }
 
 .container {
@@ -187,9 +187,9 @@ input:valid {
 }
 
 .toggle {
-  background-image: url("../image/LoginJapan.jpg");
-  background-size: cover; /* Ensure the background covers the entire container */
-  background-position: center; /* Center the background image */
+  background-image: url("../image/login&logout/LoginJapan.jpg");
+  background-size: cover; 
+  background-position: center; 
   color: #070707;
   position: relative;
   left: -100%;
@@ -200,7 +200,7 @@ input:valid {
 }
 
 .container.active .toggle {
-  background-image: url("../image/LoginSpain.jpg");
+  background-image: url("../image/login&logout/LoginSpain.jpg");
   background-size: cover; /* Ensure the background covers the entire container */
   background-position: center; /* Center the background image */
   transform: translateX(50%);
@@ -243,3 +243,31 @@ input:valid {
 .container.active .toggle-right {
   transform: translateX(200%);
 }
+
+.error-tooltip {
+  visibility: hidden; /* Initially hidden */
+  background-color: red;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 10px;
+
+  /* Positioning and styling */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 105%;
+  margin-left: -60px;
+}
+
+.error-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* Below the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: red transparent transparent transparent; /* Triangle */
+}
+

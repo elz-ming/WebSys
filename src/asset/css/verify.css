@@ -27,8 +27,12 @@ html, body {
     flex-direction: column;
 }
   
-h1 {
+h1 a {
     font-size: 8rem; 
+    text-align: center;
+    padding-bottom: 20px;
+    color: inherit;
+    text-decoration: none;
 
   }
 
@@ -57,7 +61,7 @@ header {
 	font-size: 10px;
 
 	/* Border color variable */
-	--border-color: #e70;
+	--border-color: #ffa902;
 }
 
 /* Flex container for side-by-side layout */
@@ -104,7 +108,7 @@ header {
 }
 
 .image-buttons input {
-	border: 0.2rem solid #fafafa;
+	border: 0.2rem solid #ffa902;
 }
 
 .image-buttons input:focus {
@@ -166,4 +170,14 @@ header {
 
 .cube.show-image-6 {
 	transform: translateZ(-15rem) rotateX(90deg);
+}
+
+
+@media screen and (max-width: 1020px) {
+  .cube-container {
+    display: none;
+  }
+  .image-buttons{
+    display: none; 
+  }
 }
