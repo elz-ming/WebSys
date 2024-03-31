@@ -1,12 +1,14 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     const placeTypeSelect = document.getElementById('placeType');
     const placeSortSelect = document.getElementById('placeSort');
     const blogContainer = document.querySelector('.card-container');
+    
     let currentPostCount = 4;
-  
+    
     function fetchAllBlogs() {
-        const fetchUrl = `../../../asset/php/post.process.php?type=all&detail=`;
-        fetch(fetchUrl)
+      // Fetch all blog data when page loads
+      const fetchUrl = `../../../asset/php/post.process.php?type=all&detail=`;
+      fetch(fetchUrl)
           .then((response) => response.json())
           .then((data) => {
             blogCount = data.length;
@@ -14,23 +16,40 @@ document.addEventListener('DOMContentLoaded', function () {
           })
           .catch((error) => console.error('Error fetching all blogs:', error));
       }
+      function loadMoreBlogs() {
+        currentPostCount += 2;
+        const type = placeTypeSelect.value;
+        const detail = placeSortSelect.value;
+        fetch(
+          `../../../asset/php/post.process.php?type=${type}&detail=${encodeURIComponent(
+            detail
+          )}&start=${currentPostCount}`
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            displayBlogs(data.slice(0, currentPostCount));
+          })
+          .catch((error) => console.error('Error fetching more blogs:', error));
+      }
+      
+
+    
   
-    function loadMoreBlogs() {
-      currentPostCount += 4;
-      fetch(
-        `../../../asset/php/post.process.php?type=all&detail=&start=${currentPostCount}`
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          displayBlogs(data.slice(0, currentPostCount));
-        })
-        .catch((error) => console.error('Error fetching more blogs:', error));
-    }
-  
-    function displayBlogs(blogs) {
-      blogContainer.innerHTML = '';
-      blogs.forEach((blog) => {
-        const cardHtml = `
+      function addLoadMoreButton() {
+        if (blogCount > currentPostCount) {
+          const loadMoreButton = document.createElement('button');
+          loadMoreButton.id = 'loadMoreButton';
+          loadMoreButton.textContent = 'Load More';
+          loadMoreButton.classList.add('orange-button');
+          blogContainer.appendChild(loadMoreButton);
+          loadMoreButton.addEventListener('click', loadMoreBlogs);
+        }
+      }
+      
+      function displayBlogs(blogs) {
+        blogContainer.innerHTML = '';
+        blogs.forEach((blog) => {
+          const cardHtml = `
                   <div class="col-4 card">
                       <img src="${blog.image_path}" alt="Blog Image">
                       <div class="card-content">
@@ -40,45 +59,82 @@ document.addEventListener('DOMContentLoaded', function () {
                       </div>
                   </div>
               `;
-        blogContainer.innerHTML += cardHtml;
-      });
-      appendLoadMoreButton();
-    }
+          blogContainer.innerHTML += cardHtml;
+        });
+      
+        addLoadMoreButton();
+      }
+      
   
-
-function appendLoadMoreButton() {
-    if (currentPostCount < blogCount) {
-      const loadMoreButton = document.createElement('button');
-      loadMoreButton.id = 'loadMoreButton';
-      loadMoreButton.textContent = 'Load More';
-      loadMoreButton.classList.add('orange-button'); // Add the CSS class
-      blogContainer.appendChild(loadMoreButton);
-      loadMoreButton.addEventListener('click', loadMoreBlogs);
-    }
-  }
+    // Function to handle changes in the first dropdown or initial load
+    function fetchDataForSecondDropdown() {
+      // Determine which file to use based on the selection
+      let fetchUrl = '';
+      switch (placeTypeSelect.value) {
+          case 'country':
+              fetchUrl = '../../../asset/php/getCountries.php';
+              break;
+          case 'category':
+              fetchUrl = '../../../asset/php/getCategories.php';
+              break;
+      }
   
+      // Fetch data and populate the second dropdown
+      if (fetchUrl) {
+          fetch(fetchUrl)
+              .then(response => response.json())
+              .then(data => {
+                  placeSortSelect.innerHTML = ''; // Clear existing options
+                  data.forEach(item => {
+                      let option = new Option(item, item);
+                      placeSortSelect.appendChild(option);
+                  });
+              })
+              .catch(error => console.error('Error fetching data:', error));
+      } else {
+          placeSortSelect.innerHTML = ''; // Clear the dropdown if 'all' is selected
+      }
+    }
   
     // Initial data fetch for the second dropdown based on the default/first value of the first dropdown
-    let blogCount = 0;
-    fetchAllBlogs().then((data) => (blogCount = data.length));
+    fetchAllBlogs();
+    fetchDataForSecondDropdown();
   
     // Event listener for changes in the first dropdown
     placeTypeSelect.addEventListener('change', fetchDataForSecondDropdown);
   
     // This function handles the search functionality.
-    document.getElementById('searchButton').addEventListener('click', function () {
-      const type = placeTypeSelect.value;
-      const detail = placeSortSelect.value;
-      const fetchUrl = `../../../asset/php/post.process.php?type=${type}&detail=${encodeURIComponent(
-        detail
-      )}`;
-  
-      // Fetch filtered blog data based on the selection
-      fetch(fetchUrl)
-        .then((response) => response.json())
-        .then((data) => {
-          displayBlogs(data.slice(0, currentPostCount));
-        })
-        .catch((error) => console.error('Error fetching filtered blogs:', error));
-    });
+
+    document.getElementById('searchButton').addEventListener('click', function() {
+        const type = placeTypeSelect.value;
+        const detail = placeSortSelect.value;
+        currentPostCount = 4;
+        fetch(
+          `../../../asset/php/post.process.php?type=${type}&detail=${encodeURIComponent(
+            detail
+          )}`
+        )
+          .then(response => response.json())
+          .then(data => {
+            // Clear existing blog cards
+            const blogContainer = document.querySelector('.card-container');
+            blogContainer.innerHTML = '';
+      
+            // Construct new blog cards based on the filtered data
+            displayBlogs(data.slice(0, currentPostCount));
+      
+            // Update the blog count
+            blogCount = data.length;
+      
+            // Remove the existing "Load More" button
+            const existingLoadMoreButton = document.getElementById('loadMoreButton');
+            if (existingLoadMoreButton) {
+              blogContainer.removeChild(existingLoadMoreButton);
+            }
+      
+            // Ensure that the first 4 cards are displayed and the "Load More" button is added
+            addLoadMoreButton();
+          })
+          .catch(error => console.error('Error fetching filtered blogs:', error));
+      });
   });
