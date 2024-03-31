@@ -46,11 +46,21 @@
           </ul>
         </aside>
         <section class="content">
-              <!-- Your dynamic content will be loaded here based on the selection -->
+          <!-- Your dynamic content will be loaded here based on the selection -->
         </section>
+        <div id="actionModal" class="modal">
+          <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modalBody"></div>
+            <div class="modal-footer">
+              <button id="actionBtn" class="action-btn">Action</button>
+              <button class="cancel-btn">Cancel</button>
+            </div>
+          </div>
+        </div>
       </main>
     <?php
-    include "component/footer.component.php";
+      include "component/footer.component.php";
     ?>
   </body>
 
