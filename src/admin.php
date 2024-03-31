@@ -35,7 +35,6 @@
   <body>
       <?php
       include "component/header.component.php";
-      include "component/landing-screen.component.php";
       ?>
       <main class="admin-container">
         <aside class="sidebar">

@@ -22,16 +22,28 @@ switch($table) {
     case 'blog':
         $query = "
             SELECT id, 
+                    user_id,
+                    created_at AS `Creation Date`,
                     title AS `Title`,
                     subtitle AS `Subtitle`, 
-                    category AS `Category`, 
                     country AS `Country`,
+                    category AS `Category`,
+                    like_count AS `likes`,
+                    comment_count AS `comments`,
+                    para_intro AS `Introduction`,
+                    heading_1 AS `1st Section`,
+                    para_1 AS `1st Paragraph`, 
+                    heading_2 AS `2nd Section`,
+                    para_2 AS `2nd Paragraph`, 
+                    heading_3 AS `3rd Section`,
+                    para_3 AS `3rd   Paragraph`, 
                     image_path AS `Image Path` 
             FROM blog";
         break;
     case 'package':
         $query = "
-            SELECT id, 
+            SELECT id,
+                    blog_id, 
                     pname AS `Package Name`,
                     content AS `Content`, 
                     destination AS `Destination`, 
@@ -52,15 +64,22 @@ if(!$result) {
     exit;
 }
 
-// Add button
-echo "<button id='add-btn' class='add-row-btn'>Add</button>";
+// Create add button if the table is not 'user'
+if ($table !== 'user') {
+    echo "<button id='add-btn' class='add-row-btn' data-table=" . $table . ">Add</button>";
+}
 
 // Start table
 echo "<table data-table=" . $table .">";
 // Dynamically generate headers based on fetched columns
 $columns = array_keys($result->fetch_assoc());
 echo "<tr>";
-echo "<th class='actions-cell'>Actions</th>";
+
+// Create action heading if the table is not 'user'
+if ($table !== 'user') {
+    echo "<th class='actions-cell'>Actions</th>";
+}
+
 foreach($columns as $column) {
     echo "<th class='header'>" . $column . "</th>";
 }
@@ -69,19 +88,32 @@ echo "</tr>";
 // Reset pointer to the first result
 $result->data_seek(0);
 
-// Populate table rows
+// Create add button if the table is not 'user'
+if ($table !== 'user') {
+    // Populate table rows
+    while($row = $result->fetch_assoc()) {
+        echo "<tr data-id=". $row['id']. ">";
+        // Actions cell
+        echo "<td class='actions-cell'>";
+        echo  "<button class='edit-btn' data-id=" . $row['id'] . " data-table=" . $table . ">EDIT</button>";
+        echo  "<button class='delete-btn' data-id=" . $row['id'] . " data-table=" . $table . ">DELETE</button>";
+        echo "</td>";
+        foreach($row as $cell) {
+            echo "<td>" . $cell . "</td>";
+        }
+        echo "</tr>";
+    }
+} else {
+    // Populate table rows
 while($row = $result->fetch_assoc()) {
     echo "<tr data-id=". $row['id']. ">";
-    // Actions cell
-    echo "<td class='actions-cell'>";
-    echo  "<button class='edit-btn' data-id=" . $row['id'] . " data-table=" . $table . ">EDIT</button>";
-    echo  "<button class='delete-btn'  data-id=" . $row['id'] . " data-table=" . $table . ">DELETE</button>";
-    echo "</td>";
     foreach($row as $cell) {
         echo "<td>" . $cell . "</td>";
     }
     echo "</tr>";
+    }
 }
+
 echo "</table>";
 
 // Close database connection if it's no longer needed

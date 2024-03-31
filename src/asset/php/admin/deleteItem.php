@@ -6,7 +6,7 @@ $tableName = $data['table'] ?? '';
 $response = ['success' => false];
 
 // Whitelist of allowed tables
-$allowedTables = ['user', 'blog', 'package'];
+$allowedTables = ['blog', 'package'];
 
 if ($id && in_array($tableName, $allowedTables)) {
     // Establish database connection
@@ -28,5 +28,6 @@ if ($id && in_array($tableName, $allowedTables)) {
     $response['error'] = 'Invalid table or ID';
 }
 
+header('Content-Type: application/json');
 echo json_encode($response);
 ?>

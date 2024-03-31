@@ -109,7 +109,7 @@ td.integer, td.float, td.timestamp {
 }
 
 /* ++++++++++++++++++++ CSS for <div id="actionModal"> and everything inside ++++++++++++++++++++ */
-/* ++++++++++++++++++++ The table ++++++++++++++++++++ */
+/* ++++++++++++++++++++ The popup ++++++++++++++++++++ */
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -177,4 +177,36 @@ td.integer, td.float, td.timestamp {
 
 .modal-footer {
   text-align: right;
+}
+
+/* ++++++++++++++++++++ CSS for <form id="addBlogForm"> and everything inside ++++++++++++++++++++ */
+/* ++++++++++++++++++++ The table ++++++++++++++++++++ */
+#modalBody form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+#modalBody form label,
+#modalBody form input,
+#modalBody form textarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#modalBody form label {
+  margin-top: 10px;
+}
+
+#modalBody form input[type="text"],
+#modalBody form input[type="number"],
+#modalBody form textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Aligning labels to the right for aesthetics */
+#modalBody form label {
+  text-align: left;
 }
