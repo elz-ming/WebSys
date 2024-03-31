@@ -20,6 +20,7 @@ body {
   margin: 0px 30px;
   border-bottom: 1px solid white;
   color: white;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .search-bar {
