@@ -468,6 +468,15 @@ h4 {
     background-color: #cc8b0d;
     /* Darker color on hover */
 }
+#loadMoreButton {
+    background-color: #F77D24; /* Orange color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Small padding */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Indicate clickable behavior */
+    font-size: 14px; /* Adjust font size if needed */
+  }
 
 /* .tags-container { */
 /* background-color: #fff; */
