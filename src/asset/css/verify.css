@@ -9,49 +9,79 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
-    background-color: #938686;
+    background-color: #090101; /* Fallback color */
+    background-image: url("https://source.unsplash.com/man-in-swimming-pool-during-daytime-IzP7jvgwXo0/1920x1080"); /* Default background image */
+    background-size: cover; /* Cover the entire page */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    min-height: 100vh; /* Ensure it covers the full height of the viewport */
     min-height: 100vh; /* Use viewport height to ensure full screen coverage */
     display: flex;
     justify-content: center;
     align-items: center; /* This centers the .container vertically */
+    transition: background 0.5s ease-in-out;
   }
+
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(97, 91, 91, 0.5); /* Semi-transparent black overlay */
+    z-index: 1; /* Ensures overlay is above the background but below the content */
+}
   
   .container {
+    position: relative;
+    z-index: 2; /* Ensures content is above the overlay */
     display: flex;
     align-items: flex-start;
     text-align: center;
-    max-width: 1200px;
+    max-width: 680px;
     width: 100%;
-    margin: auto;
+    margin-right: 380px;
     padding: 20px;
     flex-direction: column;
 }
   
 h1 a {
-    font-size: 8rem; 
+    font-size: 6rem; 
     text-align: center;
     padding-bottom: 20px;
     color: inherit;
     text-decoration: none;
-
+    text-align: center;
+    padding-bottom: 20px;
+    color: #ffa902;
+    font-weight: bold; /* Make the text bold */
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000; /* Text shadow for outline effect */
   }
 
-header {
-  text-align: center;
-  padding-bottom: 20px;
-  color: #ffa902;
-}
 
 .verification-message {
-    background-color: #f0f0f0;
-    color: #ffa902;
-    padding: 20px;
-    text-align: center;
-    border-radius: 5px;
-    width: 200%; /* Set width as a percentage of its container */
-    margin: 0 auto; /* Center the box */
-    font-size: 2rem;
-  }
+  background-color: rgba(237, 225, 225, 0.325);
+  color: #ffa902;
+  padding: 20px;
+  text-align: left;
+  border-radius: 5px;
+  width: auto; /* Adjust width to auto */
+  max-width: 100%; /* Set max-width to prevent overflow */
+  margin: 0 auto; /* Center the container */
+  font-size: 2rem;
+  overflow-y: auto; /* Allow vertical scrolling */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  text-shadow: 
+      -1px -1px 0 #000,  
+       1px -1px 0 #000,
+      -1px  1px 0 #000,
+       1px  1px 0 #000; /* Text shadow for outline effect */
+}
 
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat:500);
@@ -66,20 +96,21 @@ header {
 
 /* Flex container for side-by-side layout */
 .content-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center; /* Keeps items aligned in the center */
+  justify-content: center; /* Center the items vertically */
+  flex-direction: column; /* Stack items vertically */
+  gap: 2rem; /* Space between items */
+  z-index: 2; /* Ensures content is above the overlay */
 }
 
 
 .cube-container {
-	position: relative;
-	width: 30rem;
-	height: 30rem;
-	margin: 5rem auto 6rem;
-	perspective: 100rem;
+  position: relative;
+  width: 30rem; 
+  height: 30rem; 
+  margin: 5rem auto; 
+  perspective: 100rem;
 }
 
 .cube {
@@ -101,10 +132,11 @@ header {
 }
 
 .image-buttons {
-	display: grid;
-	grid-template-columns: repeat(3, auto);
-	grid-gap: 3rem;
-	justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Adjust if you want a different column setup */
+  grid-gap: 3rem;
+  justify-content: center; /* This will keep the buttons centered */
+  width: 100%; /* Make sure the container takes the full width to center content */
 }
 
 .image-buttons input {

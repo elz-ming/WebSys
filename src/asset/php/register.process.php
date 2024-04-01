@@ -43,6 +43,7 @@ function sendVerificationEmail($email, $id, $vkey)
     // Create the verification link
     $verification_link = "https://traveltalk.site//verify.php?id=$id&key=$vkey";
 
+
     // Set email body
     $mail->Body = "Thank You for registering with us. Click <a href='$verification_link'>here</a> to verify your account.";
     $mail->AltBody = "Thank You for registering with us. Copy and paste the following link in your browser to verify your account: $verification_link";
@@ -129,7 +130,7 @@ $success = true; // Assume success until a test fails
 
 // Validate and sanitize input
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (empty ($_POST["email"])) {
+    if (empty($_POST["email"])) {
         $errorMsg .= "Email is required.<br>";
         $success = false;
     } else {
@@ -140,21 +141,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    if (empty ($_POST["first_name"])) {
+    if (empty($_POST["first_name"])) {
         $errorMsg .= "First name is required.<br>";
         $success = false;
     } else {
         $first_name = sanitize_input($_POST["first_name"]);
     }
 
-    if (empty ($_POST["last_name"])) {
+    if (empty($_POST["last_name"])) {
         $errorMsg .= "Last name is required.<br>";
         $success = false;
     } else {
         $last_name = sanitize_input($_POST["last_name"]);
     }
 
-    if (empty ($_POST["pwd"]) || empty ($_POST["pwd_confirm"])) {
+    if (empty($_POST["pwd"]) || empty($_POST["pwd_confirm"])) {
         $errorMsg .= "Password and Confirm password are required.<br>";
         $success = false;
     } else {

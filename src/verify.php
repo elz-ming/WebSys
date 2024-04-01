@@ -73,7 +73,7 @@ if (isset ($_GET['id']) && isset ($_GET['key'])) {
             <h1><a href="Login.php">Travel Talk</a></h1>
         </header>
         <main>
-            <div class="verification-message">
+            <div class="verification-message"> Message:
                 <p>
                     <?php echo $verificationMessage; ?>
                 </p>
@@ -88,13 +88,13 @@ if (isset ($_GET['id']) && isset ($_GET['key'])) {
                 <img class="cube-face-image image-2"
                     src="https://source.unsplash.com/woman-in-red-and-orange-sweater-stands-on-stone-beside-water-JQ0YTMFhN5Q/300x300">
                 <img class="cube-face-image image-3"
-                    src="https://source.unsplash.com/a-man-on-a-motorcycle-carrying-a-large-bundle-of-leaves-dhx1hRfS5CY/300x300">
+                    src="https://source.unsplash.com/a-narrow-city-street-at-night-with-neon-lights-QXJCo9sSd20/300x300">
                 <img class="cube-face-image image-4"
-                    src="https://source.unsplash.com/portrait-of-a-young-traveler-dressed-in-bright-jacket-and-hat-enjoying-a-trip-highly-in-the-mountains-traveling-on-tenerife-island-spain-v633pKkykvs/300x300">
+                    src="https://www.simpleimageresizer.com/_uploads/photos/f566dc0e/photo_6075806388308785688_y_2_300x300.jpg">
                 <img class="cube-face-image image-5"
                     src="https://source.unsplash.com/a-tree-that-is-standing-in-the-water-bCwYbTmixiw/300x300">
                 <img class="cube-face-image image-6"
-                    src="https://source.unsplash.com/people-on-beach-during-daytime-kbMao2VbNuY/300x300">
+                    src="https://source.unsplash.com/a-blue-lake-surrounded-by-trees-in-the-middle-of-a-forest-sPWA29VTgLk/300x300">
             </div>
         </div>
         <div class="image-buttons">
@@ -103,13 +103,13 @@ if (isset ($_GET['id']) && isset ($_GET['key'])) {
             <input type="image" class="show-image-2"
                 src="https://source.unsplash.com/woman-in-red-and-orange-sweater-stands-on-stone-beside-water-JQ0YTMFhN5Q/100x100"></input>
             <input type="image" class="show-image-3"
-                src="https://source.unsplash.com/a-man-on-a-motorcycle-carrying-a-large-bundle-of-leaves-dhx1hRfS5CY/100x100"></input>
+                src="https://source.unsplash.com/a-narrow-city-street-at-night-with-neon-lights-QXJCo9sSd20/100x100"></input>
             <input type="image" class="show-image-4"
-                src="https://source.unsplash.com/portrait-of-a-young-traveler-dressed-in-bright-jacket-and-hat-enjoying-a-trip-highly-in-the-mountains-traveling-on-tenerife-island-spain-v633pKkykvs/100x100"></input>
+                src="https://www.simpleimageresizer.com/_uploads/photos/f566dc0e/photo_6075806388308785688_y_3_100x100.jpg"></input>
             <input type="image" class="show-image-5"
                 src="https://source.unsplash.com/a-tree-that-is-standing-in-the-water-bCwYbTmixiw/100x100"></input>
             <input type="image" class="show-image-6"
-                src="https://source.unsplash.com/people-on-beach-during-daytime-kbMao2VbNuY/100x100"></input>
+                src="https://source.unsplash.com/a-blue-lake-surrounded-by-trees-in-the-middle-of-a-forest-sPWA29VTgLk/100x100"></input>
         </div>
     </div>
     </main>
