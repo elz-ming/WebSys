@@ -199,7 +199,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<p>Please go back to the homepage.</p>";
         }
         ?>
-        <button onclick="window.location.href='../../Login.php';" class="back-btn">Go Back</button>
+        <button onclick="window.location.href='/login.php';" class="back-btn">Go Back</button>
     </div>
 </body>
 

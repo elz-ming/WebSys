@@ -61,7 +61,7 @@ if (isset ($_GET['id']) && isset ($_GET['key'])) {
 <body>
     <div class="container">
         <header>
-            <h1><a href="Login.php">Travel Talk</a></h1>
+            <h1><a href="/login.php">Travel Talk</a></h1>
         </header>
         <main>
             <div class="verification-message">

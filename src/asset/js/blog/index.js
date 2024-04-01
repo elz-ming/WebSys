@@ -31,10 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
           })
           .catch((error) => console.error('Error fetching more blogs:', error));
       }
-      
-
     
-  
       function addLoadMoreButton() {
         if (blogCount > currentPostCount) {
           const loadMoreButton = document.createElement('button');
@@ -72,10 +69,10 @@ document.addEventListener('DOMContentLoaded', function() {
       let fetchUrl = '';
       switch (placeTypeSelect.value) {
           case 'country':
-              fetchUrl = '../../../asset/php/getCountries.php';
+              fetchUrl = '/asset/php/getCountries.php';
               break;
           case 'category':
-              fetchUrl = '../../../asset/php/getCategories.php';
+              fetchUrl = '/asset/php/getCategories.php';
               break;
       }
   

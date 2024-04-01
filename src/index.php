@@ -7,7 +7,7 @@ function getBlogPostsAndCategories()
   $categories = [];
 
   // Establish database connection
-    include "connectDB.php";
+  include "connectDB.php";
 
   $conn = new mysqli(
     $config['servername'],
