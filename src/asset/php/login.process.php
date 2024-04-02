@@ -75,14 +75,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $errorMsg = "Your account is not verified. Please check your email to verify it.";
                 }
             } else {
-                $errorMsg = "Invalid password.";
+                $errorMsg = "Invalid password. Please try again.";
             }
         } else {
-            $errorMsg = "User not found.";
+            $errorMsg = "User not found. Please try again.";
         }
         $stmt->close();
         $conn->close();
-        header('Location: /login.php');
     }
+}
+
+if (!empty($errorMsg)) {
+    header('Location: /login.php?error=' . urlencode($errorMsg));
+    exit;
 }
 ?>
