@@ -120,7 +120,7 @@ function getBlogPostsAndCategories()
                     // Use echo to output the HTML structure
                     echo "<div class='slide'>";
                     echo "<div class='slide-img' style='background-image: url(\"$imagePath\");'>";
-                    echo "<a href='#'>$name</a>"; // Replace '#' with the actual link to the category
+                    echo "<a href='/blog/index.php?type=category&details=" . encodeURIComponent($category['name']) . "'>$name</a>"; // Replace '#' with the actual link to the category
                     echo "</div>";
                     echo "</div>";
                   }
