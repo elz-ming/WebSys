@@ -1,7 +1,14 @@
 <?php
-// Check if session is not already started
+// Start the session if it's not already started
 if (session_status() == PHP_SESSION_NONE) {
-    session_start(); // Start the session
+    session_start();
+}
+
+// Check if the user is logged in
+if (!isset($_SESSION['user_id'])) {
+    // Redirect to index.php
+    header("Location: /package.php");
+    exit;
 }
 
 // Now, check if the user is logged in and set the variables.

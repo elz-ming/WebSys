@@ -17,7 +17,18 @@
     <?php
     // Establish database connection
     include "connectDB.php";
+    
+    // Start the session if it's not already started
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
 
+    // Check if the user is logged in
+    if (!isset($_SESSION['user_id'])) {
+        // Redirect to index.php
+        header("Location: /package.php");
+        exit;
+    }
     // Get the package ID from the query string
     $package_id = isset($_GET['package_id']) ? (int)$_GET['package_id'] : 0;
 
