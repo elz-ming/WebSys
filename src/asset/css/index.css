@@ -159,6 +159,7 @@ section h1 {
     list-style: none;
     display: flex;
     justify-content: space-between;
+    padding-left: 0px!important;
 }
 
 .num-nav li {

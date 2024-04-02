@@ -2,8 +2,8 @@
 /* ++++++++++++++++++++ CSS common throughout all / most pages ++++++++++++++++++++ */
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 .row {
-  margin: 0;
-  padding: 0;
+  margin: 0!important;
+  padding: 0!important;
 }
 
 body {
@@ -21,6 +21,11 @@ body {
   border-bottom: 1px solid white;
   color: white;
   background: rgba(0, 0, 0, 0.9);
+}
+
+.header-bar a{
+  text-decoration: none;
+  color: white;
 }
 
 .search-bar {
@@ -288,10 +293,11 @@ footer.follow-icon {
   .header-nav ul {
     flex-direction: column;
     align-items: center;
+    padding-left: 0px !important;
   }
 
   .header-nav li {
-    padding: 10px 0;
+    padding: 0px;
   }
 
   .header-nav ul li:after {
@@ -314,6 +320,16 @@ footer.follow-icon {
 }
 
 @media only screen and (max-width:576px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .header-nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0px !important;
+  }
+
   .copyright {
     order: 1;
   }
@@ -339,12 +355,32 @@ footer.follow-icon {
 
 /* TABLETS */
 @media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .header-nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0px !important;
+  }
+
   .header-nav {
     font-size: small;
   }
 
+  .title{
+    order: 2;
+  }
+  .button{
+    order: 1;
+  }
+  .profile{
+    order: 3;
+  }
+
   .header-nav li {
-    padding: 0 30px;
+    padding: 0px;
   }
 
   .video-background {
@@ -375,8 +411,28 @@ footer.follow-icon {
 }
 
 @media (min-width:769px) and (max-width:992px) {
+  body {
+    overflow-x: hidden;
+  }
+
   .header-nav {
     font-size: medium;
+  }
+
+  .header-nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0px !important;
+  }
+
+  .title{
+    order: 2;
+  }
+  .button{
+    order: 1;
+  }
+  .profile{
+    order: 3;
   }
 
   .video-background {
