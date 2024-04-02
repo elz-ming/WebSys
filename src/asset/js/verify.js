@@ -28,3 +28,43 @@ window.addEventListener("DOMContentLoaded",	() => {
 	});
 	
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const backgroundImages = {
+        "show-image-1": "url('https://source.unsplash.com/man-in-swimming-pool-during-daytime-IzP7jvgwXo0/1920x1080')",
+        "show-image-2": "url('https://source.unsplash.com/woman-in-red-and-orange-sweater-stands-on-stone-beside-water-JQ0YTMFhN5Q/1920x1080')",
+		"show-image-3": "url('https://source.unsplash.com/a-narrow-city-street-at-night-with-neon-lights-QXJCo9sSd20/1920x1080')",
+		"show-image-4": "url('https://www.simpleimageresizer.com/_uploads/photos/f566dc0e/photo_6075806388308785688_y_1920x1080.jpg')",
+		"show-image-5": "url('https://source.unsplash.com/a-tree-that-is-standing-in-the-water-bCwYbTmixiw/1920x1080')",
+		"show-image-6": "url('https://source.unsplash.com/a-blue-lake-surrounded-by-trees-in-the-middle-of-a-forest-sPWA29VTgLk/1920x1080')",
+    };
+
+    function changeBackgroundImage(imageId) {
+        // Change the background image of the body
+        document.body.style.backgroundImage = backgroundImages[imageId];
+    }
+
+    // Attach event listeners to buttons
+    document.querySelectorAll('.image-buttons input').forEach(button => {
+        button.addEventListener('click', function() {
+            changeBackgroundImage(this.className);
+        });
+    });
+});
+
+function changeBackgroundImage(imageClassName) {
+    const imageUrl = backgroundImages[imageClassName];
+    if (imageUrl) {
+        // Fade out effect
+        document.body.style.opacity = '0';
+        document.body.style.transition = 'opacity 0.5s ease-in-out';
+        
+        // Allow time for the fade out effect to complete before changing the background and fading back in
+        setTimeout(() => {
+            document.body.style.backgroundImage = imageUrl;
+            document.body.style.opacity = '1';
+        }, 500); // Match the timeout to the transition duration
+    } else {
+        console.error("No background image found for class name:", imageClassName);
+    }
+}
