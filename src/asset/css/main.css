@@ -24,8 +24,11 @@ body {
 }
 
 .header-bar a{
-  text-decoration: none;
-  color: white;
+  color: white; /* Set the text color to white */
+  text-decoration-thickness: 2px; /* Adjust the thickness of the underline */
+  text-decoration-color: white; /* Set the underline color to white */
+  text-underline-offset: 3px; /* Adjust the position of the underline */
+  text-decoration: none; /* Optional: Makes the underline continuous, not skipping over descenders */
 }
 
 .search-bar {
@@ -85,7 +88,7 @@ body {
 .header-nav li {
   display: flex;
   align-items: center;
-  padding: 0 50px;
+  padding: 0 30px;
   height: 60px;
   /* Example height, adjust as needed */
 }

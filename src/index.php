@@ -72,6 +72,8 @@ function getBlogPostsAndCategories()
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Homepage</title>
+
   <!-- Main JS -->
   <link rel="stylesheet" href="/asset/css/main.css" />
   <script defer src="/asset/js/main.js"></script>
