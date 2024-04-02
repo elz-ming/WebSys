@@ -18,3 +18,27 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: 
 .summary-item span { font-weight: 700; }
 .checkout { background-color: #d3a625; color: white; border: none; padding: 10px 20px; cursor: pointer; width: 100%; }
 .special-instruction { width: 100%; margin-bottom: 10px; }
+
+.credit-card-form {
+    margin-bottom: 20px;
+}
+
+.credit-card-form h3 {
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
