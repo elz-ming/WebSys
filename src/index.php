@@ -120,7 +120,7 @@ function getBlogPostsAndCategories()
                     // Use echo to output the HTML structure
                     echo "<div class='slide'>";
                     echo "<div class='slide-img' style='background-image: url(\"$imagePath\");'>";
-                    echo "<a href='/blog/index.php?type=category&details=" . encodeURIComponent($category['name']) . "'>$name</a>"; // Replace '#' with the actual link to the category
+                    echo "<a href='/blog/index.php?type=category&detail=" . htmlspecialchars($category['name']) . "'>$name</a>"; // Replace '#' with the actual link to the category
                     echo "</div>";
                     echo "</div>";
                   }
@@ -141,6 +141,8 @@ function getBlogPostsAndCategories()
             $data = getBlogPostsAndCategories();
             if (!empty($data['blogs'])) {
               foreach ($data['blogs'] as $blog) {
+
+                $blogId = isset($blog['id']) ? htmlspecialchars($blog['id']) : '';
                 $imagePath = isset($blog['image_path']) ? htmlspecialchars($blog['image_path']) : 'default-image-path.jpg';
                 $title = isset($blog['title']) ? htmlspecialchars($blog['title']) : 'No Title';
 
@@ -152,13 +154,15 @@ function getBlogPostsAndCategories()
                 $formattedDate = $blog['formatted_date'] ?? 'No Date';
                 $commentCount = (int) ($blog['comment_count'] ?? 0);
                 $likesCount = (int) ($blog['like_count'] ?? 0);
-
+                
                 echo "<div class='row col-8 pop-wrapper mx-auto'>";
                 echo "<img class='col-xs-12 col-md-6' src='{$imagePath}' alt='{$title}' width='300' height='175'>";
                 echo "<div class='col-xs-12 col-md-6 pop-text'>";
+                echo "<a href='/blog/post.php?blog_id={$blogId}'>";
                 echo "<h3>{$title}</h3>";
+                echo "</a>";
                 echo "<div class='post-author'>";
-                echo "<a href='#' class='post-link'>Post</a>";
+                echo "<a href='/blog/post.php?blog_id={$blogId}' class='post-link'>Post</a>";
                 echo "<span class='author-name'>By {$authorFullName}</span>";
                 echo "</div>";
                 echo "<div class='post-meta'>";
@@ -182,25 +186,33 @@ function getBlogPostsAndCategories()
             <div class="country-wrapper">
               <img src="/asset/image/index/rectangle-60@2x.png" width="114" height="79">
               <div class="country-text">
-                <h3>countryname</h3>
+                <a href='/blog/index.php?type=category&detail=Korea'>
+                  <h3>Korea</h3>
+                </a>
               </div>
             </div>
             <div class="country-wrapper">
               <img src="/asset/image/index/rectangle-61@2x.png" width="114" height="79">
               <div class="country-text">
-                <h3>countryname</h3>
+                <a href='/blog/index.php?type=category&detail=Singapore'>
+                  <h3>Singapore</h3>
+                </a>
               </div>
             </div>
             <div class="country-wrapper">
               <img src="/asset/image/index/rectangle-62@2x.png" width="114" height="79">
               <div class="country-text">
-                <h3>countryname</h3>
+                <a href='/blog/index.php?type=category&detail=Spain'>
+                  <h3>Spain</h3>
+                </a>
               </div>
             </div>
             <div class="country-wrapper">
               <img src="/asset/image/index/rectangle-64@2x.png" width="114" height="79">
               <div class="country-text">
-                <h3>countryname</h3>
+                <a href='/blog/index.php?type=category&detail=Vietnam'>
+                  <h3>Vietnam</h3>
+                </a>
               </div>
             </div>
           </div>

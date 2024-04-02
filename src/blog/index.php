@@ -39,7 +39,7 @@
   include "../component/landing-screen.component.php";
 
   $type = isset($_GET['type']) ? $_GET['type'] : null;
-  $details = isset($_GET['details']) ? $_GET['details'] : null;
+  $detail = isset($_GET['detail']) ? $_GET['detail'] : null;
   ?>
   <main>
     <section class="filter-table">

@@ -141,10 +141,10 @@ h2 {
 }
 
 .comment-info span {
-    margin-right: 100%; /* Optional: adds some spacing between the name and timestamp */
-  }
+    margin-right: 88%; /* Optional: adds some spacing between the name and timestamp */
+}
   
-  .profile-section, .comment-info {
+.profile-section, .comment-info {
     flex-grow: 1; /* Allows these sections to grow */
 }
 

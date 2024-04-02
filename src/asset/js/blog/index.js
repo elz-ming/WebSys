@@ -6,8 +6,15 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentPostCount = 4;
     
     function fetchAllBlogs() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const type = urlParams.get('type') || 'all'; // Default to 'all' if type is not specified
+      const detail = urlParams.get('detail') || '';
+
+      console.log(type);
+      console.log(detail);
+
       // Fetch all blog data when page loads
-      const fetchUrl = `../../../asset/php/post.process.php?type=all&detail=`;
+      const fetchUrl = `../../../asset/php/post.process.php?type=${type}&detail=${detail}`;
       fetch(fetchUrl)
           .then((response) => response.json())
           .then((data) => {
