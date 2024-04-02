@@ -159,7 +159,7 @@ body {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  padding-top: 300px;
+  padding-top: 300px!important;
   padding-bottom: 300px;
   display: flex;
   text-align: center;
