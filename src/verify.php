@@ -81,7 +81,7 @@ if (isset ($_GET['id']) && isset ($_GET['key'])) {
                 <img class="cube-face-image image-3"
                     src="https://source.unsplash.com/a-narrow-city-street-at-night-with-neon-lights-QXJCo9sSd20/300x300">
                 <img class="cube-face-image image-4"
-                    src="https://www.simpleimageresizer.com/_uploads/photos/f566dc0e/photo_6075806388308785688_y_2_300x300.jpg">
+                    src="https://source.unsplash.com/a-man-and-a-woman-standing-next-to-each-other-in-front-of-a-building-lSXYLGMQDSo/300x300">
                 <img class="cube-face-image image-5"
                     src="https://source.unsplash.com/a-tree-that-is-standing-in-the-water-bCwYbTmixiw/300x300">
                 <img class="cube-face-image image-6"
@@ -96,7 +96,7 @@ if (isset ($_GET['id']) && isset ($_GET['key'])) {
             <input type="image" class="show-image-3"
                 src="https://source.unsplash.com/a-narrow-city-street-at-night-with-neon-lights-QXJCo9sSd20/100x100"></input>
             <input type="image" class="show-image-4"
-                src="https://www.simpleimageresizer.com/_uploads/photos/f566dc0e/photo_6075806388308785688_y_3_100x100.jpg"></input>
+                src="https://source.unsplash.com/a-man-and-a-woman-standing-next-to-each-other-in-front-of-a-building-lSXYLGMQDSo/100x100"></input>
             <input type="image" class="show-image-5"
                 src="https://source.unsplash.com/a-tree-that-is-standing-in-the-water-bCwYbTmixiw/100x100"></input>
             <input type="image" class="show-image-6"

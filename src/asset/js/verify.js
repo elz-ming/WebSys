@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "show-image-1": "url('https://source.unsplash.com/man-in-swimming-pool-during-daytime-IzP7jvgwXo0/1920x1080')",
         "show-image-2": "url('https://source.unsplash.com/woman-in-red-and-orange-sweater-stands-on-stone-beside-water-JQ0YTMFhN5Q/1920x1080')",
 		"show-image-3": "url('https://source.unsplash.com/a-narrow-city-street-at-night-with-neon-lights-QXJCo9sSd20/1920x1080')",
-		"show-image-4": "url('https://www.simpleimageresizer.com/_uploads/photos/f566dc0e/photo_6075806388308785688_y_1920x1080.jpg')",
+		"show-image-4": "url('https://source.unsplash.com/a-man-and-a-woman-standing-next-to-each-other-in-front-of-a-building-lSXYLGMQDSo/1920x1080')",
 		"show-image-5": "url('https://source.unsplash.com/a-tree-that-is-standing-in-the-water-bCwYbTmixiw/1920x1080')",
 		"show-image-6": "url('https://source.unsplash.com/a-blue-lake-surrounded-by-trees-in-the-middle-of-a-forest-sPWA29VTgLk/1920x1080')",
     };
