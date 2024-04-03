@@ -13,7 +13,7 @@
         </ul>
       </nav>
     </div>
-    <div class="col-xs-12 col-md follow-icon">
+    <div class="col-xs-12 col-md-4 follow-icon">
       <a href="https://www.facebook.com" target="_blank" class="social-icon">
         <i class="fa-brands fa-facebook"></i>
       </a>

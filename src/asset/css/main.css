@@ -2,8 +2,8 @@
 /* ++++++++++++++++++++ CSS common throughout all / most pages ++++++++++++++++++++ */
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 .row {
-  margin: 0!important;
-  padding: 0!important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 body {
@@ -23,7 +23,7 @@ body {
   background: rgba(0, 0, 0, 0.9);
 }
 
-.header-bar a{
+.header-bar a {
   text-decoration: none;
   color: white;
 }
@@ -159,7 +159,7 @@ body {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  padding-top: 300px!important;
+  padding-top: 300px !important;
   padding-bottom: 300px;
   display: flex;
   text-align: center;
@@ -281,6 +281,7 @@ footer.follow-icon {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left: 10px;
 }
 
 /* ++++++++++++++++++++ CSS for responsive design ++++++++++++++++++++ */
@@ -311,11 +312,24 @@ footer.follow-icon {
   .footer-nav ul {
     flex-direction: column;
     align-items: center;
+    padding-right: 40px;
   }
 
   .footer-nav li {
     padding: 10px 0;
     /* Vertical padding for stacked items */
+  }
+
+  .intro-container {
+    padding-top: 365px !important;
+  }
+
+  .intro-content {
+    font-size: small;
+  }
+
+  .lets-go {
+    font-size: 30px;
   }
 }
 
@@ -334,6 +348,10 @@ footer.follow-icon {
     order: 1;
   }
 
+  .footer-nav ul {
+    padding-right: 40px;
+  }
+
   .footer-nav-child {
     order: 2;
   }
@@ -349,6 +367,10 @@ footer.follow-icon {
   .follow-icon {
     display: flex;
     justify-content: center;
+  }
+
+  .intro-container {
+    padding-top: 365px !important;
   }
 
 }
@@ -369,13 +391,15 @@ footer.follow-icon {
     font-size: small;
   }
 
-  .title{
+  .title {
     order: 2;
   }
-  .button{
+
+  .button {
     order: 1;
   }
-  .profile{
+
+  .profile {
     order: 3;
   }
 
@@ -404,9 +428,17 @@ footer.follow-icon {
     padding: 0 20px;
   }
 
+  .footer-nav ul {
+    padding-right: 40px;
+  }
+
   .follow-icon {
     display: flex;
     justify-content: center;
+  }
+
+  .intro-container {
+    padding-top: 365px !important;
   }
 }
 
@@ -425,13 +457,15 @@ footer.follow-icon {
     padding-left: 0px !important;
   }
 
-  .title{
+  .title {
     order: 2;
   }
-  .button{
+
+  .button {
     order: 1;
   }
-  .profile{
+
+  .profile {
     order: 3;
   }
 
@@ -446,6 +480,18 @@ footer.follow-icon {
   .intro-text,
   .intro-content {
     font-size: small !important;
+  }
+
+  .intro-container {
+    padding-top: 365px !important;
+  }
+
+  .footer-nav ul {
+    padding-right: 30px;
+  }
+
+  .follow-icon {
+    padding-left: 20px;
   }
 }
 
@@ -462,6 +508,14 @@ footer.follow-icon {
   .intro-content {
     font-size: medium !important;
   }
+
+  .intro-container {
+    padding-top: 365px !important;
+  }
+
+  .footer-nav ul {
+    padding-right: 20px;
+  }
 }
 
 @media (min-width: 1201px) and (max-width: 1400px) {
@@ -476,6 +530,14 @@ footer.follow-icon {
   .intro-text,
   .intro-content {
     font-size: large !important;
+  }
+
+  .intro-container {
+    padding-top: 300px !important;
+  }
+
+  .footer-nav ul {
+    padding-right: 10px;
   }
 }
 
@@ -523,7 +585,7 @@ footer.follow-icon {
   right: 0;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
