@@ -417,14 +417,14 @@ h4 {
 }
 
 .subscribe-container h4 {
-    color: #ffffff;
+    color: black;
     /* White text */
     margin-bottom: 15px;
     margin-right: 20px;
 }
 
 .subscribe-container p {
-    color: #ffffff;
+    color: black;
     /* White text */
     margin-bottom: 20px;
 }
@@ -452,7 +452,7 @@ h4 {
 }
 
 .subscribe-form label {
-    color: #ffffff;
+    color: black;
     /* White text */
     font-size: 0.9rem;
 }
