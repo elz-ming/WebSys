@@ -63,7 +63,7 @@
 						<h3>Lin Zhenming</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
 							velit, eu sed sollicitudin tempus,</p>
-						<p1>Fun Fact: Loves Japan</p1>
+						<p>Fun Fact: Loves Japan</p>
 					</div>
 				</div>
 				<div class="abt-wrapper">
@@ -72,7 +72,7 @@
 						<h3>Darryl Ng Bing Bing</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
 							velit, eu sed sollicitudin tempus,</p>
-						<p1>Fun Fact: Loves Japan</p1>
+						<p>Fun Fact: Loves Japan</p>
 					</div>
 				</div>
 				<div class="abt-wrapper">
@@ -81,7 +81,7 @@
 						<h3>Philicia Lee Fei Li</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
 							velit, eu sed sollicitudin tempus,</p>
-						<p1>Fun Fact: Loves Japan</p1>
+						<p>Fun Fact: Loves Japan</p>
 					</div>
 				</div>
 				<div class="abt-wrapper">
@@ -90,7 +90,7 @@
 						<h3>Lim Jing Yu</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
 							velit, eu sed sollicitudin tempus,</p>
-						<p1>Fun Fact: Loves Japan</p1>
+						<p>Fun Fact: Loves Japan</p>
 					</div>
 				</div>
 				<div class="abt-wrapper">
@@ -99,7 +99,7 @@
 						<h3>Yeow Dao Xing</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
 							velit, eu sed sollicitudin tempus,</p>
-						<p1>Fun Fact: Loves Japan</p1>
+						<p>Fun Fact: Loves Japan</p>
 					</div>
 				</div>
 			</div>
