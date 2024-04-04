@@ -1,7 +1,7 @@
 * { box-sizing: border-box; }
 body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #fff; }
 .header { padding: 10px; text-align: center; background-color: #f4f4f4; margin-bottom: 20px; }
-.container { display: flex; justify-content: center; padding: 20px; }
+.container { display: flex; justify-content: center; padding: 20px; flex-wrap: wrap; }
 .cart { width: 60%; padding-right: 20px; }
 .summary { width: 30%; padding: 20px; border: 1px solid #ccc; }
 .summary h2 { color: #d3a625; }
@@ -10,7 +10,7 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: 
 .book-details { flex-grow: 1; }
 .book-title { font-size: 18px; font-weight: 700; margin-bottom: 5px; }
 .book-price { color: #d3a625; font-weight: 700; }
-.remove { color: #d3a625; cursor: pointer; text-align: left; font-weight: 700; display: block; margin-top: 8px; } /* Added display:block and margin-top */
+.remove { color: #d3a625; cursor: pointer; text-align: left; font-weight: 700; display: block; margin-top: 8px; }
 .quantity-controls { display: flex; margin-top: 10px; align-items: center; }
 .quantity-controls button, .quantity-controls input { margin-right: 5px; }
 .quantity-controls input { text-align: center; }
@@ -41,4 +41,15 @@ body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: 
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    .container { flex-direction: column; align-items: center; }
+    .cart, .summary { width: 100%; }
+    .cart { padding-right: 0; margin-bottom: 20px; }
+    .summary { border: none; }
+    .book-item { flex-direction: column; align-items: center; }
+    .book-item img { margin-bottom: 10px; }
+    .quantity-controls { justify-content: center; }
 }
