@@ -66,226 +66,230 @@ function getBlogPostsAndCategories()
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Page Logo -->
-    <link rel="icon" type="image/png" href="/asset/image/favicon.png">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Homepage</title>
+  <!-- Page Logo -->
+  <link rel="icon" type="image/png" href="/asset/image/favicon.png">
 
-    <!-- Main JS -->
-    <link rel="stylesheet" href="/asset/css/main.css" />
-    <script defer src="/asset/js/main.js"></script>
+  <title>Homepage</title>
 
-    <!-- Page JS -->
-    <link rel="stylesheet" href="/asset/css/index.css" />
-    <script defer src="/asset/js/index.js"></script>
+  <!-- Main JS -->
+  <link rel="stylesheet" href="/asset/css/main.css" />
+  <script defer src="/asset/js/main.js"></script>
 
-    <!--Bootstrap JS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-      crossorigin="anonymous"></script>
+  <!-- Page JS -->
+  <link rel="stylesheet" href="/asset/css/index.css" />
+  <script defer src="/asset/js/index.js"></script>
 
-    <!-- Tinyslider JS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
+  <!--Bootstrap JS-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
 
-    <!--Font Awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
-  </head>
+  <!-- Tinyslider JS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
 
-  <body>
-    <?php
-    include "component/header.component.php";
-    include "component/landing-screen.component.php";
-    ?>
+  <!--Font Awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+</head>
 
-    <main class="containers">
-      <section id="slider">
-        <h1>Choose a Category</h1>
-        <div class="carousel">
-          <div class="subcarousel">
-            <div class="slider-wrapper">
-              <br>
-              <div class="my-slider">
-                <?php
-                  $data = getBlogPostsAndCategories(); // Assuming this function returns an array with 'blogs' and 'categories'
-                  if (!empty($data['categories'])) {
-                    foreach ($data['categories'] as $category) {
-                      $name = htmlspecialchars($category['name']);
-                      $imagePath = htmlspecialchars($category['image_path']);
-                      // Use echo to output the HTML structure
-                      echo "<div class='slide'>";
-                      echo "<div class='slide-img' role='presentation' style='background-image: url(\"$imagePath\");' alt=''>";
-                      echo "<a href='/blog/index.php?type=category&detail=" . htmlspecialchars($category['name']) . "'>$name</a>"; // Replace '#' with the actual link to the category
-                      echo "</div>";
-                      echo "</div>";
-                    }
-                  } else {
-                    echo "<p>No categories found.</p>";
-                  }
-                ?>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="pop-container">
-        <h1>Popular Post</h1>
-        <div class="row">
-          <div class="col-md-12 col-xl-8 pop-post">
-            <?php
-              $data = getBlogPostsAndCategories();
-              if (!empty($data['blogs'])) {
-                foreach ($data['blogs'] as $blog) {
+<body>
+  <?php
+  include "component/header.component.php";
+  include "component/landing-screen.component.php";
+  ?>
 
-                  $blogId = isset($blog['id']) ? htmlspecialchars($blog['id']) : '';
-                  $imagePath = isset($blog['image_path']) ? htmlspecialchars($blog['image_path']) : 'default-image-path.jpg';
-                  $title = isset($blog['title']) ? htmlspecialchars($blog['title']) : 'No Title';
-
-                  $firstName = isset($blog['first_name']) ? htmlspecialchars($blog['first_name']) : '';
-                  $lastName = isset($blog['last_name']) ? htmlspecialchars($blog['last_name']) : '';
-                  $authorFullName = trim($firstName . ' ' . $lastName);
-                  $authorFullName = !empty($authorFullName) ? $authorFullName : 'Unknown Author';
-
-                  $formattedDate = $blog['formatted_date'] ?? 'No Date';
-                  $commentCount = (int) ($blog['comment_count'] ?? 0);
-                  $likesCount = (int) ($blog['like_count'] ?? 0);
-                  
-                  echo "<div class='row col-8 pop-wrapper mx-auto'>";
-                  echo "<img class='col-xs-12 col-md-6' role='presentation' src='{$imagePath}' alt='{$title}' width='300' height='175'>";
-                  echo "<div class='col-xs-12 col-md-6 pop-text'>";
-                  echo "<a href='/blog/post.php?blog_id={$blogId}'></a>";
-                  echo "<h3>{$title}</h3>";
-                  echo "<div class='post-author'>";
-                  echo "<a href='/blog/post.php?blog_id={$blogId}' class='post-link'>Post</a>";
-                  echo "<span class='author-name'>By {$authorFullName}</span>";
-                  echo "</div>";
-                  echo "<div class='post-meta'>";
-                  // Inside your HTML where you're outputting the date:
-                  echo "<span class='post-date'>{$blog['formatted_date']}</span>";
-                  echo "<span class='symbol'>&#8212;</span>";
-                  echo "<span class='post-comments'>{$commentCount} comments</span> | ";
-                  echo "<span class='post-likes'>{$likesCount} likes</span>";
-                  echo "</div>";
+  <main class="containers">
+    <section id="slider">
+      <h1>Choose a Category</h1>
+      <div class="carousel">
+        <div class="subcarousel">
+          <div class="slider-wrapper">
+            <br>
+            <div class="my-slider">
+              <?php
+              $data = getBlogPostsAndCategories(); // Assuming this function returns an array with 'blogs' and 'categories'
+              if (!empty($data['categories'])) {
+                foreach ($data['categories'] as $category) {
+                  $name = htmlspecialchars($category['name']);
+                  $imagePath = htmlspecialchars($category['image_path']);
+                  // Use echo to output the HTML structure
+                  echo "<div class='slide'>";
+                  echo "<div class='slide-img' role='presentation' style='background-image: url(\"$imagePath\");' alt=''>";
+                  echo "<a href='/blog/index.php?type=category&detail=" . htmlspecialchars($category['name']) . "'>$name</a>"; // Replace '#' with the actual link to the category
                   echo "</div>";
                   echo "</div>";
                 }
               } else {
-                echo "<p>No popular posts to display.</p>";
+                echo "<p>No categories found.</p>";
               }
-            ?>
+              ?>
+            </div>
           </div>
-          <div class="col-md-12  col-xl-3">
-            <div class="country-post">
-              <h4>Pick a Country</h4>
-              <div class="country-wrapper">
-                <img src="/asset/image/index/rectangle-60@2x.png" role='presentation' alt='Korea' width="114" height="79">
-                <div class="country-text">
-                  <a href='/blog/index.php?type=category&detail=Korea'></a>
-                    <h3>Korea</h3>
-                </div>
-              </div>
-              <div class="country-wrapper">
-                <img src="/asset/image/index/rectangle-61@2x.png" role='presentation' alt='Singapore' width="114" height="79">
-                <div class="country-text">
-                  <a href='/blog/index.php?type=category&detail=Singapore'></a>
-                    <h3>Singapore</h3>
-                
-                </div>
-              </div>
-              <div class="country-wrapper">
-                <img src="/asset/image/index/rectangle-62@2x.png" role='presentation' alt='Spain' width="114" height="79">
-                <div class="country-text">
-                  <a href='/blog/index.php?type=category&detail=Spain'></a>
-                    <h3>Spain</h3>
-            
-                </div>
-              </div>
-              <div class="country-wrapper">
-                <img src="/asset/image/index/rectangle-64@2x.png" role='presentation' alt='Vietnam' width="114" height="79">
-                <div class="country-text">
-                  <a href='/blog/index.php?type=category&detail=Vietnam'></a>
-                    <h3>Vietnam</h3>
-                  
-                </div>
-              </div>
-            </div>
-            <div class="subscribe-container" id="subscribe">
-              <h4>Subscribe Today</h4>
-              <p>Embark on adventures with us! Subscribe now for exclusive travel tips, inspiring stories, and special
-                package offers delivered directly to your inbox</p>
-              <form action="/asset/php/subscribe.process.php" method="post" class="subscribe-form">
-                <label for="fullname">Full Name</label>
-                <input type="text" id="fullname" name="fullname" placeholder="Full Name" required maxlength="45">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
-                <div class="checkbox-container">
-                  <input type="checkbox" id="privacy-policy" required>
-                  <label for="privacy-policy">You Agree To Our Company Privacy Policy</label>
-                </div>
-                <button type="submit" class="subscribe-btn">SUBSCRIBE</button>
-              </form>
-            </div>
-            <!-- Thank You Modal -->
-            <div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="thankYouModalLabel">Thank You</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    Thank you for subscribing!
-                  </div>
-                </div>
-              </div>
-            </div>
+        </div>
+      </div>
+    </section>
+    <section class="pop-container">
+      <h1>Popular Post</h1>
+      <div class="row">
+        <div class="col-md-12 col-xl-8 pop-post">
+          <?php
+          $data = getBlogPostsAndCategories();
+          if (!empty($data['blogs'])) {
+            foreach ($data['blogs'] as $blog) {
 
-            <!-- Already Subscribed Modal -->
-            <div class="modal fade" id="alreadySubscribedModal" tabindex="-1"
-              aria-labelledby="alreadySubscribedModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="alreadySubscribedModalLabel">Already Subscribed</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    The email is already subscribed.
-                  </div>
-                </div>
+              $blogId = isset($blog['id']) ? htmlspecialchars($blog['id']) : '';
+              $imagePath = isset($blog['image_path']) ? htmlspecialchars($blog['image_path']) : 'default-image-path.jpg';
+              $title = isset($blog['title']) ? htmlspecialchars($blog['title']) : 'No Title';
+
+              $firstName = isset($blog['first_name']) ? htmlspecialchars($blog['first_name']) : '';
+              $lastName = isset($blog['last_name']) ? htmlspecialchars($blog['last_name']) : '';
+              $authorFullName = trim($firstName . ' ' . $lastName);
+              $authorFullName = !empty($authorFullName) ? $authorFullName : 'Unknown Author';
+
+              $formattedDate = $blog['formatted_date'] ?? 'No Date';
+              $commentCount = (int) ($blog['comment_count'] ?? 0);
+              $likesCount = (int) ($blog['like_count'] ?? 0);
+
+              echo "<div class='row col-8 pop-wrapper mx-auto'>";
+              echo "<img class='col-xs-12 col-md-6' role='presentation' src='{$imagePath}' alt='{$title}' width='300' height='175'>";
+              echo "<div class='col-xs-12 col-md-6 pop-text'>";
+              echo "<a href='/blog/post.php?blog_id={$blogId}' aria-label='Read more about this blog post'></a>";
+              echo "<h3>{$title}</h3>";
+              echo "<div class='post-author'>";
+              echo "<a href='/blog/post.php?blog_id={$blogId}' class='post-link'>Post</a>";
+              echo "<span class='author-name'>By {$authorFullName}</span>";
+              echo "</div>";
+              echo "<div class='post-meta'>";
+              // Inside your HTML where you're outputting the date:
+              echo "<span class='post-date'>{$blog['formatted_date']}</span>";
+              echo "<span class='symbol'>&#8212;</span>";
+              echo "<span class='post-comments'>{$commentCount} comments</span> | ";
+              echo "<span class='post-likes'>{$likesCount} likes</span>";
+              echo "</div>";
+              echo "</div>";
+              echo "</div>";
+            }
+          } else {
+            echo "<p>No popular posts to display.</p>";
+          }
+          ?>
+        </div>
+        <div class="col-md-12  col-xl-3">
+          <div class="country-post">
+            <h4>Pick a Country</h4>
+            <div class="country-wrapper">
+              <img src="/asset/image/index/rectangle-60@2x.png" role='presentation' alt='Korea' width="114" height="79">
+              <div class="country-text">
+                <a href='/blog/index.php?type=category&detail=Korea' aria-label='Explore Korea'></a>
+                <h3>Korea</h3>
               </div>
             </div>
-            <!-- Failure Modal -->
-            <div class="modal fade" id="failureModal" tabindex="-1" role="dialog" aria-labelledby="failureModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="failureModalLabel">Oops!</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    Something went wrong with your subscription. Please try again later.
-                  </div>
-                </div>
+            <div class="country-wrapper">
+              <img src="/asset/image/index/rectangle-61@2x.png" role='presentation' alt='Singapore' width="114"
+                height="79">
+              <div class="country-text">
+                <a href='/blog/index.php?type=category&detail=Singapore' aria-label='Explore Singapore'></a>
+                <h3>Singapore</h3>
+
+              </div>
+            </div>
+            <div class="country-wrapper">
+              <img src="/asset/image/index/rectangle-62@2x.png" role='presentation' alt='Spain' width="114" height="79">
+              <div class="country-text">
+                <a href='/blog/index.php?type=category&detail=Spain' aria-label='Explore Spain'></a>
+                <h3>Spain</h3>
+
+              </div>
+            </div>
+            <div class="country-wrapper">
+              <img src="/asset/image/index/rectangle-64@2x.png" role='presentation' alt='Vietnam' width="114"
+                height="79">
+              <div class="country-text">
+                <a href='/blog/index.php?type=category&detail=Vietnam' aria-label='Explore Vietnam'></a>
+                <h3>Vietnam</h3>
+
               </div>
             </div>
           </div>
-      </section>
-    </main>
+          <div class="subscribe-container" id="subscribe">
+            <h4>Subscribe Today</h4>
+            <p>Embark on adventures with us! Subscribe now for exclusive travel tips, inspiring stories, and special
+              package offers delivered directly to your inbox</p>
+            <form action="/asset/php/subscribe.process.php" method="post" class="subscribe-form">
+              <label for="fullname">Full Name</label>
+              <input type="text" id="fullname" name="fullname" placeholder="Full Name" required maxlength="45">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Your Email" required>
+              <div class="checkbox-container">
+                <input type="checkbox" id="privacy-policy" required>
+                <label for="privacy-policy">You Agree To Our Company Privacy Policy</label>
+              </div>
+              <button type="submit" class="subscribe-btn">SUBSCRIBE</button>
+            </form>
+          </div>
+          <!-- Thank You Modal -->
+          <div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="thankYouModalLabel">Thank You</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Thank you for subscribing!
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <?php
-      include "component/ending-screen.component.php";
-      include "component/footer.component.php";
-    ?>
-  </body>
+          <!-- Already Subscribed Modal -->
+          <div class="modal fade" id="alreadySubscribedModal" tabindex="-1"
+            aria-labelledby="alreadySubscribedModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="alreadySubscribedModalLabel">Already Subscribed</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  The email is already subscribed.
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Failure Modal -->
+          <div class="modal fade" id="failureModal" tabindex="-1" role="dialog" aria-labelledby="failureModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="failureModalLabel">Oops!</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Something went wrong with your subscription. Please try again later.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+  </main>
+
+  <?php
+  include "component/ending-screen.component.php";
+  include "component/footer.component.php";
+  ?>
+</body>
+
 </html>
