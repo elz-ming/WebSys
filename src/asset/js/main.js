@@ -19,6 +19,16 @@ if (navbar) {
     window.addEventListener("scroll", stickHeader);
 }
 
+// const navtoggle = document.querySelector('.navbar-toggler');
+
+// const navcomponent = document.querySelector('.navbar-component');
+
+
+// navtoggle.addEventListener('click', () => { 
+//   navtoggle.classList.toggle('active');
+//   navcomponent.classList.toggle('active');
+// })
+
 // Wait for the DOM to be ready
 document.addEventListener('DOMContentLoaded', function() {
     // Toggle the dropdown when clicking on the user icon

@@ -198,7 +198,7 @@ function time_elapsed_string($datetime, $full = false)
               <div class="comment-block">
                 <div class="empty-container-before-comment">
                   <img src=<?php echo $comment['image_path']; ?> alt="Profile Picture" class="profile-pic">
-                  <div class="comment-info">
+                  <div class="row comment-info">
                     <span><?php echo $comment['first_name'] . '' . $comment['last_name']; ?></span>
                     <span class="timestamp">
                     Posted: <?php echo time_elapsed_string($comment['created_at']); ?>
