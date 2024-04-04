@@ -74,6 +74,10 @@ section h1 {
     background-image: url(/asset/image/index/rectangle-7@2x.png);
 }
 
+.slider-wrapper {
+    padding-left: 13%;
+}
+
 @media (max-width:1600px) {
     .carousel {
         width: 100%;
@@ -96,11 +100,15 @@ section h1 {
 }
 
 @media (min-width:993px) and (max-width: 1200px) {
-
+    .slider-wrapper {
+        padding-left: 15%;
+    }
 }
 
 @media (min-width: 1201px) and (max-width: 1400px) {
-
+    .slider-wrapper {
+        padding-left: 15%;
+    }
 }
 
 * {
