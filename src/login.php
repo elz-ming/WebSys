@@ -37,11 +37,11 @@
 
                 <div class="mb-3">
                     <label for="email" class="form-label"></label>
-                    <input required type="email" id="email" name="email" class="form-control" placeholder="Enter email">
+                    <input required type="email" id="user_email" name="email" class="form-control" placeholder="Enter email">
                 </div>
                 <div class="mb-3">
                     <label for="pwd" class="form-label"></label>
-                    <input required maxlength="30" minlength="8" type="password" id="pwd" name="pwd" class="form-control"
+                    <input required maxlength="30" minlength="8" type="password" id="user_pwd" name="pwd" class="form-control"
                         placeholder="Enter password">
                 </div>
                 <div class="mb-3">
