@@ -189,7 +189,7 @@ function getBlogPostsAndCategories()
             <div class="country-post">
               <h4>Pick a Country</h4>
               <div class="country-wrapper">
-                <img src="/asset/image/index/rectangle-60@2x.png" width="114" height="79">
+                <img src="/asset/image/index/rectangle-60@2x.png" alt="Korea" width="114" height="79">
                 <div class="country-text">
                   <a href='/blog/index.php?type=category&detail=Korea'>
                     <h3>Korea</h3>
@@ -197,7 +197,7 @@ function getBlogPostsAndCategories()
                 </div>
               </div>
               <div class="country-wrapper">
-                <img src="/asset/image/index/rectangle-61@2x.png" width="114" height="79">
+                <img src="/asset/image/index/rectangle-61@2x.png" alt="Singapore" width="114" height="79">
                 <div class="country-text">
                   <a href='/blog/index.php?type=category&detail=Singapore'>
                     <h3>Singapore</h3>
@@ -205,7 +205,7 @@ function getBlogPostsAndCategories()
                 </div>
               </div>
               <div class="country-wrapper">
-                <img src="/asset/image/index/rectangle-62@2x.png" width="114" height="79">
+                <img src="/asset/image/index/rectangle-62@2x.png" alt="Spain" width="114" height="79">
                 <div class="country-text">
                   <a href='/blog/index.php?type=category&detail=Spain'>
                     <h3>Spain</h3>
@@ -213,7 +213,7 @@ function getBlogPostsAndCategories()
                 </div>
               </div>
               <div class="country-wrapper">
-                <img src="/asset/image/index/rectangle-64@2x.png" width="114" height="79">
+                <img src="/asset/image/index/rectangle-64@2x.png" alt="Vietnam"  width="114" height="79">
                 <div class="country-text">
                   <a href='/blog/index.php?type=category&detail=Vietnam'>
                     <h3>Vietnam</h3>
