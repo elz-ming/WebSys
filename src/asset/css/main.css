@@ -257,7 +257,7 @@ footer {
 .footer-nav li {
   display: flex;
   align-items: center;
-  padding: 0 50px;
+  /* padding: 0 50px; */
   /* Horizontal padding for desktop */
 }
 
@@ -282,6 +282,10 @@ footer.follow-icon {
   justify-content: center;
   align-items: center;
   padding-left: 10px;
+}
+
+.col-lg-3.follow-icon {
+  padding-left: 80px;
 }
 
 /* ++++++++++++++++++++ CSS for responsive design ++++++++++++++++++++ */
@@ -331,6 +335,10 @@ footer.follow-icon {
   .lets-go {
     font-size: 30px;
   }
+
+  .col-lg-3.follow-icon {
+    padding-left: 0px !important;
+  }
 }
 
 @media only screen and (max-width:576px) {
@@ -373,6 +381,9 @@ footer.follow-icon {
     padding-top: 365px !important;
   }
 
+  .col-lg-3.follow-icon {
+    padding-left: 0px !important;
+  }
 }
 
 /* TABLETS */
@@ -437,6 +448,10 @@ footer.follow-icon {
     justify-content: center;
   }
 
+  .col-lg-3.follow-icon {
+    padding-left: 0px !important;
+  }
+
   .intro-container {
     padding-top: 365px !important;
   }
@@ -492,6 +507,12 @@ footer.follow-icon {
 
   .follow-icon {
     padding-left: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .col-lg-3.follow-icon {
+    padding-left: 0px !important;
   }
 }
 
