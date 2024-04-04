@@ -222,7 +222,7 @@ section h1 {
     /* Allows the text to take up the remaining space */
 }
 
-.pop-text h3 {
+.pop-text h2 {
     font-size: 24px;
     margin-top: 0;
     /* Adjusted padding to margin for spacing */
@@ -267,7 +267,7 @@ h4 {
     /* Adjust the gap to match the design */
 }
 
-.country-text h3 {
+.country-text h2 {
     font-size: 1.25rem;
     /* Adjust the font size to match the design */
     margin-bottom: 0.5rem;

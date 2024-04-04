@@ -163,7 +163,7 @@ function getBlogPostsAndCategories()
               echo "<img class='col-xs-12 col-md-6' role='presentation' src='{$imagePath}' alt='{$title}' width='300' height='175'>";
               echo "<div class='col-xs-12 col-md-6 pop-text'>";
               echo "<a href='/blog/post.php?blog_id={$blogId}' aria-label='Read more about this blog post'></a>";
-              echo "<h3>{$title}</h3>";
+              echo "<h2>{$title}</h2>";
               echo "<div class='post-author'>";
               echo "<a href='/blog/post.php?blog_id={$blogId}' class='post-link'>Post</a>";
               echo "<span class='author-name'>By {$authorFullName}</span>";
@@ -190,7 +190,7 @@ function getBlogPostsAndCategories()
               <img src="/asset/image/index/rectangle-60@2x.png" role='presentation' alt='Korea' width="114" height="79">
               <div class="country-text">
                 <a href='/blog/index.php?type=category&detail=Korea' aria-label='Explore Korea'></a>
-                <h3>Korea</h3>
+                <h2>Korea</h2>
               </div>
             </div>
             <div class="country-wrapper">
@@ -198,15 +198,14 @@ function getBlogPostsAndCategories()
                 height="79">
               <div class="country-text">
                 <a href='/blog/index.php?type=category&detail=Singapore' aria-label='Explore Singapore'></a>
-                <h3>Singapore</h3>
-
+                <h2>Singapore</h2>
               </div>
             </div>
             <div class="country-wrapper">
               <img src="/asset/image/index/rectangle-62@2x.png" role='presentation' alt='Spain' width="114" height="79">
               <div class="country-text">
                 <a href='/blog/index.php?type=category&detail=Spain' aria-label='Explore Spain'></a>
-                <h3>Spain</h3>
+                <h2>Spain</h2>
 
               </div>
             </div>
@@ -215,8 +214,7 @@ function getBlogPostsAndCategories()
                 height="79">
               <div class="country-text">
                 <a href='/blog/index.php?type=category&detail=Vietnam' aria-label='Explore Vietnam'></a>
-                <h3>Vietnam</h3>
-
+                <h2>Vietnam</h2>
               </div>
             </div>
           </div>
