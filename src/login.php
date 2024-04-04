@@ -41,8 +41,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="pwd" class="form-label"></label>
-                    <input required maxlength="30" minlength="8" type="password" id="user_pwd" name="pwd" class="form-control"
-                        placeholder="Enter password">
+                    <input required maxlength="30" minlength="8" type="password" id="pwd" name="pwd" 
+                        class="form-control" placeholder="Enter password">
                 </div>
                 <div class="mb-3">
                     <label for="pwd_confirm" class="form-label"></label>
