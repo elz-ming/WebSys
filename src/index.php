@@ -284,7 +284,7 @@ function getBlogPostsAndCategories()
           </div>
       </section>
 
-      <section class="num-nav mt-3">
+      <!-- <section class="num-nav mt-3">
         <nav>
           <ul>
             <span class="arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
@@ -294,7 +294,7 @@ function getBlogPostsAndCategories()
             <i class="fa-solid fa-chevron-right"></i>
           </ul>
         </nav>
-      </section>
+      </section> -->
     </main>
 
     <?php

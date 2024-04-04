@@ -1,6 +1,6 @@
 <?php
-  // $config = parse_ini_file('../../db-config.ini');
-  $config = parse_ini_file('/var/www/private/db-config.ini');
+  $config = parse_ini_file('../../db-config.ini');
+  //$config = parse_ini_file('/var/www/private/db-config.ini');
   if (!$config) {
     $errorMsg = "Failed to read database config file.";
     $success = false;

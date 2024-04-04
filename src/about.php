@@ -58,7 +58,7 @@
 		<main class="abt-container">
 			<div class="abt-post">
 				<div class="abt-wrapper">
-					<img src="/asset/image/user/edmund.jpg">
+					<img src="/asset/image/user/edmund.jpg" alt = "Photo of Edmund">
 					<div class="abt-text">
 						<h3>Lin Zhenming</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
@@ -67,7 +67,7 @@
 					</div>
 				</div>
 				<div class="abt-wrapper">
-					<img src="/asset/image/user/darryl.jpg">
+					<img src="/asset/image/user/darryl.jpg" alt="Photo of Darryl">
 					<div class="abt-text">
 						<h3>Darryl Ng Bing Bing</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
@@ -76,7 +76,7 @@
 					</div>
 				</div>
 				<div class="abt-wrapper">
-					<img src="/asset/image/user/philicia.jpg">
+					<img src="/asset/image/user/philicia.jpg" alt="Photo of Philicia">
 					<div class="abt-text">
 						<h3>Philicia Lee Fei Li</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
@@ -85,7 +85,7 @@
 					</div>
 				</div>
 				<div class="abt-wrapper">
-					<img src="/asset/image/user/jingyu.jpg">
+					<img src="/asset/image/user/jingyu.jpg" alt="Photo of Jingyu">
 					<div class="abt-text">
 						<h3>Lim Jing Yu</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
@@ -94,7 +94,7 @@
 					</div>
 				</div>
 				<div class="abt-wrapper">
-					<img src="/asset/image/user/tommy.jpg">
+					<img src="/asset/image/user/tommy.jpg" alt="photo of Tommy">
 					<div class="abt-text">
 						<h3>Yeow Dao Xing</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
