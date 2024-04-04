@@ -20,7 +20,7 @@ body {
   margin: 0px 30px;
   border-bottom: 1px solid white;
   color: white;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0);
 }
 
 .header-bar a {
@@ -67,7 +67,8 @@ body {
 
 /* ++++++++++++++++++++ CSS for <nav> and everything inside ++++++++++++++++++++ */
 .header-nav {
-  width: 100%;
+  position: fixed;
+  width: 50%;
   font-size: 24px;
   display: flex;
   align-items: center;
@@ -85,7 +86,7 @@ body {
 .header-nav li {
   display: flex;
   align-items: center;
-  padding: 0 10px;
+  padding: 0 25px;
   height: 60px;
   /* Example height, adjust as needed */
 }
@@ -298,6 +299,7 @@ footer.follow-icon {
   .header-nav ul {
     flex-direction: column;
     align-items: center;
+
     padding-left: 0px !important;
   }
 
@@ -388,6 +390,10 @@ footer.follow-icon {
 
 /* TABLETS */
 @media screen and (max-width: 768px) {
+  .header-nav {
+    background-color: black;
+  }
+
   body {
     overflow-x: hidden;
   }
@@ -458,6 +464,10 @@ footer.follow-icon {
 }
 
 @media (min-width:769px) and (max-width:992px) {
+  .header-nav {
+    background-color: black;
+  }
+
   body {
     overflow-x: hidden;
   }
@@ -537,6 +547,10 @@ footer.follow-icon {
   .footer-nav ul {
     padding-right: 20px;
   }
+
+  .header-nav li {
+    padding: 10px;
+  }
 }
 
 @media (min-width: 1201px) and (max-width: 1400px) {
@@ -546,6 +560,10 @@ footer.follow-icon {
 
   .header-container {
     margin-top: -300px
+  }
+
+  .header-nav li {
+    padding: 10px;
   }
 
   .intro-text,

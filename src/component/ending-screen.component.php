@@ -6,7 +6,7 @@
     </video>
     <div class="video-overlay">
       <h1>Trips For Your First Solo Traveling</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Let's set the course together.</p>
       <!-- <a href="#" class="btn btn-primary video-button">Top</a> -->
     </div>
   </div>
