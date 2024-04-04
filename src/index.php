@@ -123,10 +123,11 @@ function getBlogPostsAndCategories()
                   $imagePath = htmlspecialchars($category['image_path']);
                   // Use echo to output the HTML structure
                   echo "<div class='slide'>";
-                  echo "<div class='slide-img' role='presentation' style='background-image: url(\"$imagePath\");' alt=''>";
-                  echo "<a href='/blog/index.php?type=category&detail=" . htmlspecialchars($category['name']) . "'>$name</a>"; // Replace '#' with the actual link to the category
+                  echo "<div class='slide-img' style='background-image: url(\"$imagePath\");'>";
+                  echo "<a href='/blog/index.php?type=category&detail=" . htmlspecialchars($category['name']) . "' role='presentation'>$name</a>";
                   echo "</div>";
                   echo "</div>";
+
                 }
               } else {
                 echo "<p>No categories found.</p>";
