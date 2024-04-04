@@ -63,7 +63,7 @@ body, html {
 }
 
 .delete-btn {
-  color: white; /* Text color */
+  color: black; /* Text color */
   background-color: red; /* Red background for delete button */
 }
 
