@@ -38,7 +38,7 @@
 	<main class="abt-container">
 		<div class="abt-post">
 			<div class="abt-wrapper">
-				<img src="/asset/image/index/rectangle-28@2x.png">
+				<img src="/asset/image/index/rectangle-28@2x.png" alt="">
 				<div class="abt-text">
 					<h3>Edmund Lin</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
@@ -47,7 +47,7 @@
 				</div>
 			</div>
 			<div class="abt-wrapper">
-				<img src="/asset/image/index/rectangle-28@2x.png">
+				<img src="/asset/image/index/rectangle-28@2x.png" alt="">
 				<div class="abt-text">
 					<h3>Edmund Lin</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
@@ -56,7 +56,7 @@
 				</div>
 			</div>
 			<div class="abt-wrapper">
-				<img src="/asset/image/index/rectangle-28@2x.png">
+				<img src="/asset/image/index/rectangle-28@2x.png" alt="">
 				<div class="abt-text">
 					<h3>Edmund Lin</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
@@ -65,7 +65,7 @@
 				</div>
 			</div>
 			<div class="abt-wrapper">
-				<img src="/asset/image/index/rectangle-28@2x.png">
+				<img src="/asset/image/index/rectangle-28@2x.png" alt="">
 				<div class="abt-text">
 					<h3>Edmund Lin</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
@@ -74,7 +74,7 @@
 				</div>
 			</div>
 			<div class="abt-wrapper">
-				<img src="/asset/image/index/rectangle-28@2x.png">
+				<img src="/asset/image/index/rectangle-28@2x.png" alt="">
 				<div class="abt-text">
 					<h3>Edmund Lin</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
