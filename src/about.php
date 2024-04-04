@@ -45,7 +45,7 @@
 			echo "<div class='header-container' style='background-image: url(" . "/asset/image/user/GroupPhoto.jpg" . ");'>";
 			?>
 			<div class="overlay-bg">
-			<img src="/asset/image/index/rectangle-1.svg" />
+			<img src="/asset/image/index/rectangle-1.svg" alt="group picture of development team"/>
 			</div>
 			<div class="row intro-container">
 			<div class="lets-go">The Team Behind The Dream</div>
