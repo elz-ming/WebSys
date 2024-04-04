@@ -48,7 +48,7 @@
 				<img src="/asset/image/index/rectangle-1.svg" alt="group picture of development team"/>
 			</div>
 			<div class="row intro-container">
-			<div class="lets-go">The Team Behind The Dream</div>
+				<h1 class="col-12 intro-text">The Team Behind The Dream</h1>
 			</div>
 		</div>
 		<main class="abt-container">
