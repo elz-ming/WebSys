@@ -1,90 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<?php
-  include "component/head.component.php";
-  ?>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>About Us</title>
+		<!-- Page Logo -->
+		<link rel="icon" type="image/png" href="/asset/image/favicon.png">
 
-	<!-- Page JS -->
-	<link rel="stylesheet" href="/asset/css/about.css" />
-	<script defer src="/asset/js/about.js"></script>
-</head>
+		<title>About Us</title>
 
-<body>
-	<?php
-	include "component/header.component.php";
-	?>
+		<!-- Main JS -->
+    <link rel="stylesheet" href="/asset/css/main.css" />
+    <script defer src="/asset/js/main.js"></script>
 
-	<div id="landing-screen">
+		<!-- Page JS -->
+		<link rel="stylesheet" href="/asset/css/about.css" />
+		<script defer src="/asset/js/about.js"></script>
+
+		<!--Bootstrap JS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"></script>
+
+    <!-- Tinyslider JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+	</head>
+
+	<body>
 		<?php
-		echo "<div class='header-container' style='background-image: url(" . "/asset/image/user/GroupPhoto.jpg" . ");'>";
+		include "component/header.component.php";
 		?>
-		<div class="overlay-bg">
-		<img src="/asset/image/index/rectangle-1.svg" />
+
+		<div id="landing-screen">
+			<?php
+			echo "<div class='header-container' style='background-image: url(" . "/asset/image/user/GroupPhoto.jpg" . ");'>";
+			?>
+			<div class="overlay-bg">
+			<img src="/asset/image/index/rectangle-1.svg" />
+			</div>
+			<div class="row intro-container">
+			<?php
+			echo "<h1 class='col-12 intro-text'>" . htmlspecialchars($blog['title']) . "</h1>";
+			echo "<div class='intro-content'>" . htmlspecialchars($blog['subtitle']) . "</div>";
+			?>
+			<div class="lets-go">The Team Behind The Dream</div>
+			</div>
 		</div>
-		<div class="row intro-container">
+		<main class="abt-container">
+			<div class="abt-post">
+				<div class="abt-wrapper">
+					<img src="/asset/image/user/edmund.jpg">
+					<div class="abt-text">
+						<h3>Lin Zhenming</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
+							velit, eu sed sollicitudin tempus,</p>
+						<p1>Fun Fact: Loves Japan</p1>
+					</div>
+				</div>
+				<div class="abt-wrapper">
+					<img src="/asset/image/user/darryl.jpg">
+					<div class="abt-text">
+						<h3>Darryl Ng Bing Bing</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
+							velit, eu sed sollicitudin tempus,</p>
+						<p1>Fun Fact: Loves Japan</p1>
+					</div>
+				</div>
+				<div class="abt-wrapper">
+					<img src="/asset/image/user/philicia.jpg">
+					<div class="abt-text">
+						<h3>Philicia Lee Fei Li</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
+							velit, eu sed sollicitudin tempus,</p>
+						<p1>Fun Fact: Loves Japan</p1>
+					</div>
+				</div>
+				<div class="abt-wrapper">
+					<img src="/asset/image/user/jingyu.jpg">
+					<div class="abt-text">
+						<h3>Lim Jing Yu</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
+							velit, eu sed sollicitudin tempus,</p>
+						<p1>Fun Fact: Loves Japan</p1>
+					</div>
+				</div>
+				<div class="abt-wrapper">
+					<img src="/asset/image/user/tommy.jpg">
+					<div class="abt-text">
+						<h3>Yeow Dao Xing</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
+							velit, eu sed sollicitudin tempus,</p>
+						<p1>Fun Fact: Loves Japan</p1>
+					</div>
+				</div>
+			</div>
+		</main>
 		<?php
-		echo "<h1 class='col-12 intro-text'>" . htmlspecialchars($blog['title']) . "</h1>";
-		echo "<div class='intro-content'>" . htmlspecialchars($blog['subtitle']) . "</div>";
+		include "component/footer.component.php";
 		?>
-		<div class="lets-go">The Team Behind The Dream</div>
-		</div>
-	</div>
-	<main class="abt-container">
-		<div class="abt-post">
-			<div class="abt-wrapper">
-				<img src="/asset/image/user/edmund.jpg">
-				<div class="abt-text">
-					<h3>Lin Zhenming</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
-						velit, eu sed sollicitudin tempus,</p>
-					<p1>Fun Fact: Loves Japan</p1>
-				</div>
-			</div>
-			<div class="abt-wrapper">
-				<img src="/asset/image/user/darryl.jpg">
-				<div class="abt-text">
-					<h3>Darryl Ng Bing Bing</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
-						velit, eu sed sollicitudin tempus,</p>
-					<p1>Fun Fact: Loves Japan</p1>
-				</div>
-			</div>
-			<div class="abt-wrapper">
-				<img src="/asset/image/user/philicia.jpg">
-				<div class="abt-text">
-					<h3>Philicia Lee Fei Li</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
-						velit, eu sed sollicitudin tempus,</p>
-					<p1>Fun Fact: Loves Japan</p1>
-				</div>
-			</div>
-			<div class="abt-wrapper">
-				<img src="/asset/image/user/jingyu.jpg">
-				<div class="abt-text">
-					<h3>Lim Jing Yu</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
-						velit, eu sed sollicitudin tempus,</p>
-					<p1>Fun Fact: Loves Japan</p1>
-				</div>
-			</div>
-			<div class="abt-wrapper">
-				<img src="/asset/image/user/tommy.jpg">
-				<div class="abt-text">
-					<h3>Yeow Dao Xing</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
-						velit, eu sed sollicitudin tempus,</p>
-					<p1>Fun Fact: Loves Japan</p1>
-				</div>
-			</div>
-		</div>
-	</main>
-	<?php
-	include "component/footer.component.php";
-	?>
-</body>
+	</body>
 
 </html>
