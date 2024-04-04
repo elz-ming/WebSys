@@ -57,15 +57,21 @@
               <option value="category">Category</option>
             </select>
           </label>
-        </div>
-        <div class="fifty-box">
           <label for="placeSort" class="block">
             Filter by:
             <select aria-label="Detail" id="placeSort" name="sort" class="mt-1 w-full bg-white border border-black-200 rounded-lg h-10 cursor-pointer pl-4 pr-8 pt-0 pb-0 disabled:cursor-not-allowed disabled:opacity-20">
             </select>
           </label>
+          <button type="button" id="searchButton">Search</button>
         </div>
-        <button type="button" id="searchButton">Search</button>
+        <!-- <div class="fifty-box">
+          <label for="placeSort" class="block">
+            Filter by:
+            <select aria-label="Detail" id="placeSort" name="sort" class="mt-1 w-full bg-white border border-black-200 rounded-lg h-10 cursor-pointer pl-4 pr-8 pt-0 pb-0 disabled:cursor-not-allowed disabled:opacity-20">
+            </select>
+          </label>
+        </div> -->
+        <!-- <button type="button" id="searchButton">Search</button> -->
       </form>
     </section>
     <section class="row card-container">
