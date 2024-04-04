@@ -16,7 +16,7 @@ body {
   text-align: center;
   align-items: center;
   justify-content: center;
-  padding: 10px 0px;
+  padding: 30px 0px !important;
   margin: 0px 30px;
   border-bottom: 1px solid white;
   color: white;
@@ -311,6 +311,10 @@ footer.follow-icon {
     content: none;
   }
 
+  .header-bar {
+    padding: 10px 0px !important;
+  }
+
   .footer-nav {
     font-size: smaller;
   }
@@ -352,6 +356,10 @@ footer.follow-icon {
     flex-direction: column;
     align-items: center;
     padding-left: 0px !important;
+  }
+
+  .header-bar {
+    padding: 10px 0px !important;
   }
 
   .copyright {
@@ -406,6 +414,10 @@ footer.follow-icon {
 
   .header-nav {
     font-size: small;
+  }
+
+  .header-bar {
+    padding: 10px 0px !important;
   }
 
   .title {
@@ -480,6 +492,10 @@ footer.follow-icon {
     flex-direction: column;
     align-items: center;
     padding-left: 0px !important;
+  }
+
+  .header-bar {
+    padding: 10px 0px !important;
   }
 
   .title {
