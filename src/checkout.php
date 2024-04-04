@@ -78,7 +78,29 @@
         <h2>Order Summary</h2>
         <div class="summary-item total">Total Cart Value: <span id="totalCartValue">$<?php echo htmlspecialchars($total); ?></span></div>
         <textarea class="special-instruction" placeholder="Special Request"></textarea>
-        <button onclick="window.location.href='/checkoutsuccess.php'" class="checkout">Checkout</button>
+        
+        <!-- Credit Card Form -->
+        <div class="credit-card-form">
+        <h3>Credit Card Details</h3>
+        <div class="form-group">
+            <label for="cardName">Name on Card</label>
+            <input type="text" id="cardName" name="cardName" required>
+        </div>
+        <div class="form-group">
+            <label for="cardNumber">Card Number</label>
+            <input type="text" id="cardNumber" name="cardNumber" maxlength="16" pattern="\d{16}" title="Card number must be 16 digits" required>
+        </div>
+        <div class="form-group">
+            <label for="expiryDate">Expiry Date</label>
+            <input type="text" id="expiryDate" name="expiryDate" maxlength="4" placeholder="MMYY" pattern="\d{4}" title="Expiry date must be in MMYY format" required>
+        </div>
+        <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv" maxlength="3" pattern="\d{3}" title="CVV must be 3 digits" required>
+        </div>
+    </div>
+
+        <button onclick="if(validateCreditCard()) { window.location.href='/checkoutsuccess.php'; }" class="checkout">Checkout</button>
         <br><br>
         <button onclick="window.location.href='/package.php'" class="checkout">Back</button>
     </div>
