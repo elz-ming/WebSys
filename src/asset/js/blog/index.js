@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         blogContainer.innerHTML = '';
         blogs.forEach((blog) => {
           const cardHtml = `
-                  <div class="col-4 card">
+                  <div class="col-10 col-sm-10 col-md-4 col-lg-3 col-xl-3 card">
                       <img src="${blog.image_path}" alt="Blog Image">
                       <div class="card-content">
                           <h3><a href="/blog/post.php?blog_id=${blog.id}">${blog.title}</a></h3>
