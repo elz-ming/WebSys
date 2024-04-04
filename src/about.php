@@ -48,10 +48,6 @@
 			<img src="/asset/image/index/rectangle-1.svg" />
 			</div>
 			<div class="row intro-container">
-			<?php
-			echo "<h1 class='col-12 intro-text'>" . htmlspecialchars($blog['title']) . "</h1>";
-			echo "<div class='intro-content'>" . htmlspecialchars($blog['subtitle']) . "</div>";
-			?>
 			<div class="lets-go">The Team Behind The Dream</div>
 			</div>
 		</div>
