@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Checkout</title>
-<link rel="stylesheet" href="asset/css/checkout.css">
-<script src="asset/js/checkout.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Logo -->
+    <link rel="icon" type="image/png" href="/asset/image/favicon.png">
+
+    <title>Checkout</title>
+
+    <link rel="stylesheet" href="asset/css/checkout.css">
+    <script src="asset/js/checkout.js"></script>
 </head>
 <body>
 

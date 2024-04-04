@@ -9,7 +9,7 @@
     width: 325px;
     background-color: white;
     border-radius: 5px;
-    overflow: hidden;
+    /* overflow: hidden; */
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     margin: 20px;
     padding: 0px;
@@ -18,10 +18,16 @@
 .card img {
     width: 100%;
     height: auto;
+    max-height: 50%;
 }
 
 .card-content {
     padding: 16px;
+}
+
+.card-content a {
+    text-decoration: none;
+    color: black;
 }
 
 .card-content h3 {

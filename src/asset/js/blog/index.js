@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const placeSortSelect = document.getElementById('placeSort');
     const blogContainer = document.querySelector('.card-container');
     
-    let currentPostCount = 4;
+    let currentPostCount = 6;
     
     function fetchAllBlogs() {
       const urlParams = new URLSearchParams(window.location.search);
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
           .catch((error) => console.error('Error fetching all blogs:', error));
       }
       function loadMoreBlogs() {
-        currentPostCount += 2;
+        currentPostCount += 6;
         const type = placeTypeSelect.value;
         const detail = placeSortSelect.value;
         fetch(
@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
                       <div class="card-content">
                           <h3><a href="/blog/post.php?blog_id=${blog.id}">${blog.title}</a></h3>
                           <p>${blog.subtitle}</p>
+                          <p>By ${blog.first_name} ${blog.last_name} </p>
                           <p>By ${blog.first_name} ${blog.last_name} </p>
                       </div>
                   </div>
@@ -112,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('searchButton').addEventListener('click', function() {
         const type = placeTypeSelect.value;
         const detail = placeSortSelect.value;
-        currentPostCount = 4;
+        currentPostCount = 6;
         fetch(
           `../../../asset/php/post.process.php?type=${type}&detail=${encodeURIComponent(
             detail

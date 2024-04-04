@@ -95,6 +95,17 @@ function time_elapsed_string($datetime, $full = false)
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Page Logo -->
+  <link rel="icon" type="image/png" href="/asset/image/favicon.png">
+
+  <title>
+    <?php
+      getBlog();
+      echo $blog['title'];
+    ?>
+  </title>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
@@ -138,7 +149,6 @@ function time_elapsed_string($datetime, $full = false)
   ?>
   <div id="landing-screen">
     <?php
-    getBlog();
     echo "<div class='header-container' style='background-image: url(" . htmlspecialchars($blog['image_path']) . ");'>";
     ?>
     <div class="overlay-bg">

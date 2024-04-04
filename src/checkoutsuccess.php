@@ -45,13 +45,17 @@ $conn->close();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Checkout Result</title>
-    <!-- Your CSS and other head content -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Logo -->
+    <link rel="icon" type="image/png" href="/asset/image/favicon.png">
+
+    <title>Successful!</title>
     <link rel="stylesheet" href="asset/css/checkoutsuccess.css">
     </head>
 <body>
     <div class="container">
-        <!-- Assuming the checkout is always successful -->
         <h2 class='success'>Checkout Successful!</h2>
         <p>Dear <?php echo htmlspecialchars($userFirstName); ?> <?php echo htmlspecialchars($userLastName); ?>,</p>
         <p>Your order has been placed successfully!</p>
