@@ -241,7 +241,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: black;
 }
 
 .copyright {
@@ -265,14 +265,14 @@ footer {
 .footer-nav a {
   text-decoration: none;
   /* Removes underline */
-  color: #FFFFFF;
+  color: black;
   /* Change the color to match your design */
   transition: color 0.3s ease;
   /* Optional: for smooth color transition on hover */
 }
 
 .footer-nav a:hover {
-  color: #CCCCCC;
+  color: black;
   /* Change the hover color to match your design */
 }
 
@@ -591,7 +591,7 @@ footer.follow-icon {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  color: white;
+  color: black;
   text-align: center;
   line-height: 40px;
   font-size: 20px;
