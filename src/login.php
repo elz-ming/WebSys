@@ -65,6 +65,11 @@
                         <span>B</span><span>a</span><span>c</span><span>k</span>
                     </h1>
                 </a>
+                <?php if (isset($_GET['error'])): ?>
+                    <div class="alert alert-danger" role="alert">
+                        <?php echo htmlspecialchars($_GET['error']); ?>
+                    </div>
+                <?php endif; ?>
                 <div class="mb-3">
                     <label for="email" class="form-label"></label>
                     <input required type="email" id="email" name="email" class="form-control" placeholder="Email">
