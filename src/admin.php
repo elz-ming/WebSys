@@ -37,7 +37,19 @@
 
   <body>
       <?php
-      include "component/header.component.php";
+        if (session_status() == PHP_SESSION_NONE) {
+          session_start(); // Start the session
+        }
+
+        if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
+          echo "<script>
+                  alert('You do not have valid permissions to access the admin page.');
+                  window.location.href = 'index.php';
+                </script>";
+          exit();
+        } 
+
+        include "component/header.component.php";
       ?>
       <main>
         <div id="admin-container">

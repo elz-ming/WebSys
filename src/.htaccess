@@ -1,0 +1,31 @@
+RewriteEngine On
+
+# Redirect / to /index.php
+RewriteRule ^$ /index.php [L]
+RewriteRule ^index/?$ /index.php [L]
+
+# Redirect /login to /login.php
+RewriteRule ^login/?$ /login.php [L]
+
+# Redirect /verify to /verify.php
+RewriteRule ^verify/?$ /verify.php [L]
+
+# Redirect /blog to /blog/index.php
+RewriteRule ^blog/?$ /blog/index.php [L]
+RewriteRule ^blog/index$ /blog/index.php [L]
+
+# Redirect /blog/x to /blog/post.php?blog_id=x
+RewriteRule ^blog/([0-9]+)/?$ /blog/post.php?blog_id=$1 [L,QSA]
+RewriteRule ^blog/post/([0-9]+)/?$ /blog/post.php?blog_id=$1 [L,QSA]
+
+# Redirect /admin to /admin.php
+RewriteRule ^admin/?$ /admin.php [L]
+
+# Redirect /package to /package.php
+RewriteRule ^package/?$ /package.php [L]
+
+# Redirect /checkout to /checkout.php
+RewriteRule ^checkout/?$ /checkout.php [L]
+
+# Redirect /checkout to /checkout.php
+RewriteRule ^about/?$ /about.php [L]

@@ -159,7 +159,7 @@ function time_elapsed_string($datetime, $full = false)
       echo "<h1 class='col-12 intro-text'>" . htmlspecialchars($blog['title']) . "</h1>";
       echo "<div class='intro-content'>" . htmlspecialchars($blog['subtitle']) . "</div>";
       ?>
-      <div class="lets-go">Let's Go...</div>
+      <!-- <div class="lets-go">Let's Go...</div> -->
     </div>
   </div>
   </div>
@@ -207,7 +207,9 @@ function time_elapsed_string($datetime, $full = false)
             <?php foreach ($comments as $comment): ?>
               <div class="comment-block">
                 <div class="empty-container-before-comment">
-                  <img src=<?php echo $comment['image_path']; ?> alt="Profile Picture" class="profile-pic">
+                  <?php if (!empty($comment['image_path'])): ?>
+                    <img src="<?php echo htmlspecialchars($comment['image_path']); ?>" alt="Profile Picture" class="profile-pic">
+                  <?php endif; ?>
                   <div class="row comment-info">
                     <span><?php echo $comment['first_name'] . '' . $comment['last_name']; ?></span>
                     <span class="timestamp">
