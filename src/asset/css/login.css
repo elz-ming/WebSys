@@ -23,7 +23,7 @@ h1 span {
 }
 
 h1 span:hover {
-  color: #ffa902; 
+  color: #ffa902;
 }
 
 .container {
@@ -45,12 +45,9 @@ h1 span:hover {
 
 .container h1 {
   font-size: 32px;
-  line-height: 20px;
   letter-spacing: 0.3px;
   margin: 20px 0;
 }
-
-
 
 .container a {
   color: #333;
@@ -188,8 +185,8 @@ input:valid {
 
 .toggle {
   background-image: url("../image/login&logout/LoginJapan.jpg");
-  background-size: cover; 
-  background-position: center; 
+  background-size: cover;
+  background-position: center;
   color: #070707;
   position: relative;
   left: -100%;
@@ -271,3 +268,76 @@ input:valid {
   border-color: red transparent transparent transparent; /* Triangle */
 }
 
+@media (max-width: 768px) {
+  .form-container {
+    position: static;
+    display: block; /* Make sure the form container is always displayed */
+    width: 100%;
+    opacity: 1;
+    transform: none !important; /* Override any transform applied */
+  }
+
+  .container.active .sign-in,
+  .container:not(.active) .sign-up {
+    display: none; /* Hide the form not in use */
+  }
+
+  .toggle-container, .toggle {
+    display: none; /* Hide the toggle container on smaller screens */
+  }
+
+  /* Ensure the container fits within the viewport on smaller screens */
+  .container {
+    width: 90%;
+    height: 90%; /* Adjust height to fit content */
+    min-height: 90%; /* Override min-height */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: softer shadow */
+  }
+}
+/* Default state (screen wider than 768px) */
+.toggle-forms-btn {
+  display: none;
+
+  .toggle-forms-btn {
+    display: block; /* Make the button visible */
+    position: absolute; /* Or absolute, depending on your needs */
+    bottom: 20px;
+    right: 20px;
+    z-index: 10; /* Ensure it's visible above other elements */
+    padding: 10px 20px; /* Adjust as needed */
+    background-color: #ffa902; /* Primary color */
+    color: #fff; /* Text color */
+    border: none; /* Simplify button borders */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Indicates it's clickable */
+    /* Add any additional styling as necessary */
+  }
+}
+
+/* For larger screens */
+@media (min-width: 769px) {
+  .sign-up,
+  .sign-in {
+    display: block; /* Show both forms */
+  }
+  .toggle-forms-btn {
+    display: none; /* Optionally hide the toggle button */
+  }
+}
+
+@media (max-width: 768px) {
+  .toggle-forms-btn {
+    display: block; /* Make the button visible */
+    position: absolute; /* Or absolute, depending on your needs */
+    bottom: 20px;
+    right: 20px;
+    z-index: 10; /* Ensure it's visible above other elements */
+    padding: 10px 20px; /* Adjust as needed */
+    background-color: #ffa902; /* Primary color */
+    color: #fff; /* Text color */
+    border: none; /* Simplify button borders */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Indicates it's clickable */
+    /* Add any additional styling as necessary */
+  }
+}
