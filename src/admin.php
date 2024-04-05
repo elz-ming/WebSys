@@ -39,25 +39,33 @@
       <?php
       include "component/header.component.php";
       ?>
-      <main class="admin-container">
-        <aside class="sidebar">
-          <ul class="menu">
-            <li><a href="?table=user">Users</a></li>
-            <li><a href="?table=blog">Blogs</a></li>
-            <li><a href="?table=package">Packages</a></li>
-          </ul>
-        </aside>
-        <section class="content">
-          <!-- Your dynamic content will be loaded here based on the selection -->
-        </section>
-        <div id="actionModal" class="modal">
-          <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <div id="modalBody"></div>
-            <div class="modal-footer">
-              <button id="actionBtn" class="action-btn">Action</button>
-              <button class="cancel-btn">Cancel</button>
+      <main>
+        <div id="admin-container">
+          <aside class="sidebar">
+            <ul class="menu">
+              <li><a href="?table=user">Users</a></li>
+              <li><a href="?table=blog">Blogs</a></li>
+              <li><a href="?table=package">Packages</a></li>
+            </ul>
+          </aside>
+          <section class="content">
+            <!-- Your dynamic content will be loaded here based on the selection -->
+          </section>
+          <div id="actionModal" class="modal">
+            <div class="modal-content">
+              <span class="close-btn">&times;</span>
+              <div id="modalBody"></div>
+              <div class="modal-footer">
+                <button id="actionBtn" class="action-btn">Action</button>
+                <button class="cancel-btn">Cancel</button>
+              </div>
             </div>
+          </div>
+        </div>
+        <div id="mobileMessage" style="display: none;">
+          <div class="card">
+            <p>Admin actions are disallowed in mobile view.</p>
+            <p>Please log in using a desktop.</p>
           </div>
         </div>
       </main>
