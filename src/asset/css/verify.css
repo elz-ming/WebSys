@@ -213,3 +213,19 @@ h1 a {
     display: none; 
   }
 }
+
+/* Small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  h1 a {
+      font-size: 4rem; /* Smaller font size */
+  }
+  .container {
+      margin-right: 20px; /* Adjust margin */
+      padding: 10px; /* Smaller padding */
+  }
+  .content-wrapper {
+      flex-direction: column; /* Stack elements vertically */
+      gap: 1rem; /* Reduce gap */
+  }
+}
+

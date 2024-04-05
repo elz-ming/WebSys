@@ -53,3 +53,50 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+var toggleButton = document.getElementById('toggleForms');
+
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('container');
+    const toggleButton = document.getElementById('toggleForms');
+    const signUpForm = document.querySelector('.sign-up');
+    const signInForm = document.querySelector('.sign-in');
+
+    // Function to toggle visibility based on the 'active' class
+    function toggleForms() {
+        // Toggle 'active' class on the container
+        container.classList.toggle('active');
+        adjustVisibility(); // Adjust visibility after toggling
+    }
+
+    // Function to adjust the form visibility based on window size and 'active' class
+    function adjustVisibility() {
+        if (window.innerWidth < 769) {
+            // Small screens: Display only one form based on 'active' class
+            if (container.classList.contains('active')) {
+                signUpForm.style.display = 'block';
+                signInForm.style.display = 'none';
+                toggleButton.textContent = 'To Sign-In'; // Update button text accordingly
+                toggleButton.style.display = 'block';
+            } else {
+                signInForm.style.display = 'block';
+                signUpForm.style.display = 'none';
+                toggleButton.textContent = 'To Sign-Up'; // Update button text accordingly
+                toggleButton.style.display = 'block';
+            }
+        } else {
+            // Larger screens: Show both forms
+            signUpForm.style.display = 'block';
+            signInForm.style.display = 'block';
+            toggleButton.style.display = 'none'; // Optionally, hide the toggle button as both forms are visible
+        }
+    }
+
+    // Event listeners
+    toggleButton.addEventListener('click', toggleForms);
+    window.addEventListener('resize', adjustVisibility);
+
+    // Initial call to set the correct visibility based on current window size
+    adjustVisibility();
+});
+

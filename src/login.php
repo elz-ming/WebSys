@@ -16,6 +16,7 @@
 
 <body>
     <div class="container" id="container">
+        <button id="toggleForms" class="toggle-forms-btn">To Sign-Up</button>
         <div class="form-container sign-up">
             <form action="/asset/php/register.process.php" method="post">
                 <h1>
@@ -41,7 +42,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="pwd" class="form-label"></label>
-                    <input required maxlength="30" minlength="8" type="password" id="pwd" name="pwd" 
+                    <input required maxlength="30" minlength="8" type="password" id="pwd" name="pwd"
                         class="form-control" placeholder="Enter password">
                 </div>
                 <div class="mb-3">
@@ -72,12 +73,13 @@
                 </div>
                 <div class="mb-3">
                     <label for="pwd" class="form-label"></label>
-                    <input required maxlength="30" minlength="8" type="password" id="pwd" name="pwd" class="form-control"
-                        placeholder="Password">
+                    <input required maxlength="30" minlength="8" type="password" id="pwd" name="pwd"
+                        class="form-control" placeholder="Password">
                 </div>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
+
             </form>
         </div>
         <div class="toggle-container">
