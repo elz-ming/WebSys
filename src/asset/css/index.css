@@ -198,6 +198,11 @@ section h1 {
     /* Removed min-height: 100vh; to not force it to take full viewport height */
 }
 
+.pop-post a {
+    text-decoration: none;
+    color: black;
+}
+
 .pop-wrapper {
     display: flex;
     /* Make pop-wrapper also a flex container */
@@ -247,6 +252,11 @@ section h1 {
     max-width: 100%;
     border-radius: 8px;
     max-height: 100%;
+}
+
+.country-post a {
+    text-decoration: none;
+    color: black;
 }
 
 .country-post h4 {

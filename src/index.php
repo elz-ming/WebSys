@@ -159,12 +159,13 @@ function getBlogPostsAndCategories()
               $formattedDate = $blog['formatted_date'] ?? 'No Date';
               $commentCount = (int) ($blog['comment_count'] ?? 0);
               $likesCount = (int) ($blog['like_count'] ?? 0);
-
+              
               echo "<div class='row col-8 pop-wrapper mx-auto'>";
               echo "<img class='col-xs-12 col-md-6' role='presentation' src='{$imagePath}' alt='{$title}' width='300' height='175'>";
               echo "<div class='col-xs-12 col-md-6 pop-text'>";
-              echo "<a href='/blog/post.php?blog_id={$blogId}' aria-label='Read more about this blog post'></a>";
+              echo "<a href='/blog/post.php?blog_id={$blogId}' aria-label='Read more about this blog post'>";
               echo "<h2>{$title}</h2>";
+              echo "</a>";
               echo "<div class='post-author'>";
               echo "<a href='/blog/post.php?blog_id={$blogId}' class='post-link'>Post</a>";
               echo "<span class='author-name'>By {$authorFullName}</span>";
@@ -187,37 +188,39 @@ function getBlogPostsAndCategories()
         <div class="col-md-12  col-xl-3">
           <div class="country-post">
             <h4>Pick a Country</h4>
-            <div class="country-wrapper">
-              <img src="/asset/image/index/rectangle-60@2x.png" role='presentation' alt='Korea' width="114" height="79">
-              <div class="country-text">
-                <a href='/blog/index.php?type=category&detail=Korea' aria-label='Explore Korea'></a>
-                <h2>Korea</h2>
+            <a href='/blog/index.php?type=category&detail=Korea' aria-label='Explore Korea'>
+              <div class="country-wrapper">
+                <img src="/asset/image/index/rectangle-60@2x.png" role='presentation' alt='Korea' width="114" height="79">
+                <div class="country-text">
+                  <h2>Korea</h2>
+                </div>
               </div>
-            </div>
-            <div class="country-wrapper">
-              <img src="/asset/image/index/rectangle-61@2x.png" role='presentation' alt='Singapore' width="114"
-                height="79">
-              <div class="country-text">
-                <a href='/blog/index.php?type=category&detail=Singapore' aria-label='Explore Singapore'></a>
-                <h2>Singapore</h2>
+            </a>
+            <a href='/blog/index.php?type=category&detail=Singapore' aria-label='Explore Singapore'>
+              <div class="country-wrapper">
+                <img src="/asset/image/index/rectangle-61@2x.png" role='presentation' alt='Singapore' width="114"
+                  height="79">
+                <div class="country-text">
+                  <h2>Singapore</h2>
+                </div>
               </div>
-            </div>
-            <div class="country-wrapper">
-              <img src="/asset/image/index/rectangle-62@2x.png" role='presentation' alt='Spain' width="114" height="79">
-              <div class="country-text">
-                <a href='/blog/index.php?type=category&detail=Spain' aria-label='Explore Spain'></a>
-                <h2>Spain</h2>
-
+            </a>
+            <a href='/blog/index.php?type=category&detail=Spain' aria-label='Explore Spain'>
+              <div class="country-wrapper">
+                <img src="/asset/image/index/rectangle-62@2x.png" role='presentation' alt='Spain' width="114" height="79">
+                <div class="country-text">
+                  <h2>Spain</h2>
+                </div>
               </div>
-            </div>
-            <div class="country-wrapper">
-              <img src="/asset/image/index/rectangle-64@2x.png" role='presentation' alt='Vietnam' width="114"
-                height="79">
-              <div class="country-text">
-                <a href='/blog/index.php?type=category&detail=Vietnam' aria-label='Explore Vietnam'></a>
-                <h2>Vietnam</h2>
+            </a>
+            <a href='/blog/index.php?type=category&detail=Vietnam' aria-label='Explore Vietnam'>
+              <div class="country-wrapper">
+                <img src="/asset/image/index/rectangle-64@2x.png" role='presentation' alt='Vietnam' width="114" height="79">
+                <div class="country-text">
+                  <h2>Vietnam</h2>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
           <div class="subscribe-container" id="subscribe">
             <h4>Subscribe Today</h4>

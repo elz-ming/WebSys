@@ -24,6 +24,11 @@
   color: black;
 }
 
+.abt-text h2 {
+  font-size: 32px;
+  padding-top: 20px;
+}
+
 .abt-text h3 {
   font-size: 24px;
   padding-top: 15px;
@@ -31,5 +36,5 @@
 
 .abt-text p {
   font-size: 16px;
-  padding-top: 20px;
+  padding-top: 10px;
 }
