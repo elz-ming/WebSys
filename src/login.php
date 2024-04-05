@@ -14,12 +14,13 @@
         <button id="toggleForms" class="toggle-forms-btn">To Sign-Up</button>
         <div class="form-container sign-up">
             <form action="/asset/php/register.process.php" method="post">
-                <h1>
-                    <span>C</span><span>r</span><span>e</span><span>a</span><span>t</span><span>e</span>
-                    <span> </span>
-                    <span>A</span><span>c</span><span>c</span><span>o</span><span>u</span><span>n</span><span>t</span>
-                </h1>
-
+                <a href="index.php" style="text-decoration: none; color: inherit;">
+                    <h1>
+                        <span>C</span><span>r</span><span>e</span><span>a</span><span>t</span><span>e</span>
+                        <span> </span>
+                        <span>A</span><span>c</span><span>c</span><span>o</span><span>u</span><span>n</span><span>t</span>
+                    </h1>
+                </a>
                 <div class="mb-3">
                     <label for="first_name" class="form-label"></label>
                     <input required maxlength="45" type="text" id="first_name" name="first_name" class="form-control"
@@ -52,11 +53,13 @@
         </div>
         <div class="form-container sign-in">
             <form action="/asset/php/login.process.php" method="post" class="login-form">
-                <h1>
-                    <span>W</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span>
-                    <span> </span>
-                    <span>B</span><span>a</span><span>c</span><span>k</span>
-                </h1>
+                <a href="index.php" style="text-decoration: none; color: inherit;">
+                    <h1>
+                        <span>W</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span>
+                        <span> </span>
+                        <span>B</span><span>a</span><span>c</span><span>k</span>
+                    </h1>
+                </a>
                 <div class="mb-3">
                     <label for="email" class="form-label"></label>
                     <input required type="email" id="email" name="email" class="form-control" placeholder="Email">
