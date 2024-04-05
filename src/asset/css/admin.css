@@ -4,7 +4,7 @@ body, html {
   font-family: Arial, sans-serif;
 }
 
-.admin-container {
+#admin-container {
   display: flex;
   min-height: 100vh;
 }
@@ -209,4 +209,27 @@ td.integer, td.float, td.timestamp {
 /* Aligning labels to the right for aesthetics */
 #modalBody form label {
   text-align: left;
+}
+
+/* ++++++++++++++++++++ CSS for <div id="mobileMessage"> and everything inside ++++++++++++++++++++ */
+/* ++++++++++++++++++++ The popup message ++++++++++++++++++++ */
+@media (max-width: 768px) {
+  #admin-container {
+    display: none;
+  }
+
+  #mobileMessage {
+    position: sticky;
+    display: block;
+    z-index: -1;
+  }
+
+  .card {
+    padding: 20px;
+    margin: 10px 0;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+  }
 }
