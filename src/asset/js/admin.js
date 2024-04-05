@@ -337,3 +337,26 @@ function performAction() {
 
     closeModal();
 }
+
+/* ++++++++++++++++++++ JS for <div id="mobileMessage"> and everything inside ++++++++++++++++++++ */
+/* ++++++++++++++++++++ The popup message ++++++++++++++++++++ */
+function adjustAdminAccess() {
+    var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var adminContainer = document.getElementById("admin-container");
+    var mobileMessage = document.getElementById("mobileMessage");
+  
+    if (width <= 768) { // Considered as mobile view
+      adminContainer.style.display = "none";
+      mobileMessage.style.display = "block";
+    } else {
+      adminActions.style.display = "block";
+      adminContainer.style.display = "none";
+    }
+  }
+  
+  // Initial check
+  adjustAdminAccess();
+  
+  // Listen for resize changes
+  window.addEventListener('resize', adjustAdminAccess);
+  

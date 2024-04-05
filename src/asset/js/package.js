@@ -1,7 +1,7 @@
 document.querySelectorAll('[data-package-id]').forEach(button => {
     button.addEventListener('click', function() {
         const packageId = this.getAttribute('data-package-id');
-        fetch('get_package_details.php?package_id=' + packageId)
+        fetch('/asset/php/get_package_details.php?package_id=' + packageId)
             .then(response => response.json())
             .then(data => {
                 document.getElementById('modalTitle').innerText = 'Package Details - ' + data.pname;

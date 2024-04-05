@@ -41,7 +41,7 @@ function getComments($blog_id)
   return $comments;
 }
 
-// To covert the created_at timestamp to a human-readable format
+// To convert the created_at timestamp to a human-readable format
 function time_elapsed_string($datetime, $full = false)
 {
   $now = new DateTime();
@@ -97,7 +97,7 @@ function time_elapsed_string($datetime, $full = false)
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Page Logo -->
-  <link rel="icon" type="image/png" href="/asset/image/favicon.png">
+  <link rel="icon" type="image/png" href="/asset/image/favicon.png"></link>
 
   <title>
     <?php
@@ -107,31 +107,31 @@ function time_elapsed_string($datetime, $full = false)
   </title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"></link>
 
   <!-- Main JS -->
-  <link rel="stylesheet" href="/asset/css/main.css" />
+  <link rel="stylesheet" href="/asset/css/main.css" /></link>
   <script defer src="/asset/js/main.js"></script>
 
   <!-- Page JS -->
-  <link rel="stylesheet" href="/asset/css/blog/post.css" />
+  <link rel="stylesheet" href="/asset/css/blog/post.css" /></link>
   <script defer src="/asset/js/blog/post.js"></script>
 
   <!--Bootstrap JS-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"></link>
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
 
   <!-- Tinyslider JS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" /></link>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
 
   <!--Font Awesome-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"></link>
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" /></link>
 </head>
 
 <body>
@@ -152,14 +152,14 @@ function time_elapsed_string($datetime, $full = false)
     echo "<div class='header-container' style='background-image: url(" . htmlspecialchars($blog['image_path']) . ");'>";
     ?>
     <div class="overlay-bg">
-      <img src="/asset/image/index/rectangle-1.svg" />
+      <img role='presentation' alt='' src="/asset/image/index/rectangle-1.svg" />
     </div>
     <div class="row intro-container">
       <?php
       echo "<h1 class='col-12 intro-text'>" . htmlspecialchars($blog['title']) . "</h1>";
       echo "<div class='intro-content'>" . htmlspecialchars($blog['subtitle']) . "</div>";
       ?>
-      <div class="lets-go">Let's Go...</div>
+      <!-- <div class="lets-go">Let's Go...</div> -->
     </div>
   </div>
   </div>
@@ -207,8 +207,10 @@ function time_elapsed_string($datetime, $full = false)
             <?php foreach ($comments as $comment): ?>
               <div class="comment-block">
                 <div class="empty-container-before-comment">
-                  <img src=<?php echo $comment['image_path']; ?> alt="Profile Picture" class="profile-pic">
-                  <div class="comment-info">
+                  <?php if (!empty($comment['image_path'])): ?>
+                    <img src="<?php echo htmlspecialchars($comment['image_path']); ?>" alt="Profile Picture" class="profile-pic">
+                  <?php endif; ?>
+                  <div class="row comment-info">
                     <span><?php echo $comment['first_name'] . '' . $comment['last_name']; ?></span>
                     <span class="timestamp">
                     Posted: <?php echo time_elapsed_string($comment['created_at']); ?>
@@ -260,6 +262,8 @@ function time_elapsed_string($datetime, $full = false)
             </div>
           </div>
         </div>
+      </div>
+    </div>
   </section>
 
   <?php
