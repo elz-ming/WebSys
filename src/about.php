@@ -61,8 +61,8 @@
 					<img src="/asset/image/user/edmund.jpg" alt = "Photo of Edmund">
 					<div class="abt-text">
 						<h3>Lin Zhenming</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
-							velit, eu sed sollicitudin tempus,</p>
+						<p>A passionate traveler who has explored over 30 countries and loves to share his travel experiences and tips with
+							 others. He believes that travel is the best way to broaden one's horizons and learn about different cultures.</p>
 						<p>Fun Fact: Loves Japan</p>
 					</div>
 				</div>
@@ -70,8 +70,8 @@
 					<img src="/asset/image/user/darryl.jpg" alt="Photo of Darryl">
 					<div class="abt-text">
 						<h3>Darryl Ng Bing Bing</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
-							velit, eu sed sollicitudin tempus,</p>
+						<p>A passionate traveler and adventurer. With a love for exploring new places and experiencing different cultures, he shares his adventures 
+							and travel tips through his blog.</p>
 						<p>Fun Fact: Loves Japan</p>
 					</div>
 				</div>
@@ -79,8 +79,8 @@
 					<img src="/asset/image/user/philicia.jpg" alt="Photo of Philicia">
 					<div class="abt-text">
 						<h3>Philicia Lee Fei Li</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
-							velit, eu sed sollicitudin tempus,</p>
+						<p>A nature enthusiast and wildlife photographer. She has a deep love for the outdoors and is dedicated to capturing the
+							 beauty of nature through her lens. She hopes to inspire others to appreciate and protect the natural world.</p>
 						<p>Fun Fact: Loves Japan</p>
 					</div>
 				</div>
@@ -88,8 +88,8 @@
 					<img src="/asset/image/user/jingyu.jpg" alt="Photo of Jingyu">
 					<div class="abt-text">
 						<h3>Lim Jing Yu</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
-							velit, eu sed sollicitudin tempus,</p>
+						<p>A tech guru with a passion for innovation. As a software engineer, he is constantly exploring new technologies
+							 and finding creative solutions to complex problems.</p>
 						<p>Fun Fact: Loves Japan</p>
 					</div>
 				</div>
@@ -97,8 +97,8 @@
 					<img src="/asset/image/user/tommy.jpg" alt="photo of Tommy">
 					<div class="abt-text">
 						<h3>Yeow Dao Xing</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed et donec purus viverra. Sit justo
-							velit, eu sed sollicitudin tempus,</p>
+						<p>A professional photographer and nature lover who finds inspiration in the beauty of landscapes and diverse cultures. With a keen eye for detail and a 
+							passion for storytelling, he founded Wanderlust Photography to capture and share the essence of travel through stunning imagery. Dao Xing's goal is to inspire others to embark on their own adventures and create lasting memories.</p>
 						<p>Fun Fact: Loves Japan</p>
 					</div>
 				</div>
